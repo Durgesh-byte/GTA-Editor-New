@@ -1,0 +1,18 @@
+<state id="@StatID">
+	<invoke type="xml-rpc" id="@InvokeID">
+		<content>
+			<xmlrpc tool_id="FWC-Logger" tool_type="Logger">
+				<function name="GetParamValueSingleSample">
+					<argument value="'now'" type = "string" />
+					<argument value="'message'" name="message_type" type="string" />
+					<argument value="'string'" name="ExpectedReturnType" type = "string" />
+					<returnvalue name="@ReturnVal"/>
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.@ReturnVal" location="@ReturnVal"/>
+		</finalize>
+	</invoke>
+	<transition target="@TargetID" event="done.invoke.@InvokeID"/>
+</state>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTAHeaderFieldEdit</class>
+ <widget class="QDialog" name="GTAHeaderFieldEdit">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add Header field</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/images/forms/img/GTAAppIcon.png</normaloff>:/images/forms/img/GTAAppIcon.png</iconset>
+  </property>
+  <property name="modal">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="4" column="1">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="fieldNameLE"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="fileLB">
+     <property name="text">
+      <string>Field:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="fieldValueLB">
+     <property name="text">
+      <string>Value:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="fieldValueLE"/>
+   </item>
+   <item row="2" column="1">
+    <widget class="QComboBox" name="mandatoryCB">
+     <item>
+      <property name="text">
+       <string>No</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Yes</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="mandatoryLB">
+     <property name="text">
+      <string>Mandatory:</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QPlainTextEdit" name="descriptionTE"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="DescricptionLB">
+     <property name="text">
+      <string>Description:</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>fieldNameLE</tabstop>
+  <tabstop>fieldValueLE</tabstop>
+  <tabstop>mandatoryCB</tabstop>
+  <tabstop>descriptionTE</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>GTAHeaderFieldEdit</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>GTAHeaderFieldEdit</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>388</x>
+     <y>290</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

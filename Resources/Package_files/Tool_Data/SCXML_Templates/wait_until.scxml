@@ -1,0 +1,16 @@
+<state id="WaitState">
+	<invoke type="xml-rpc" id="i0">
+		<content>
+			<xmlrpc tool_id="CGIB" tool_type="GFIB">
+				<function name="GetMultiParamValueSingleSample">
+					<argument type="array" value="MultiParam" name="ParameterList"/>
+					<returnvalue name=""/>
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+		</finalize>
+	</invoke>
+	<transition target="final" cond="Timer" />
+</state>
+

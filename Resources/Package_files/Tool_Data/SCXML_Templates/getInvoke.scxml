@@ -1,0 +1,12 @@
+<invoke id="" type="xml-rpc">
+	<content>
+		<xmlrpc tool_id="CGIB" tool_type="GFIB">
+			<function name ="GetParamValueSingleSample" >
+				<argument name="ParameterID" value="" type="string"/>
+				<returnvalue name="Return_Parameter_Structure" />
+			</function>
+		</xmlrpc>
+	</content>
+	<finalize>
+	</finalize>
+</invoke>

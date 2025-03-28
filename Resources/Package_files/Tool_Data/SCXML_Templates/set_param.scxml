@@ -1,0 +1,13 @@
+<invoke id="invoke2" type="xml-rpc">
+	<content>
+		<xmlrpc tool_id="CGIB" tool_type="GFIB">
+			<function name ="SetParam" >
+				<argument name="ParameterList" value="MultiSetList" type="array"/>
+				<returnvalue name="SetStatus" />
+			</function>
+		</xmlrpc>
+	</content>
+	<finalize>
+		<assign location="SetStatus" expr="_event.data.SetStatus" />
+	</finalize>
+</invoke>

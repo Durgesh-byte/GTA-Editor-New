@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>forms/img/Add.png</file>
+        <file>forms/img/Backspace.png</file>
+        <file>forms/img/BatchFile.png</file>
+        <file>forms/img/Delete.png</file>
+        <file>forms/img/ExeFile.png</file>
+        <file>forms/img/GTAAppIcon.png</file>
+        <file>forms/img/ListOfFiles.png</file>
+        <file>forms/img/NewFile.png</file>
+        <file>forms/img/PythonFile.png</file>
+        <file>forms/img/Remove.png</file>
+        <file>forms/img/Save.png</file>
+        <file>forms/img/serverOff.png</file>
+        <file>forms/img/serverOn.png</file>
+    </qresource>
+</RCC>

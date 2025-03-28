@@ -1,0 +1,316 @@
+<REPORT>
+	<REPORT_HEADER GLOBAL_RESULT="OK">
+		<REPORTINFO>
+			<DATE>Mon Jun 25 2018</DATE>
+			<TITLE>foreach</TITLE>
+			<DESIGNERNAME/>
+			<FACILITY/>
+			<GLOBAL_RESULT>OK</GLOBAL_RESULT>
+			<GTAVERSION>22.00.00</GTAVERSION>
+		</REPORTINFO>
+		<TESTDETAIL>
+			<Item value="29 Seconds" name="TestDuration"/>
+			<Item value="" name="Test_Number"/>
+			<Item value="" name="Test Title"/>
+			<Item value="YES" name="Attachment"/>
+		</TESTDETAIL>
+		<SPECIFICATION>
+			<Item value="" name="Specification issue / section"/>
+		</SPECIFICATION>
+		<OTHERDETAILS>
+			<Item value="" name="Tester Name"/>
+			<Item value="" name="Keywords"/>
+			<Item value="" name="Aircraft"/>
+			<Item value="" name="Equipment"/>
+			<Item value="" name="Supplier"/>
+			<Item value="" name="Facility Applicability"/>
+			<Item value="" name="Standard"/>
+			<Item value="" name="LTR_Title"/>
+			<Item value="" name="LTR_Title_Reference"/>
+			<Item value="" name="High level test reference"/>
+			<Item value="" name="TRA Title"/>
+			<Item value="" name="TRA Reference"/>
+		</OTHERDETAILS>
+	</REPORT_HEADER>
+	<REPORT_SUMMARY>
+		<ITEM TITLE="Dummy title : Procedure Start" RESULT="NA"/>
+		<ITEM TITLE="shuru" RESULT="OK"/>
+	</REPORT_SUMMARY>
+	<REPORT_INFO>
+		<TITLE IS_IGNORED="FALSE">
+			<HEADING>Dummy title : Procedure Start</HEADING>
+			<COMMENTS/>
+			<STATUS>NA</STATUS>
+			<TIMESTAMP EPOC_TIME="" EXEC_TIME="" EXEC_DATE=""/>
+		</TITLE>
+		<TITLE IS_IGNORED="FALSE">
+			<HEADING>shuru</HEADING>
+			<COMMENTS>sasas</COMMENTS>
+			<STATUS>OK</STATUS>
+			<TIMESTAMP EPOC_TIME="" EXEC_TIME="" EXEC_DATE=""/>
+			<CONDITION CONFTIME_VALUE="0" COM_NAME="for each" CONFTIME_UNIT="sec" TIMEOUT_UNIT="sec" IS_IGNORED="FALSE" NAME="condition" TIMEOUT_VALUE="3">
+				<TIMESTAMP EPOC_TIME="0.0000" EXEC_TIME="" EXEC_DATE=""/>
+				<STATEMENT/>
+				<STATUS/>
+				<COMMENTS/>
+				<OTHER_DETAILS/>
+				<ACTION CONFTIME_VALUE="0" COM_NAME="" CONFTIME_UNIT="sec" TIMEOUT_UNIT="sec" IS_IGNORED="FALSE" NAME="set" TIMEOUT_VALUE="3">
+					<TIMESTAMP EPOC_TIME="1529931472134.0000" EXEC_TIME="18:27:52" EXEC_DATE="Mon Jun 25 2018"/>
+					<STATEMENT>#c#SET#c# value of #b#CRDC_A06_CONV.CRDC_A06_A429_BUS1_GCU_2A.CRDC_A06_VFGA_Cooler_Oil_Temp_Signal_AC_2_2#b# (Function Status:#b#NO#b#) to #b#line.stepID_uuid[{525cf7fa-7b45-4edf-a4dc-62eec9386e65}]#b# 
+					</STATEMENT>
+					<STATUS>OK</STATUS>
+					<COMMENTS/>
+					<USER_FEEDBACK/>
+					<REFERENCES/>
+					<OTHER_DETAILS/>
+				</ACTION>
+				<ACTION CONFTIME_VALUE="0" COM_NAME="for" CONFTIME_UNIT="sec" TIMEOUT_UNIT="" IS_IGNORED="FALSE" NAME="wait" TIMEOUT_VALUE="">
+					<TIMESTAMP EPOC_TIME="1529931473148.0000" EXEC_TIME="18:27:53" EXEC_DATE="Mon Jun 25 2018"/>
+					<STATEMENT>#c#WAIT#c# for 1 S</STATEMENT>
+					<STATUS>OK</STATUS>
+					<COMMENTS/>
+					<USER_FEEDBACK/>
+					<REFERENCES/>
+					<OTHER_DETAILS/>
+				</ACTION>
+				<CHECK CONFTIME_VALUE="0" COM_NAME="Value" CONFTIME_UNIT="sec" TIMEOUT_UNIT="sec" IS_IGNORED="FALSE" NAME="CHECK" TIMEOUT_VALUE="3">
+					<TIMESTAMP EPOC_TIME="1529931473445.0000" EXEC_TIME="18:27:53" EXEC_DATE="Mon Jun 25 2018"/>
+					<STATEMENT>#c#CHECK#c# #b#CRDC_A06_CONV.CRDC_A06_A429_BUS1_GCU_2A.CRDC_A06_VFGA_Cooler_Oil_Temp_Signal_AC_2_2#b#(Function Status:#b#NOT_LOST#b#) = #b#line.COM_comment2_uuid[{525cf7fa-7b45-4edf-a4dc-62eec9386e65}]#b# with #b#Precision#b#:0.0000
+OR
+#b#CRDC_A06_CONV.CRDC_A06_A429_BUS1_GCU_2A.CRDC_A06_VFGA_Cooler_Oil_Temp_Signal_AC_2_2#b#(Function Status:#b#NOT_LOST#b#) = #b#line.stepID_uuid[{525cf7fa-7b45-4edf-a4dc-62eec9386e65}]#b# with #b#Precision#b#:0.0000
+					</STATEMENT>
+					<STATUS>OK</STATUS>
+					<COMMENTS/>
+					<USER_FEEDBACK/>
+					<REFERENCES/>
+					<OTHER_DETAILS/>
+				</CHECK>
+				<ACTION CONFTIME_VALUE="0" COM_NAME="for" CONFTIME_UNIT="sec" TIMEOUT_UNIT="" IS_IGNORED="FALSE" NAME="wait" TIMEOUT_VALUE="">
+					<TIMESTAMP EPOC_TIME="1529931475457.0000" EXEC_TIME="18:27:55" EXEC_DATE="Mon Jun 25 2018"/>
+					<STATEMENT>#c#WAIT#c# for 2 S</STATEMENT>
+					<STATUS>OK</STATUS>
+					<COMMENTS/>
+					<USER_FEEDBACK/>
+					<REFERENCES/>
+					<OTHER_DETAILS/>
+				</ACTION>
+				<ACTION CONFTIME_VALUE="0" COM_NAME="parameter value" CONFTIME_UNIT="sec" TIMEOUT_UNIT="" IS_IGNORED="FALSE" NAME="print" TIMEOUT_VALUE="">
+					<TIMESTAMP EPOC_TIME="1529931475457.0000" EXEC_TIME="18:27:55" EXEC_DATE="Mon Jun 25 2018"/>
+					<STATEMENT>#c#PRINT#c#  the following parameters: #b#line.COM_comment2_uuid[{525cf7fa-7b45-4edf-a4dc-62eec9386e65}]#b#</STATEMENT>
+					<STATUS>OK</STATUS>
+					<COMMENTS/>
+					<USER_FEEDBACK/>
+					<REFERENCES/>
+					<OTHER_DETAILS>
+						<PARAMINFO NAME="line.COM_comment2">
+							<line.COM_comment2>544</line.COM_comment2>
+						</PARAMINFO>
+					</OTHER_DETAILS>
+				</ACTION>
+				<ACTION CONFTIME_VALUE="0" COM_NAME="table" CONFTIME_UNIT="sec" TIMEOUT_UNIT="" IS_IGNORED="FALSE" NAME="print" TIMEOUT_VALUE="">
+					<TIMESTAMP EPOC_TIME="" EXEC_TIME="" EXEC_DATE=""/>
+					<STATEMENT>#c#PRINT TABLE#c# [#b#mytable#b#]</STATEMENT>
+					<STATUS>NA</STATUS>
+					<COMMENTS/>
+					<USER_FEEDBACK/>
+					<REFERENCES/>
+					<OTHER_DETAILS>
+						<PARAMINFO NAME="line.IN_Bleed">
+							<line.IN_Bleed>OFF</line.IN_Bleed>
+						</PARAMINFO>
+						<PARAMINFO NAME="line.stepID">
+							<line.stepID>8</line.stepID>
+						</PARAMINFO>
+						<PARAMINFO NAME="line.COM_comment1">
+							<line.COM_comment1>544</line.COM_comment1>
+						</PARAMINFO>
+						<PARAMINFO NAME="line.IN_FlapConf">
+							<line.IN_FlapConf>Flap2</line.IN_FlapConf>
+						</PARAMINFO>
+						<PARAMINFO NAME="line.CRDC_A06_VFGA_Cooler_Oil_Temp_Signal_AC_2_2">
+							<Status>NO</Status>
+							<Value>8</Value>
+						</PARAMINFO>
+					</OTHER_DETAILS>
+				</ACTION>
+				<CONDITION CONFTIME_VALUE="" COM_NAME="end for each" CONFTIME_UNIT="" TIMEOUT_UNIT="" IS_IGNORED="FALSE" NAME="condition" TIMEOUT_VALUE="">
+					<TIMESTAMP EPOC_TIME="0.0000" EXEC_TIME="" EXEC_DATE=""/>
+					<STATEMENT>end for each</STATEMENT>
+					<STATUS/>
+					<COMMENTS/>
+					<OTHER_DETAILS/>
+				</CONDITION>
+			</CONDITION>
+		</TITLE>
+	</REPORT_INFO>
+	<PRINT_TABLES>
+		<PRINT_TABLE NAME="mytable">
+			<TABLE_HEADER VALUE="Parameter;Signal Type;Unit;mytables;mytables_0;mytables_1;mytables_2;mytables_3;mytables_4;mytables_5;mytables_6"/>
+			<PARAMETER_INFO UNIT="" TYPE="" NAME="line.IN_Bleed">
+				<VALUES>
+					<VALUE>
+						<Value>ON</Value>
+					</VALUE>
+					<VALUE>
+						<Value>OFF</Value>
+					</VALUE>
+					<VALUE>
+						<Value>ON</Value>
+					</VALUE>
+					<VALUE>
+						<Value>OFF</Value>
+					</VALUE>
+					<VALUE>
+						<Value>ON</Value>
+					</VALUE>
+					<VALUE>
+						<Value>OFF</Value>
+					</VALUE>
+					<VALUE>
+						<Value>ON</Value>
+					</VALUE>
+					<VALUE>
+						<Value>OFF</Value>
+					</VALUE>
+				</VALUES>
+			</PARAMETER_INFO>
+			<PARAMETER_INFO UNIT="" TYPE="" NAME="line.stepID">
+				<VALUES>
+					<VALUE>
+						<Value>1</Value>
+					</VALUE>
+					<VALUE>
+						<Value>2</Value>
+					</VALUE>
+					<VALUE>
+						<Value>3</Value>
+					</VALUE>
+					<VALUE>
+						<Value>4</Value>
+					</VALUE>
+					<VALUE>
+						<Value>5</Value>
+					</VALUE>
+					<VALUE>
+						<Value>6</Value>
+					</VALUE>
+					<VALUE>
+						<Value>7</Value>
+					</VALUE>
+					<VALUE>
+						<Value>8</Value>
+					</VALUE>
+				</VALUES>
+			</PARAMETER_INFO>
+			<PARAMETER_INFO UNIT="" TYPE="" NAME="line.COM_comment1">
+				<VALUES>
+					<VALUE>
+						<Value>dsj</Value>
+					</VALUE>
+					<VALUE>
+						<Value>lkjsdkjds</Value>
+					</VALUE>
+					<VALUE>
+						<Value>54</Value>
+					</VALUE>
+					<VALUE>
+						<Value>54545</Value>
+					</VALUE>
+					<VALUE>
+						<Value>5454</Value>
+					</VALUE>
+					<VALUE>
+						<Value>5454</Value>
+					</VALUE>
+					<VALUE>
+						<Value>545</Value>
+					</VALUE>
+					<VALUE>
+						<Value>544</Value>
+					</VALUE>
+				</VALUES>
+			</PARAMETER_INFO>
+			<PARAMETER_INFO UNIT="" TYPE="" NAME="line.IN_FlapConf">
+				<VALUES>
+					<VALUE>
+						<Value>Flap1</Value>
+					</VALUE>
+					<VALUE>
+						<Value>Flap2</Value>
+					</VALUE>
+					<VALUE>
+						<Value>Flap1</Value>
+					</VALUE>
+					<VALUE>
+						<Value>Flap2</Value>
+					</VALUE>
+					<VALUE>
+						<Value>Flap1</Value>
+					</VALUE>
+					<VALUE>
+						<Value>Flap2</Value>
+					</VALUE>
+					<VALUE>
+						<Value>Flap1</Value>
+					</VALUE>
+					<VALUE>
+						<Value>Flap2</Value>
+					</VALUE>
+				</VALUES>
+			</PARAMETER_INFO>
+			<PARAMETER_INFO UNIT="" TYPE="" NAME="line.CRDC_A06_VFGA_Cooler_Oil_Temp_Signal_AC_2_2">
+				<VALUES>
+					<VALUE>
+						<Status>NO</Status>
+						<Time>Mon Jun 25 2018 19:20:46</Time>
+						<Value>1</Value>
+					</VALUE>
+					<VALUE>
+						<Status>NO</Status>
+						<Time>Mon Jun 25 2018 19:20:49</Time>
+						<Value>2</Value>
+					</VALUE>
+					<VALUE>
+						<Status>NO</Status>
+						<Time>Mon Jun 25 2018 19:20:53</Time>
+						<Value>3</Value>
+					</VALUE>
+					<VALUE>
+						<Status>NO</Status>
+						<Time>Mon Jun 25 2018 19:20:56</Time>
+						<Value>4</Value>
+					</VALUE>
+					<VALUE>
+						<Status>NO</Status>
+						<Time>Mon Jun 25 2018 19:21:00</Time>
+						<Value>5</Value>
+					</VALUE>
+					<VALUE>
+						<Status>NO</Status>
+						<Time>Mon Jun 25 2018 19:21:04</Time>
+						<Value>6</Value>
+					</VALUE>
+					<VALUE>
+						<Status>NO</Status>
+						<Time>Mon Jun 25 2018 19:21:08</Time>
+						<Value>7</Value>
+					</VALUE>
+					<VALUE>
+						<Status>NO</Status>
+						<Time>Mon Jun 25 2018 19:21:11</Time>
+						<Value>8</Value>
+					</VALUE>
+				</VALUES>
+			</PARAMETER_INFO>
+		</PRINT_TABLE>
+	</PRINT_TABLES>
+	<ATTACHMENTS>
+		<ITEM Path="C:/Users/I0000680/Documents/GTA_DB/ProcedureFilePath/DATA/foreach.pro"/>
+		<ITEM Path="C:/Users/I0000680/Documents/GTA_DB/ProcedureFilePath/LOG/foreach.log"/>
+		<ITEM Path="C:/Users/I0000680/Desktop/print_table_mytable.csv"/>
+	</ATTACHMENTS>
+	<DATABASE_FILES>
+		<DB_FILE FILENAME="TEST_ICD_v6.0.csv" FILETYPE="ICD" FILEPATH="C:/Users/I0000680/Documents/GTA_DB/BenchDatabase/AC_ICD/TEST_ICD_v6.0.csv"/>
+		<DB_FILE FILENAME="Test.csv" FILETYPE="TABLE" FILEPATH="C:/Users/I0000680/Documents/GTA_DB/BenchDatabase/TABLES/Test.csv"/>
+	</DATABASE_FILES>
+</REPORT>

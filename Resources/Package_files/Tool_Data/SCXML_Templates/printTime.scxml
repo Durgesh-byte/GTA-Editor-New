@@ -1,0 +1,6 @@
+<state id="s0">
+	<onexit>
+		<log expr="" label="'info'"/>
+	</onexit>
+	<transition target="main_final" event="'info'"/>
+</state>

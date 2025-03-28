@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>forms/img/replayAll.png</file>
+        <file>forms/img/replayOne.png</file>
+        <file>forms/img/start.png</file>
+        <file>forms/img/stop.png</file>
+    </qresource>
+</RCC>

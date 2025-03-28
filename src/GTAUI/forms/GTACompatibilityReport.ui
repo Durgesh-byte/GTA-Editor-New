@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTACompatibilityReport</class>
+ <widget class="QWidget" name="GTACompatibilityReport">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>828</width>
+    <height>467</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>25</number>
+   </property>
+   <property name="rightMargin">
+    <number>25</number>
+   </property>
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout_4">
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <item row="0" column="5">
+      <widget class="QComboBox" name="searchTypeCB">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <item>
+        <property name="text">
+         <string>Type</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Source</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>File</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Include Line</string>
+        </property>
+       </item>
+	  <item>
+		<property name="text">
+		 <string>Exclude Line</string>
+		</property>
+	  </item>
+	 <item>
+        <property name="text">
+         <string>Description(contains)</string>
+        </property>
+      </item>
+	  <item>
+		 <property name="text">
+			<string>Description(not contains)</string>
+		 </property>
+	  </item> 
+	 	  
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="7">
+      <layout class="QGridLayout" name="gridLayout_5">
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QTableWidget" name="ReportTW">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="contextMenuPolicy">
+          <enum>Qt::CustomContextMenu</enum>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <column>
+          <property name="text">
+           <string>Type</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Source</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>File</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Line</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Description</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLineEdit" name="searchLE">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"> border-radius: 5px;
+border: 0.8px solid;</string>
+       </property>
+       <property name="placeholderText">
+        <string extracomment="Search for"/>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QToolButton" name="searchTB">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/SEARCH_REPLACE.png</normaloff>:/images/forms/img/SEARCH_REPLACE.png</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>25</width>
+         <height>16</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QComboBox" name="logFilterCB">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+         <kerning>true</kerning>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <item>
+        <property name="text">
+         <string>Error</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Warning</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Info</string>
+        </property>
+       </item>
+	   <item>
+	    <property name="text">
+		    <string>All</string>
+		</property>
+	   </item>
+      </widget>
+        </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="logFilterLabel">
+       <property name="text">
+        <string>Log level:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

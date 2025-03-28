@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTAActionFCTLConfWidget</class>
+ <widget class="QWidget" name="GTAActionFCTLConfWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>621</width>
+    <height>426</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_6">
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Law</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="LAWCB">
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1A</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2A</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2B</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>direct</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>flare</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>normal</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QComboBox" name="EnginesCB">
+         <item>
+          <property name="text">
+           <string>running</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>not running</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>Engines</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="label_7">
+         <property name="text">
+          <string>Landing Gear</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QComboBox" name="LdgGearCB">
+         <item>
+          <property name="text">
+           <string>up</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>down</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="GndFlghtCB">
+         <item>
+          <property name="text">
+           <string>ground</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>flight</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="text">
+          <string>Ground/Flight</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="SFConfCB">
+         <item>
+          <property name="text">
+           <string>1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1F</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>3</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>full</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>clean</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>S/F Conf</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_16">
+         <property name="text">
+          <string>FCPC1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="FCPC1CB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_17">
+         <property name="text">
+          <string>FCSC1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QComboBox" name="FCSC1CB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_20">
+         <property name="text">
+          <string>FCPC2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="FCPC2CB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="label_18">
+         <property name="text">
+          <string>FCSC2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QComboBox" name="FCSC2CB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_19">
+         <property name="text">
+          <string>FCPC3</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="FCPC3CB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_21">
+         <property name="text">
+          <string>BCM</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="BCMCB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_22">
+         <property name="text">
+          <string>FMGEC1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="FMGEC1CB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_23">
+         <property name="text">
+          <string>FMGEC2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QComboBox" name="FMGEC2CB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_24">
+         <property name="text">
+          <string>AP1</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="AP1CB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_25">
+         <property name="text">
+          <string>AP2</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="AP2CB">
+         <item>
+          <property name="text">
+           <string>on</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>off</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="CGLE"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>Gross Weight (T)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="GrossWeightLE"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>VCAS (knts)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="VCASLE"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Altitude (ft)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="AltitudeLE"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>Yellow Hydraulic</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="YHYDLE"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>Green Hydraulic</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLineEdit" name="GHYDLE"/>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>Blue Hydraulic</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="BHYDLE"/>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>Alpha</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="AlphaLE"/>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>CG (%MAC)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <spacer name="verticalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="2" column="2">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <spacer name="verticalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="2" column="1">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Configuration</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="ConfigNameLE"/>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

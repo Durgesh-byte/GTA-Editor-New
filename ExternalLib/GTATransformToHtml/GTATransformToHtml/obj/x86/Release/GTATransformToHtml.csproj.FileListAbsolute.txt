@@ -1,0 +1,7 @@
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\bin\Release\AINGTATransformToHtml.exe.config
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\bin\Release\AINGTATransformToHtml.exe
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\bin\Release\AINGTATransformToHtml.pdb
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\obj\x86\Release\AINGTATransformToHtml.Properties.Resources.resources
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\obj\x86\Release\AINGTATransformToHtml.csproj.GenerateResource.Cache
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\obj\x86\Release\AINGTATransformToHtml.exe
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\obj\x86\Release\AINGTATransformToHtml.pdb

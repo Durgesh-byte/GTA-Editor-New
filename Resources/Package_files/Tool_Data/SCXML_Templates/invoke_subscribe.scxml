@@ -1,0 +1,19 @@
+<state id="subscribe" >
+	<onentry>
+		<assign expr="{ 'Name':'AP1','BUS1':{'Media':'AFDX', Signal1: {'ParameterType':'Float'}}}" location="varTemp"/>
+	</onentry>
+	<invoke id="invokeID" type="xml-rpc">
+		<content>
+			<xmlrpc tool_id="CGIB" tool_type="GFIB">
+				<function name ="SubscribeParamList" >											
+					<argument name="ParameterList" type="struct" value="varTemp"/>
+					<returnvalue name="returnValue" />						
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.returnValue" location="invokeReturn1"/>
+		</finalize>
+	</invoke>	
+	<transition event="done.invoke._all" target="unsubscribe"/>
+</state>

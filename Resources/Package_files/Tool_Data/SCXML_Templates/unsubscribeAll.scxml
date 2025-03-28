@@ -1,0 +1,11 @@
+<invoke type="xml-rpc" id="unsubscribe_invoke">
+	<content>
+		<xmlrpc tool_id="CGIB" tool_type="GFIB">
+			<function name="UnSubscribe">
+				<returnvalue name="Result_unsubscribe"/>
+			</function>
+		</xmlrpc>
+	</content>
+	<finalize>
+	</finalize>
+</invoke>

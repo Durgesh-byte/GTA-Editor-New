@@ -1,0 +1,9 @@
+<ToolList xmlns="https://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="">
+ <tool toolType="" default="false" id="NA"/>
+ <tool toolType="" default="false" id="ASPIC_ISSM"/>
+ <tool toolType="" default="false" id="ASPIC_ITB"/>
+ <tool toolType="" default="false" id="CGIB"/>
+ <tool toolType="" default="false" id="CGIB"/>
+ <tool toolType="" default="false" id="CG"/>
+ <tool toolType="" default="true" id="CGIB"/>
+</ToolList>

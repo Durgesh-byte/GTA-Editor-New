@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>forms/img/GTAAppIcon.png</file>
+        <file>forms/img/Left_Arrow.png</file>
+        <file>forms/img/Right_Arrow.png</file>
+        <file>forms/img/Start.png</file>
+        <file>forms/img/Stop.png</file>
+        <file>forms/img/Down_Arrow.png</file>
+        <file>forms/img/Down_Arrow_Selected .png</file>
+        <file>forms/img/Up_Arrow.png</file>
+        <file>forms/img/Up_Arrow_Selected .png</file>
+        <file>forms/img/Start_Pressed.png</file>
+        <file>forms/img/Stop_Pressed.png</file>
+        <file>forms/img/Close.png</file>
+        <file>forms/img/OKButton.png</file>
+        <file>forms/img/Minimize.png</file>
+        <file>forms/img/Down_Arrow_Disabled.png</file>
+        <file>forms/img/Up_Arrow_Disabled.png</file>
+    </qresource>
+</RCC>

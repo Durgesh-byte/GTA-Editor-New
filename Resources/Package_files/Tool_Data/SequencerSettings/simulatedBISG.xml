@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<Setting InitWaitTime="10" TimeoutUnit="min" Name="simulatedBISG" Timeout="15" InitWaitTimeUnit="sec" SchedulerPath="C:/Users/I0000680/Documents/eMoTest_Scheduler_v1.2.8.1/eMoTest.exe" InitCheck="False">
+ <Scripts>
+  <Script Path="C:/Users/I0000680/Documents/Python Servers/DummyServer_ASPIC.py"/>
+  <Script Path="C:/Users/I0000680/Documents/Python Servers/ExternalToolSimu.py"/>
+ </Scripts>
+ <Tools>
+  <Tool Path="C:/Users/I0000680/Desktop/Interactive Controller (mine)/AINGTAInteractiveController.exe"/>
+ </Tools>
+ <Slaves>
+  <Slave IP="40.221.93.123" AliasName="simubisg"/>
+ </Slaves>
+</Setting>

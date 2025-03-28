@@ -1,0 +1,6 @@
+<state id="@stateID">
+	<onentry>
+		<send event="event_@stateID_timeout" delay="" />
+	</onentry>
+	<transition target="@target" />
+</state>

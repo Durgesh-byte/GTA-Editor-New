@@ -1,0 +1,17 @@
+<invoke type="xml-rpc" id="">
+	<content>
+		<xmlrpc tool_id="BITE-Logger" tool_type="Logger">
+				<function name="CheckCondition">
+					<argument value="" type = "int" name ="ID" />
+					<argument value="" type="string" name = "content"/>
+					<argument value ="" type ="string" name ="ContentType" />
+					<argument value="" type="string" name="condition" />                                                                                                                                 
+					<argument value ="" type ="string" name="condition_value" />
+					<argument value="" type="int" name="delay"/>
+					<returnvalue name=""/>
+				</function>	
+		</xmlrpc>
+	</content>
+	<finalize>
+	</finalize>
+</invoke>

@@ -1,0 +1,63 @@
+<scxml initial="Init_Environment">
+	<datamodel>
+
+	</datamodel>
+	<parallel id="Init_Environment">
+		<state id="oneclick_finished">
+
+		</state>
+	</parallel>
+	<state id="subscribe" >
+		<invoke id="invokeID" type="xml-rpc">
+			<content>
+				<xmlrpc tool_id="CGIB" tool_type="GFIB">
+					<function name ="SubscribeParamList" >											
+						<argument name="ParameterList" value="ApplicationNamePerInvoke" type= "struct" />
+						<returnvalue name="SubscribeResult" />						
+					</function>
+				</xmlrpc>
+			</content>
+			<finalize>
+				<assign location="SubscribeResult" expr="_event.data.SubscribeResult" />
+				<log label="Info" expr="'the following Signals were not subscribed:'+ SubscribeResult"/>
+			</finalize>
+		</invoke>	
+		<transition target="Init" event="done.invoke._all" cond = "SubscribeResult.status == 'OK'" status="success"/>
+		<transition target="final" event="done.invoke._all" cond = "SubscribeResult.status != 'OK'" status="fail"/>
+	</state>
+	<state id="Init">
+		<transition target="Test_Procedure" status="success"/>
+	</state>
+	<parallel id="Test_Procedure">
+		<state id="main">
+		</state>
+		<state id="logstate" initial="Log_Init">
+			<state id="Log_Init">
+				<transition cond="main_final_done=='Executed'" target="unsubscribe"/>
+			</state>
+		</state>
+		<transition target="unsubscribe" status="success"/>
+	</parallel>
+	<state id="unsubscribe">
+		<invoke type="xml-rpc" id="unsubscribe_invoke">
+			<content>
+				<xmlrpc tool_id="CGIB" tool_type="GFIB">
+					<function name="UnSubscribe">
+						<returnvalue name="Result_unsubscribe"/>
+					</function>
+				</xmlrpc>
+			</content>
+			<finalize>
+				<assign expr="_event.data.Result_unsubscribe" location="Result_unsubscribe"/>
+			</finalize>
+		</invoke>
+		<transition cond="Result_unsubscribe.Status == 'OK'" event="done.invoke._all" status="success" target="End_Environment">
+		</transition>
+		<transition cond="Result_unsubscribe.Status != 'OK'" event="done.invoke._all" status="fail" target="End_Environment">
+		</transition>
+	</state>
+	<state id="End_Environment">
+		<transition status="success" target="final"/>
+	</state>
+
+</scxml>

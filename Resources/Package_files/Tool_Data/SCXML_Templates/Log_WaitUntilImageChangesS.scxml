@@ -1,0 +1,17 @@
+<state id="statID">
+	<invoke id="invokeID" type="xml-rpc">
+		<content>
+			<xmlrpc tool_id="2AGC" tool_type="IRT">
+				<function name="GetResultDetailsS" >
+					<argument name= "ResultDbId" value="Return_RunIRT1[6]"/>
+					<returnvalue name="Result_Var" />
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign location="Flag_Var" expr="'Logged'"/>
+			<assign location="Return_Var" expr="_event.data.Result_Var" />
+		</finalize>
+	</invoke>			
+	<transition target="Log_Init"/>
+</state>

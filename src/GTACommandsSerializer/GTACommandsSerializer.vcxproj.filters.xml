@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files\src" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionCallProceduresSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionCallSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionConditionSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionDoWhileSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionElseSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFCTLConfSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFTAKinematicMultiOutputSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFailureSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionForEachSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFunctionReturnSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionGenericFunctionSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionIRTSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionIfSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionInitParamSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionManualSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionMathSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionMathsSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickPPCSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickSetListSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickSetSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickTitleSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrintSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrintTableSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrintTimeSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionReleaseSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionRoboArmSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionSetListSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionSetSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionTitleSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionUnInitParamSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionWaitSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionWhileSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckAudioSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckBiteMsgSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckFwcWarningSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckRefreshSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckValueSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACmdSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACommentSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailureConfigSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailureProfileSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericToolCmdSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAInitConfigurationSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAInvalidCommandSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAOneClickAppLaunchSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAOneClickSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTARequirementSerializer.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files\PrivateInterfaces" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTASerilizerRegisterDef.h">
+      <Filter>Header Files\PrivateInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files\PublicInterfaces" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionCallProceduresSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionCallSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionConditionSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionDoWhileSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionElseSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionFCTLConfSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionFTAKinematicMultiOutputSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionFailureSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionForEachSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionFunctionReturnSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionGenericFunctionSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionIRTSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionIfSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionInitParamSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionManualSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionMathSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionMathsSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionOneClickPPCSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionOneClickSetListSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionOneClickSetSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionOneClickTitleSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionPrintSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionPrintTableSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionPrintTimeSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionReleaseSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionRoboArmSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionSetListSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionSetSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionTitleSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionUnInitParamSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionWaitSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionWhileSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckAudioSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckBiteMsgSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckFwcWarningSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckRefreshSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckValueSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACmdSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACommandsSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACommentSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailureConfigSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailureProfileSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAGenericToolCmdSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAInitConfigurationSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAInvalidCommandSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAOneClickAppLaunchSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAOneClickSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTARequirementSerializer.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

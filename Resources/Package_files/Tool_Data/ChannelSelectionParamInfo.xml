@@ -1,0 +1,16 @@
+<CHANNEL_INFO>
+	<ENGINES>
+		<ENGINE id="CFM">
+			<CH id="A" engine="1" param="EIU_CFM1.EIU1_BUS_A.Channel_A_Selected_L005_12"/>
+			<CH id="A" engine="2" param="EIU_CFM2.EIU2_BUS_A.Channel_A_Selected_L005_12"/>
+		</ENGINE>
+		<ENGINE id="PW">
+			<CH id="A" engine="1" param="EIU_PW1.EIU1_BUS_A.Channel_A_Selected_L005_12"/>
+			<CH id="A" engine="2" param="EIU_PW2.EIU2_BUS_A.Channel_A_Selected_L005_12"/>
+		</ENGINE>
+		<ENGINE id="RR">
+			<CH id="A" engine="1" param="EIVMU_RR_1.EIVMU1_A1.Channel_A_270_11"/>
+			<CH id="A" engine="2" param="EIVMU_RR_2.EIVMU2_A1.Channel_A_270_11"/>
+		</ENGINE>
+	</ENGINES>
+</CHANNEL_INFO>

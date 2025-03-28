@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AINGTALiveModeParameterSave</class>
+ <widget class="QWidget" name="AINGTALiveModeParameterSave">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string/>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0" colspan="3">
+    <widget class="QListWidget" name="filesLW"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLineEdit" name="fileNameLE"/>
+   </item>
+   <item row="1" column="1">
+    <widget class="QToolButton" name="clearTB">
+     <property name="toolTip">
+      <string>Clear</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../resource.qrc">
+       <normaloff>:/live/forms/img/Backspace.png</normaloff>:/live/forms/img/Backspace.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QToolButton" name="saveTB">
+     <property name="toolTip">
+      <string>Save</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../resource.qrc">
+       <normaloff>:/live/forms/img/Save_FlatIcon.png</normaloff>:/live/forms/img/Save_FlatIcon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QToolButton" name="oKTB">
+     <property name="text">
+      <string>OK</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resource.qrc">
+       <normaloff>:/live/forms/img/OK_FlatIcon.png</normaloff>:/live/forms/img/OK_FlatIcon.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

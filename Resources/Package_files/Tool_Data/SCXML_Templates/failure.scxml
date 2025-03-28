@@ -1,0 +1,16 @@
+<state id="Start">
+	<invoke id="" type="xml-rpc">
+		<content>
+			<xmlrpc tool_id="Recrem" tool_type="Dspace">
+				<function name="Failure.run">
+					<argument name="failure_ID" type="struct" value="failure_list[user_defined_failure_name].objectIdStructure"/>
+					<returnvalue name="status"/>
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.Return_from_Object_Run" location="failure_list[user_defined_failure_name].status"/>
+		</finalize>
+	</invoke>
+	<transition target=""/>
+</state>

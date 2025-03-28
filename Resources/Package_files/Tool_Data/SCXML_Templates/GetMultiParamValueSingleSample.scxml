@@ -1,0 +1,15 @@
+<state id="s0">
+	<invoke type="xml-rpc" id="i0">
+		<content>
+			<xmlrpc tool_id="CGIB">
+				<function name="GetMultiParamValueSingleSample">
+					<argument type="array" value="MultiParam" name="ParameterList"/>
+					<returnvalue name=""/>
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+		</finalize>
+	</invoke>
+	<transition target="main_final" event="done.invoke._all"/>
+</state>

@@ -1,0 +1,9 @@
+<invoke id="">
+	<content>
+		<get name="">
+			<returnvalue name=""/>
+		</get>
+	</content>
+	<finalize>
+	</finalize>
+</invoke>

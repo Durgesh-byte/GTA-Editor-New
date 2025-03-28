@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTAActionManualWidget</class>
+ <widget class="QWidget" name="GTAActionManualWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>768</width>
+    <height>446</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_3">
+   <item row="0" column="0" colspan="2">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="3" column="0">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>108</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="2" column="1" rowspan="2">
+      <widget class="GTARestrictedTextEdit" name="TitleTE"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="MessageLabel">
+       <property name="text">
+        <string>Message</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QToolButton" name="BoldTB">
+         <property name="toolTip">
+          <string>Bold</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/textbold.png</normaloff>:/images/forms/img/textbold.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="ItalicsTB">
+         <property name="toolTip">
+          <string>Italic</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/textitalic.png</normaloff>:/images/forms/img/textitalic.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="UnderlineTB">
+         <property name="toolTip">
+          <string>Underline</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/textunder.png</normaloff>:/images/forms/img/textunder.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="LeftTB">
+         <property name="toolTip">
+          <string>Left</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/textleft.png</normaloff>:/images/forms/img/textleft.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="CentreTB">
+         <property name="toolTip">
+          <string>Centre</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/textcenter.png</normaloff>:/images/forms/img/textcenter.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="RightTB">
+         <property name="toolTip">
+          <string>Right</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/textright.png</normaloff>:/images/forms/img/textright.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="JustifyTB">
+         <property name="toolTip">
+          <string>Justify</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/textjustify.png</normaloff>:/images/forms/img/textjustify.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="ColorTB">
+         <property name="toolTip">
+          <string>Text Color</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="BackgroundTB">
+         <property name="toolTip">
+          <string>Background color</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+         <property name="shortcut">
+          <string>Ctrl+S</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFontComboBox" name="FontCB">
+         <property name="toolTip">
+          <string>Font</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="FontSizeCB">
+         <property name="toolTip">
+          <string>Font size</string>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>12</width>
+           <height>12</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="Parameter">
+       <property name="text">
+        <string>Parameter</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="ParameterLE1"/>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="addCondition">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>31</horstretch>
+           <verstretch>31</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>31</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Condition</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="searchParamPB1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+           <horstretch>31</horstretch>
+           <verstretch>31</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>31</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>31</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="addToExpressionPB">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>31</horstretch>
+           <verstretch>31</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>31</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>31</width>
+           <height>31</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Add parameter</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/DownArrow_16_16.png</normaloff>:/images/forms/img/DownArrow_16_16.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>68</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QCheckBox" name="AcknowledgChkB">
+       <property name="text">
+        <string>Wait for acknowledgment</string>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="UserFeedbackChkB">
+       <property name="text">
+        <string>Wait for feedback from user</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="UserFeedbackGB">
+       <property name="title">
+        <string>User Feedback</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>Parameter Name</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="ParameterLE"/>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>Return Type</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QComboBox" name="ReturnTypeCB">
+          <item>
+           <property name="text">
+            <string>bool</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>float</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>int</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>string</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="2">
+         <widget class="QPushButton" name="SearchPB">
+          <property name="text">
+           <string/>
+          </property>
+          <property name="icon">
+           <iconset resource="../resource.qrc">
+            <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>GTARestrictedTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>GTARestrictedTextEdit.h</header>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>TitleTE</tabstop>
+  <tabstop>AcknowledgChkB</tabstop>
+  <tabstop>UserFeedbackChkB</tabstop>
+  <tabstop>ParameterLE</tabstop>
+  <tabstop>SearchPB</tabstop>
+  <tabstop>ReturnTypeCB</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

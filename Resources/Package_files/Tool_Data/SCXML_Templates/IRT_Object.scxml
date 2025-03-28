@@ -1,0 +1,9 @@
+<state id="">		
+	<invoke id="" type="xml-rpc">
+		<content>
+		</content>
+		<finalize>				
+		</finalize>
+	</invoke>		
+	<transition event="" target=""/> 
+</state>

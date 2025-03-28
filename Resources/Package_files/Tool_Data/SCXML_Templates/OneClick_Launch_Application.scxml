@@ -1,0 +1,24 @@
+<state id="@StateId">
+	<invoke id="@InvokeId" type="xml-rpc">
+		<content>
+			<xmlrpc tool_id="@ToolId" tool_type="@ToolType">
+				<!-- pass a struct of data in a single argument instead of one argument per data -->
+				<!-- set a type attribute for all arguments for checking before calling the xml-rpc server -->	
+				<function name ="launch_application" >											
+					<!-- Let's call the application structure simply application :D -->
+					<argument name="appname" value="'@OptionName'" type="string" />
+					<argument name="args_list" value="@ArgVal" type="array" />
+					<!-- returnvalue type attribute to be implemented by SII -->
+					<returnvalue name="@StateId_LaunchApp" />
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign location="@StateId_LaunchApp" expr="_event.data.@StateId_LaunchApp" />
+		</finalize>
+	</invoke>
+
+	<!-- Either the result is a string "ok", if all parameters are well subscribed,  
+				either it is a structure of type "application" containing all the failed parameters -->
+	<transition target="@Target1" event="done.invoke._all" cond = "@StateId_LaunchApp=='OK'" status="Success"/>
+</state>

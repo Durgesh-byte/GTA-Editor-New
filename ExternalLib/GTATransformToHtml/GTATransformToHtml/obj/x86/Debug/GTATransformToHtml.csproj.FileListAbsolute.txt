@@ -1,0 +1,14 @@
+c:\users\ikmodi\documents\visual studio 2010\Projects\AINGTAXSLTransformToHTML\AINGTAXSLTransformToHTML\bin\Debug\AINGTAXSLTransformToHTML.exe.config
+c:\users\ikmodi\documents\visual studio 2010\Projects\AINGTAXSLTransformToHTML\AINGTAXSLTransformToHTML\obj\x86\Debug\AINGTAXSLTransformToHTML.Properties.Resources.resources
+c:\users\ikmodi\documents\visual studio 2010\Projects\AINGTAXSLTransformToHTML\AINGTAXSLTransformToHTML\obj\x86\Debug\AINGTATransformToHtml.csproj.GenerateResource.Cache
+c:\users\ikmodi\documents\visual studio 2010\Projects\AINGTAXSLTransformToHTML\AINGTAXSLTransformToHTML\bin\Debug\AINGTAXSLTransformToHTML.exe
+c:\users\ikmodi\documents\visual studio 2010\Projects\AINGTAXSLTransformToHTML\AINGTAXSLTransformToHTML\bin\Debug\AINGTAXSLTransformToHTML.pdb
+c:\users\ikmodi\documents\visual studio 2010\Projects\AINGTAXSLTransformToHTML\AINGTAXSLTransformToHTML\obj\x86\Debug\AINGTAXSLTransformToHTML.exe
+c:\users\ikmodi\documents\visual studio 2010\Projects\AINGTAXSLTransformToHTML\AINGTAXSLTransformToHTML\obj\x86\Debug\AINGTAXSLTransformToHTML.pdb
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\bin\Debug\AINGTATransformToHtml.exe.config
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\bin\Debug\AINGTATransformToHtml.exe
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\bin\Debug\AINGTATransformToHtml.pdb
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\obj\x86\Debug\AINGTATransformToHtml.Properties.Resources.resources
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\obj\x86\Debug\AINGTATransformToHtml.csproj.GenerateResource.Cache
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\obj\x86\Debug\AINGTATransformToHtml.exe
+C:\Users\IKMODI\Documents\Visual Studio 2010\Projects\AINGTATransformToHtml\AINGTATransformToHtml\obj\x86\Debug\AINGTATransformToHtml.pdb

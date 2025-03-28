@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files\src" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLAssign.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLCancel.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLData.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLDataModel.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLFinal.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLGenericFunction.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLInvoke.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLLog.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLOnEntry.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLOnExit.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLSCXML.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLSend.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLState.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLTransition.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLUtils.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASCXMLXMLRPC.cpp">
+      <Filter>Source Files\src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files\PublicInterfaces" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXML.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLAssign.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLCancel.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLData.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLDataModel.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLFinal.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLGenericFunction.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLInvoke.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLLog.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLOnEntry.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLOnExit.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLSCXML.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLSend.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLState.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLTransition.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLUtils.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTASCXMLXMLRPC.h">
+      <Filter>Header Files\PublicInterfaces</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

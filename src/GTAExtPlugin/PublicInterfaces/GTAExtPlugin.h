@@ -1,0 +1,18 @@
+#ifndef AINGTAEXTPLUGIN_H
+#define AINGTAEXTPLUGIN_H
+
+
+#include <QtCore/qglobal.h>
+
+#if defined(AINGTAEXTPLUGIN_LIBRARY)
+#  define AINGTAEXTPLUGIN_SHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define AINGTAEXTPLUGIN_SHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+
+
+
+#endif // AINGTAEXTPLUGIN_H
+
+

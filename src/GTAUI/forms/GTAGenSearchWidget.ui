@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTAGenSearchWidget</class>
+ <widget class="QWidget" name="GTAGenSearchWidget">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>908</width>
+    <height>632</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_4">
+   <item row="0" column="0">
+    <widget class="QGroupBox" name="SearchOptGB">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="title">
+      <string>Search Options ( Search By)</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="0">
+       <widget class="QStackedWidget" name="SearchOptSW">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="page">
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <layout class="QFormLayout" name="formLayout">
+            <property name="sizeConstraint">
+             <enum>QLayout::SetFixedSize</enum>
+            </property>
+            <property name="fieldGrowthPolicy">
+             <enum>QFormLayout::FieldsStayAtSizeHint</enum>
+            </property>
+            <property name="rowWrapPolicy">
+             <enum>QFormLayout::DontWrapRows</enum>
+            </property>
+            <item row="0" column="1">
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="0" column="0">
+               <widget class="QCheckBox" name="SearchOpt3Chk">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Signal Name/ParameterLocal Name</string>
+                </property>
+                <property name="checked">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QCheckBox" name="SearchOpt5Chk">
+                <property name="text">
+                 <string>Local Variables</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QCheckBox" name="SearchOpt6Chk">
+                <property name="text">
+                 <string>Application Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="2">
+               <widget class="QCheckBox" name="SearchOpt7Chk">
+                <property name="text">
+                 <string>Bus Name</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QCheckBox" name="SearchOpt4Chk">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Label</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="2">
+               <widget class="QCheckBox" name="SearchOpt10Chk">
+                <property name="text">
+                 <string>FS/SSM</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="4">
+               <widget class="QCheckBox" name="SearchOpt11Chk">
+                <property name="text">
+                 <string>CheckBox</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="0">
+               <widget class="QCheckBox" name="SearchOpt2Chk">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Identifier</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="2">
+               <widget class="QCheckBox" name="SearchOpt1Chk">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string> Description</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="0">
+               <widget class="QCheckBox" name="SearchVMACVarChk">
+                <property name="text">
+                 <string>Search used VMAC parameters</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="2">
+               <widget class="QCheckBox" name="CommandParamCB">
+                <property name="text">
+                 <string>Command Parameters</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="4">
+               <widget class="QCheckBox" name="SearchOpt9Chk">
+                <property name="text">
+                 <string>Media Type</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="6">
+               <widget class="QComboBox" name="SearchMediaTypeCB">
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="4">
+               <widget class="QCheckBox" name="SearchOpt8Chk">
+                <property name="text">
+                 <string>File Type</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="6">
+               <widget class="QComboBox" name="SearchFileTypeCB">
+                <property name="maximumSize">
+                 <size>
+                  <width>100</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="4">
+               <widget class="QCheckBox" name="DirectionChk">
+                <property name="text">
+                 <string>Direction</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="6">
+               <widget class="QComboBox" name="DirectionCB">
+                <item>
+                 <property name="text">
+                  <string>All</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Input</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Output</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>I/O</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="0" column="5">
+               <spacer name="horizontalSpacer_2">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>10</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="0" column="1">
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="7" column="4">
+               <widget class="QCheckBox" name="chkUserDB">
+                <property name="text">
+                 <string>User defined Database</string>
+                </property>
+               </widget>
+              </item>
+              <item row="7" column="6">
+               <widget class="QComboBox" name="userDbCB"/>
+              </item>
+              <item row="0" column="3">
+               <spacer name="horizontalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Fixed</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item row="7" column="3">
+               <widget class="QComboBox" name="CommandParamCoB"/>
+              </item>
+              <item row="6" column="3">
+               <layout class="QHBoxLayout" name="horizontalLayout">
+                <item>
+                 <widget class="QSpinBox" name="DBSearchLimit">
+                  <property name="readOnly">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="ImgPreviewPage">
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QLabel" name="ImgPreviewLabel">
+            <property name="text">
+             <string>Preview</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLineEdit" name="FilterStr1LE"/>
+     </item>
+     <item>
+      <widget class="QComboBox" name="FilterCriterionCB">
+       <item>
+        <property name="text">
+         <string>And</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Or</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>And Not</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="FilterStr2LE"/>
+     </item>
+     <item>
+      <widget class="QPushButton" name="SearchPB">
+       <property name="text">
+        <string>Search</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/SEARCH_REPLACE.png</normaloff>:/images/forms/img/SEARCH_REPLACE.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <widget class="QTableView" name="SearchResultTW">
+     <property name="styleSheet">
+      <string notr="true">selection-background-color: rgb(255, 170, 0);
+alternate-background-color: rgb(221, 255, 250);</string>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="selectionMode">
+      <enum>QAbstractItemView::NoSelection</enum>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <attribute name="verticalHeaderVisible">
+      <bool>true</bool>
+     </attribute>
+     <attribute name="verticalHeaderCascadingSectionResizes">
+      <bool>true</bool>
+     </attribute>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <property name="sizeConstraint">
+        <enum>QLayout::SetNoConstraint</enum>
+       </property>
+       <item>
+        <widget class="QProgressBar" name="DBprogressBar">
+         <property name="value">
+          <number>24</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="DBprevPage">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/previous_page.png</normaloff>:/images/forms/img/previous_page.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="DBPageNumber">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="DBnextPage">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="../resource.qrc">
+           <normaloff>:/images/forms/img/next_page.png</normaloff>:/images/forms/img/next_page.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="DBLoadTime">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Status: NA</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>458</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="PreviewImgPB">
+       <property name="text">
+        <string>Preview</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/PREVIEW.png</normaloff>:/images/forms/img/PREVIEW.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="OKPB">
+       <property name="text">
+        <string>OK</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/OK.png</normaloff>:/images/forms/img/OK.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="CancelPB">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/CANCEL.jpg</normaloff>:/images/forms/img/CANCEL.jpg</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>FilterStr1LE</tabstop>
+  <tabstop>FilterCriterionCB</tabstop>
+  <tabstop>FilterStr2LE</tabstop>
+  <tabstop>SearchPB</tabstop>
+  <tabstop>SearchResultTW</tabstop>
+  <tabstop>SearchOpt3Chk</tabstop>
+  <tabstop>SearchOpt6Chk</tabstop>
+  <tabstop>SearchOpt4Chk</tabstop>
+  <tabstop>SearchOpt2Chk</tabstop>
+  <tabstop>SearchOpt5Chk</tabstop>
+  <tabstop>SearchOpt7Chk</tabstop>
+  <tabstop>SearchOpt10Chk</tabstop>
+  <tabstop>SearchOpt1Chk</tabstop>
+  <tabstop>SearchOpt11Chk</tabstop>
+  <tabstop>PreviewImgPB</tabstop>
+  <tabstop>OKPB</tabstop>
+  <tabstop>CancelPB</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

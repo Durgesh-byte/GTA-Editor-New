@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<Setting InitWaitTime="10" SchedulerPath="C:/Users/I0000680/Desktop/eMoTest_Scheduler_v1.2.8/eMoTest.exe" Timeout="10" Name="FullTestWithServers" InitCheck="True">
+ <Scripts>
+  <Script Path="C:/Users/I0000680/Desktop/learning/DummyServer.py"/>
+  <Script Path="C:/Users/I0000680/Desktop/learning/DummyServer_ASPIC.py"/>
+  <Script Path="C:/Users/I0000680/Desktop/learning/ExternalToolSimu.py"/>
+ </Scripts>
+ <Tools>
+  <Tool Path="C:/Users/I0000680/Desktop/Interactive_Controller127/InteractiveController.exe"/>
+ </Tools>
+</Setting>

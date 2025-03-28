@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTAValidationListWidget</class>
+ <widget class="QWidget" name="GTAValidationListWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>513</width>
+    <height>431</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Validation List</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0" colspan="3">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="2">
+      <widget class="QToolButton" name="DeselectAllTB">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/DeselectAll.png</normaloff>:/images/forms/img/DeselectAll.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QToolButton" name="ExpandAllTB">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/Expandall.png</normaloff>:/images/forms/img/Expandall.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QToolButton" name="CollapseAllTB">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/Collapseall.gif</normaloff>:/images/forms/img/Collapseall.gif</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QToolButton" name="SelectAllTB">
+       <property name="text">
+        <string>...</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/SelectAll.png</normaloff>:/images/forms/img/SelectAll.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="FileNameLabel">
+       <property name="text">
+        <string>Sample Label</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0" colspan="5">
+      <widget class="QTreeView" name="ValidationElementTV"/>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="2">
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="0" column="2">
+      <widget class="QPushButton" name="SKIPClick_PB">
+       <property name="text">
+        <string>Skip</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/IgnoreWarning.png</normaloff>:/images/forms/img/IgnoreWarning.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QPushButton" name="CancelClick_PB">
+       <property name="text">
+        <string>Cancel</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/CANCEL.jpg</normaloff>:/images/forms/img/CANCEL.jpg</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QPushButton" name="ValidateClick_PB">
+       <property name="text">
+        <string>Validate</string>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource.qrc">
+         <normaloff>:/images/forms/img/OK.png</normaloff>:/images/forms/img/OK.png</iconset>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLineEdit" name="ValidatorNameLE"/>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLabel" name="ValidatorNameLB">
+     <property name="text">
+      <string>Validator Name</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

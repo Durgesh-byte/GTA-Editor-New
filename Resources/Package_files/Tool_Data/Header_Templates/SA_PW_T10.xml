@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HEADER NAME = "Template" version ="1.0" MANDATORY ="True">
+	<ITEM NAME="Tester Name"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Designer Name"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Keywords"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="DESCRIPTION"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Aircraft"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Equipment"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Supplier"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Facility"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Specification Issue/Requirement" Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Facility Applicability"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Test_Number" Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="Standard" Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="LTR_Title" Value ="" MANDATORY ="False" DESCRIPTION ="The LTR Needs this information for Title"/>
+	<ITEM NAME="LTR_Title_Reference" Value ="" MANDATORY ="False" DESCRIPTION ="The LTR Needs this information for Title"/>
+	<ITEM NAME="High level test reference" Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="TRA Title"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+	<ITEM NAME="TRA Reference"  Value ="" MANDATORY ="False" DESCRIPTION =""/>
+</HEADER>

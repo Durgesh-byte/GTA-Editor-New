@@ -1,0 +1,7 @@
+<parallel id="parallel_stateID">
+	<state id="ParallelState_finished_">
+		<transition target="" cond="parallelCounter_==No of parallel states" event="Parllel_S"/>
+	</state>
+	<transition target= "target" event = "done.state.ParallelState_finished_"/>
+</parallel>
+

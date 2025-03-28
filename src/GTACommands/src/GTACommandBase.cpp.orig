@@ -1,0 +1,1056 @@
+#include "GTACommandBase.h"
+#include "GTAComment.h"
+#include "GTAUtil.h"
+
+#pragma warning(push, 0)
+#include <QDateTime>
+#include <QUuid>
+#pragma warning(pop)
+
+GTACommandBase::GTACommandBase(CommandType iType)//:_lstChildren(* (new QList<GTACommandBase*>()))
+{
+    _InstanceName= QString();
+    setCommandType(iType);
+    _lstChildren = new QList<GTACommandBase*>();
+    _CmdValidityStatus = true;
+    _parent=NULL;
+    _IsCollapsed=true;
+    _IgnoreLogInFail=false;
+    _reportStatus=INCLUDE;
+    _bHasReferenceTimeOut=false;
+    _referenceTimeoutStates.clear();
+    _ignoreForSCXML = false;
+    _ReadOnly=false;
+    _InstancePath = QString();
+    _EpochTime = 0;
+    _IsOnlySDI = false;
+    _IsOnlyParity = false;
+    _IsOnlyRefreshRate = false;
+    _SDI = QString("00");
+    _Parity = QString("0");
+    _RefFileUUID = QString("");
+    _breakpoint = false;
+    _currentExecutionControl = false;
+
+}
+GTACommandBase::GTACommandBase(const GTACommandBase& rhs)
+{
+    _ignoreForSCXML = rhs.isIgnoredInSCXML();
+    setCommandType(rhs.getCommandType());
+    setInstanceName(rhs.getInstanceName());
+    _lstChildren = new QList<GTACommandBase*>();
+
+    _CmdValidityStatus = rhs.isCmdValid();
+    _parent=NULL;
+    _IsCollapsed=rhs.getCollapsed();
+    _IgnoreLogInFail=rhs.getIgnoreLogInFail();
+    _reportStatus=rhs.getReportStatus();
+    _bHasReferenceTimeOut=rhs.hasReferenceTimeout();
+    _ReadOnly=rhs.getReadOnlyState();
+    _Comment=rhs.getComment();
+    _Requirements = rhs.getRequirements();
+    _InstancePath =rhs.getInstancePath();
+    _EpochTime = rhs.getExecutionEpochTime();
+
+    _IsOnlySDI = rhs.getIsSDIOnly();
+    _IsOnlyParity = rhs.getIsParityOnly();
+    _IsOnlyRefreshRate = rhs.getIsRefreshRateOnly();
+    _SDI = rhs.getSDI();
+    _Parity = rhs.getParity();
+    _RefFileUUID = rhs.getRefrenceFileUUID();
+    setObjId(rhs.getObjId(),false);
+    setBreakpoint(rhs.hasBreakpoint());
+    setExecutionControl(rhs.hasExecutionControl());
+
+
+}
+
+//QString GTACommandBase::getUserCommentInResult() const
+//{
+//    return _UserCommentInResult;
+//}
+
+//void GTACommandBase::setUserCommentInResult(const QString &iCommentInResult)
+//{
+//    _UserCommentInResult = iCommentInResult;
+//}
+GTACommandBase::CommandType GTACommandBase::getCommandType() const
+{
+    return _CmdType;
+}
+void GTACommandBase::setCommandType(CommandType iType)
+{
+    _CmdType = iType;
+}
+GTACommandBase::~GTACommandBase()
+{
+    if (NULL!=_lstChildren)
+    {
+        if (!_lstChildren->isEmpty())
+        {
+            this->deleteAllChildren(*_lstChildren);
+            this->clearChildrenList();
+        }
+
+        delete _lstChildren;
+        _lstChildren=NULL;
+    }
+
+}
+int GTACommandBase::getAllChildrenCount(void)
+{
+    int totalCount =0;
+    getAllChildrenCount(totalCount,this);
+    return totalCount;
+
+}
+
+void GTACommandBase::getAllChildrenCount(int & oCount, GTACommandBase* pBase)
+{
+    if (NULL!=pBase)
+    {
+        QList<GTACommandBase*> lstChildrens = pBase->getChildren();
+        if (!lstChildrens.isEmpty())
+        {
+            foreach(GTACommandBase* pChildCommand,lstChildrens)
+            {
+                if(NULL!=pChildCommand)
+                {
+                    QList<GTACommandBase*>  lstChildChild = pChildCommand->getChildren();
+                    if (lstChildChild.isEmpty())
+                        oCount++;
+                    else
+                    {	oCount++;
+                        getAllChildrenCount(oCount,pChildCommand);
+                    }
+                }
+                else
+                    oCount++;
+
+            }
+
+        }
+        //		oCount++;
+    }
+    else
+        oCount++;
+}
+int GTACommandBase::getAbsoluteChildrenCount(void)
+{
+    int totalCount =0;
+    getAbsoluteChildrenCount(totalCount,this);
+    return totalCount;
+
+}
+
+void GTACommandBase::getAbsoluteChildrenCount(int & oCount, GTACommandBase* pBase)
+{
+    if (NULL!=pBase)
+    {
+        QList<GTACommandBase*> lstChildrens = pBase->getChildren();
+        if (!lstChildrens.isEmpty())
+        {
+            foreach(GTACommandBase* pChildCommand,lstChildrens)
+            {
+                if(NULL!=pChildCommand)
+                {
+                    QList<GTACommandBase*>  lstChildChild = pChildCommand->getChildren();
+                    if (lstChildChild.isEmpty())
+                    {oCount++;}
+                    else
+                    {	oCount++;
+                        getAbsoluteChildrenCount(oCount,pChildCommand);
+                    }
+                }
+
+            }
+
+        }
+        //		oCount++;
+    }
+}
+
+void GTACommandBase::clearChildrenList()
+{
+    for (auto& child : *_lstChildren)
+    {
+        if (child != nullptr)
+        {
+            child->clearChildrenList();
+            delete child;
+            child = nullptr;
+        }
+    }
+
+    _lstChildren->clear();
+}
+
+void GTACommandBase::deleteAllChildren(QList<GTACommandBase*> ilstChildrens)
+{
+    if (!ilstChildrens.isEmpty())
+    {
+        for (int k=0;k<ilstChildrens.size();k++)
+        {
+            GTACommandBase* pCurChild = ilstChildrens.at(k);
+            if(pCurChild != NULL)
+            {
+                QList<GTACommandBase*> lstChildChildrens = pCurChild->getChildren();
+                if (!lstChildChildrens.isEmpty())
+                {
+                    deleteAllChildren(lstChildChildrens);
+                    pCurChild->clearChildrenList();
+                }
+
+                delete pCurChild;
+                pCurChild = NULL;
+            }
+        }
+    }
+
+}
+bool GTACommandBase::canBeCopied()
+{
+    return true;
+}
+bool GTACommandBase::IsDeletable()
+{
+    return true;
+}
+
+bool  GTACommandBase:: IsUserEditable()
+{
+    return true;
+}
+
+void GTACommandBase::setRequirements(const QStringList &iList)
+{
+    _Requirements = iList;
+}
+
+
+QStringList GTACommandBase::getRequirements()const
+{
+    return _Requirements;
+}
+
+
+void GTACommandBase::setComment(const QString & iComment)
+{
+    _Comment = iComment;
+}
+QString GTACommandBase::getComment() const
+{
+    return _Comment;
+}
+bool GTACommandBase:: hasReference()
+{
+    return false;
+}
+bool GTACommandBase:: hasChildren()const
+{
+    return !(_lstChildren->isEmpty());
+}
+
+bool GTACommandBase::hasBreakpoint()const
+{
+    return _breakpoint;
+}
+
+void GTACommandBase::setBreakpoint(const bool val)
+{
+    _breakpoint = val;
+}
+
+bool GTACommandBase::hasExecutionControl()const
+{
+    return _currentExecutionControl;
+}
+
+void GTACommandBase::setExecutionControl(const bool val)
+{
+    _currentExecutionControl = val;
+}
+
+
+bool GTACommandBase::isVariable(const QString& iItem)
+{
+    bool isNumber,rC = true;
+
+    if(iItem.isEmpty())
+        return false;
+
+    iItem.toDouble(&isNumber);
+    if (isNumber || iItem.contains("\"") || iItem.contains("'"))
+        rC=false;   
+    return rC;
+}
+/**
+  * This function set instance name of the command
+  * instance name represent the context where the command is being used and its position in list
+  * this way instance name is always unique a provided context
+  * iInstanceName: instance name
+  */
+void GTACommandBase::setInstanceName(const QString iInstanceName)
+{
+    _InstanceName = iInstanceName;
+    QRegExp rx("([`'\"]+)");
+    _InstanceName.replace(rx,"");
+}
+/**
+  * This function return the instance name of command
+  */
+QString GTACommandBase::getInstanceName() const
+{
+    return _InstanceName;
+}
+
+/**
+  * this function return if the command is valid
+  * This is evaluated during compatibility check
+  */
+bool GTACommandBase::isCmdValid() const
+{
+    return _CmdValidityStatus;
+}
+/**
+  * this function set the command validity status
+  * This is evaluated during compatibility check
+  */
+void GTACommandBase::setCmdValidaityStatus( const bool iStatus)
+{
+    _ErrorLogList.clear();
+    _CmdValidityStatus = iStatus;
+}
+/**
+  * this function returns the error msg list of the command
+  * This is evaluated during compatibility check
+  */
+QStringList GTACommandBase::getErrorLogList() const
+{
+    return _ErrorLogList;
+}
+/**
+  * this function sets the error msg list of the command
+  * This is evaluated during compatibility check
+  */
+void GTACommandBase::setErrorLogList(const QString &iMsg)
+{
+    _ErrorLogList.append(iMsg);
+}
+bool GTACommandBase::isMutuallExclusiveStatement()const
+{
+    return false;
+}
+bool GTACommandBase::createEndCommand(GTACommandBase* & opEndCmd)const
+{
+    /*if (this->canHaveChildren()==false)
+    {
+        return true;
+    }*/
+    opEndCmd=NULL;
+
+    return false;
+}
+bool GTACommandBase::hasMutuallExclusiveStatement(int* opPos)const
+{
+    opPos;//for supressing warning.
+    return false;
+}
+bool GTACommandBase::canHaveMutuallExclusiveStatement()const
+{
+    return false;
+}
+
+bool GTACommandBase::stringReplaceApplicable()const
+{
+    return false;
+}
+void GTACommandBase::stringReplace(const QRegExp&,const QString&)
+{
+
+}
+bool GTACommandBase::equipmentReplace(const QRegExp&, const QString&)
+{
+    return false;
+}
+bool GTACommandBase::replacableStrFound(const QRegExp& iRegExp)const
+{
+    return searchString(iRegExp,false);
+}
+<<<<<<< HEAD:src/GTACommands/src/GTACommandBase.cpp
+bool GTACommandBase::searchString(const QRegExp&,bool) const
+=======
+bool AINGTACommandBase::searchString(const QRegExp& iRegExp, bool ibTextSearch) const {
+    return false;
+}
+
+/**
+ * @brief Searches for regular expression inside comments and requirements of the command
+ * @return true if found
+*/
+bool AINGTACommandBase::searchCommentAndRequirements(const QRegExp& iRegExp) const
+>>>>>>> 4641a461 (Search for comment and req):src/AINGTACommands/src/AINGTACommandBase.cpp
+{
+    if (_Comment.contains(iRegExp)) {
+        return true;
+    }
+    else {
+        for (const auto& req : _Requirements) {
+            if (req.contains(iRegExp)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}
+//void GTACommandBase::setSearchHighlight(bool iHighLight)
+//{
+//    _searchHighlight=iHighLight;
+//}
+//bool GTACommandBase::getSearchHighlight()const
+//{
+//    return _searchHighlight;
+//}
+bool GTACommandBase::logCanExist()const
+{
+    return true;
+}
+bool GTACommandBase::expandReferences()
+{
+    return false;
+}
+bool GTACommandBase::setDumpList(const QStringList&)
+{
+    return false;
+}
+QStringList GTACommandBase::getDumpList()const
+{
+    return QStringList();
+}
+QString GTACommandBase:: getSCXMLStateName()const
+{
+    return QString();
+}
+bool GTACommandBase::getSCXMLConditionStatement(const QStringList &, QString &oCondtionStatement, const QHash<QString, QString> &, const QString &, bool, const QStringList) const
+{
+    oCondtionStatement =  QString();
+    return false;
+}
+void GTACommandBase::updateUserComments(const QString &iUserComments)
+{
+    _UserComments = iUserComments;
+}
+
+void GTACommandBase::setCollapsed(bool)
+{
+    //_IsCollapsed = iCollapsed;
+    _IsCollapsed  = false;
+}
+bool GTACommandBase::getCollapsed() const
+{
+    return _IsCollapsed;
+}
+bool GTACommandBase:: hasLoop() const
+{
+    return false;
+}
+void GTACommandBase:: setIgnoreLogInFail(bool ibLog)
+{
+    _IgnoreLogInFail=ibLog;
+}
+bool GTACommandBase::getIgnoreLogInFail()const
+{  
+    return _IgnoreLogInFail;
+
+}
+QString GTACommandBase::dumpValuesFromLog() const
+{
+    foreach(GTAScxmlLogMessage LogMsgObj, _LogMessageList)
+    {
+        if (LogMsgObj.LOD == GTAScxmlLogMessage::Detail)
+        {
+
+        }
+    }
+
+    return QString();
+
+}
+
+
+GTACommandBase* GTACommandBase::getMasterCmd(int &oCount)
+{
+    GTACommandBase* parentCmd = this->getParent();
+    GTACommandBase* masterCmd = this;
+    if (parentCmd == NULL)
+    {
+        masterCmd;
+    }
+    else
+    {
+        while(parentCmd!=NULL)
+        {
+            oCount++;
+            masterCmd=parentCmd;
+            parentCmd = parentCmd->getParent();
+
+        }
+    }
+
+    return masterCmd;
+}
+
+GTACommandBase* GTACommandBase::getMasterCmd()
+{
+    GTACommandBase* parentCmd = this->getParent();
+    GTACommandBase* masterCmd = this;
+    if (parentCmd == NULL)
+    {
+        masterCmd;
+    }
+    else
+    {
+        while(parentCmd!=NULL)
+        {
+            masterCmd=parentCmd;
+            parentCmd = parentCmd->getParent();
+
+        }
+    }
+
+    return masterCmd;
+}
+void GTACommandBase::insertTagValuepairForTemplates(const QString &,QString &){}
+
+void GTACommandBase::setRefrenceFileUUID(const QString &iRefFileUUID)
+{
+    _RefFileUUID = iRefFileUUID;
+}
+
+QString GTACommandBase::getRefrenceFileUUID() const
+{
+    return _RefFileUUID;
+}
+
+QMap<QString, QString > GTACommandBase::getTagValuePairForTemapltes() const{return QMap<QString,QString>();}
+
+
+void GTACommandBase::replaceUntagged()
+{
+
+}
+bool GTACommandBase::createsCommadsFromTemplate()const
+{
+    return false;
+}
+bool GTACommandBase:: IsEndCommand()const
+{
+    return false;
+}
+void GTACommandBase::setReportStatusOfChildrens(reportSelectionType reportStatus)
+{
+    if (!_lstChildren->isEmpty())
+    {
+
+        // GTACommandBase::reportSelectionType statusOfFirstItem;
+        for(int i=0;i<_lstChildren->size();++i)
+        {
+            GTACommandBase* pCommand = _lstChildren->at(i);
+            if (NULL!=pCommand)
+            {
+                if (pCommand->hasChildren())
+                {
+                    pCommand->setReportStatusOfChildrens(reportStatus);
+
+                } 
+                pCommand->setReportStatus(reportStatus);
+            }
+        }
+    }
+
+}
+
+
+void GTACommandBase::updateReportStatus()
+{
+    if (!_lstChildren->isEmpty())
+    {
+
+        GTACommandBase::reportSelectionType statusOfFirstItem;
+        int childSize = _lstChildren->size();
+        if(childSize==1)
+        {
+            GTACommandBase* pChildCmd = _lstChildren->at(0);
+            if (pChildCmd->getReportStatus()==EXCLUDE && getReportStatus()==INCLUDE)
+                setReportStatus(PARTIALLY_INCLUDE);
+            else if (pChildCmd->getReportStatus()==INCLUDE && getReportStatus() == PARTIALLY_INCLUDE)
+                setReportStatus(INCLUDE);
+        }
+
+        else
+            if (!_lstChildren->empty() && _lstChildren->at(0) != NULL)
+            {
+                statusOfFirstItem = _lstChildren->at(0)->getReportStatus();
+                for (int i = 0; i < _lstChildren->size(); ++i)
+                {
+                    GTACommandBase* pCommand = _lstChildren->at(i);
+                    if (NULL != pCommand)
+                    {
+                        GTACommandBase::reportSelectionType reportSelctionStat = pCommand->getReportStatus();
+                        if (reportSelctionStat == GTACommandBase::PARTIALLY_INCLUDE)
+                        {
+                            setReportStatus(PARTIALLY_INCLUDE);
+                            break;
+                        }
+
+                        if (statusOfFirstItem != reportSelctionStat)
+                        {
+                            setReportStatus(PARTIALLY_INCLUDE);
+                            break;
+                        }
+
+                        if (i == _lstChildren->size() - 1)
+                        {
+                            if (getReportStatus() == INCLUDE || getReportStatus() == PARTIALLY_INCLUDE)
+                            {
+                                if (statusOfFirstItem == INCLUDE)
+                                    setReportStatus(INCLUDE);
+                                else
+                                    setReportStatus(PARTIALLY_INCLUDE);
+                            }
+                        }
+                    }
+                }
+            }
+        if (this->getParent()!=NULL)
+        {
+            this->getParent()->updateReportStatus();
+        }
+
+    }
+}
+void GTACommandBase::setReferenceTimeOutStates(const QStringList& iRefTimeouts)
+{
+    _bHasReferenceTimeOut=true;
+    _referenceTimeoutStates.clear();
+    _referenceTimeoutStates.append(iRefTimeouts);
+    
+}
+bool GTACommandBase::hasChannelInCtrl(const QString& iPram)
+{
+    bool hasChannelInControl=false;
+    if (iPram.count(GTA_CIC_IDENTIFIER)>=2)
+        hasChannelInControl = true;
+
+    return hasChannelInControl;
+
+}
+
+/**
+ * Author: Krutika
+ * This function checks if all the children of a command are ignored or not. pre requisite - grouping should be done
+ * @return: bool - true when all are ignored else returns false
+*/
+bool GTACommandBase::areAllChilrenIgnored()
+{
+    bool rc = true;
+    if(!_lstChildren->isEmpty())
+    {
+        for(int i = 0; i < _lstChildren->count(); i++)
+        {
+            GTACommandBase* pCmd = _lstChildren->at(i);
+            if(pCmd && pCmd->IsUserEditable())
+            {
+                if(!pCmd->isIgnoredInSCXML())
+                    rc &= false;
+
+                if(pCmd->hasChildren())
+                    rc &= pCmd->areAllChilrenIgnored();
+            }
+        }
+    }
+    return rc;
+}
+
+
+/**
+ * Author: Krutika
+ * This function sets ignoreInSCXML value
+ * @iIgnore : bool - pass true to ignore and false to not ignore
+ * @type : GTACommandBase::LOOP_TYPE = RECURSIVE for enforcing value of @iIgnore to all children
+ *         GTACommandBase::LOOP_TYPE = NON_RECURSIVE for enforcing value of @iIgnore current command and its parents but not children
+*/
+void GTACommandBase::setIgnoreInSCXML(bool iIgnore, GTACommandBase::LOOP_TYPE type)
+{
+    // isUserEditable is to determine if the command is editable by user. end of while, if , do while is not user editable
+    if(IsUserEditable())
+    {
+
+        _ignoreForSCXML = iIgnore;
+        if(type == RECURSIVE)                                       // an enum has been added to determine if an ignore should be done for all children commands or only for present command
+        {
+            if (!_lstChildren->isEmpty())
+            {
+                for (int i=0;i<_lstChildren->size();i++)
+                {
+                    GTACommandBase* pCmd = _lstChildren->at(i);
+                    if(pCmd)
+                        pCmd->setIgnoreInSCXML(iIgnore);
+                }
+            }
+        }
+        //This is done to check if the current command has a parent and to set ignore accordingly. Change is made for selective execution
+
+        GTACommandBase* pParent = this->getParent();
+        if(pParent)
+        {
+            //The condition below is used under following use case
+            //Usecase1
+            //parent0 (checked)
+            //	parent1 (checked)
+            //		child1(unchecked)
+            //		child2(checked)
+            //if child2 is toggled to unchecked, the setIgnoreInSCXML() receives input as true
+            //in such a scenario, the parent must also be unchecked if all its children are unchecked
+            //hence the line ( iIgnore is true && pParent->areAllChilrenIgnored() is true) and pParent->setIgnoreInSCXML(iIgnore,NON_RECURSIVE) is executed
+            //this is repeated up the tree until there is no parent
+
+            //Usecase2
+            //parent0 (checked)
+            //	parent1 (checked)
+            //		child1(checked)
+            //		child2(checked)
+            //if child2 is toggled to unchecked, the setIgnoreInSCXML() receives input as true
+            //in such a scenario, the parent must not be unchecked as not all its children are unchecked
+            //hence the line ( iIgnore is true && pParent->areAllChilrenIgnored() is false) and pParent->setIgnoreInSCXML(iIgnore,NON_RECURSIVE) is NOT executed
+            //this is repeated up the tree until there is no parent
+
+            //Usecase3
+            //parent0 (unchecked)
+            //	parent1 (unchecked)
+            //		child1(unchecked)
+            //		child2(unchecked)
+            //if child2 is toggled to checked, the setIgnoreInSCXML() receives input as false
+            //in such a scenario, the parent must stay checked or get a checked flag
+            //hence the line (iIgnore is false) and pParent->setIgnoreInSCXML(iIgnore,NON_RECURSIVE) is executed
+            //this is repeated up the tree until there is no parent
+            if(( iIgnore == true && pParent->areAllChilrenIgnored()) || (iIgnore == false))
+            {
+                pParent->setIgnoreInSCXML(iIgnore,NON_RECURSIVE);
+            }
+
+        }
+
+    }
+    else
+    {
+        GTACommandBase* pParent = this->getParent();
+        if (pParent!=NULL && pParent->isIgnoredInSCXML()== iIgnore)
+        {
+            _ignoreForSCXML = iIgnore;
+        }
+    }
+
+}
+void GTACommandBase::setReadOnlyState(bool iReadOnly)
+{
+    _ReadOnly = iReadOnly;
+}
+void GTACommandBase::removeEmptyChilds()
+{
+    if(this->hasChildren())
+    {
+        for (int i=_lstChildren->size()-1;i>=0;i--)
+        {
+            GTACommandBase* pCurCmd = _lstChildren->at(i);
+            if (pCurCmd==NULL)
+            {
+                _lstChildren->takeAt(i);
+            }
+        }
+    }
+}
+void GTACommandBase::setInstancePath(const QString& isInstancePath)
+{
+    _InstancePath= isInstancePath;
+}
+QString GTACommandBase::getInstancePath ()const
+{
+    return _InstancePath;
+}
+//QString GTACommandBase::getInvokeNodeDelayInMs()const
+//{
+//    return _commandProperty.value(SX_INVOKE_DEFAULT_DELAY,QString());
+//}
+
+QHash<QString, QString> GTACommandBase::getDetailedLogInfo(QMap<int, QString> &odetailInfoMap)
+{
+    //Unlike QMap, which orders its items by key, QHash stores its items in an arbitrary order.
+    //Using QMap here because we need the keys in the same order as they are populated in the LogMessageList
+    QString time = "";
+    int logCnt = _LogMessageList.count();
+    QHash<QString, QString> detailedInfo;
+    //    QMap<int,QString> detailInfoMap;
+    int count = 0;
+    for(int i=0;i<logCnt;i++)
+    {
+        GTAScxmlLogMessage logMsg = _LogMessageList.at(i);
+        if(logMsg.LOD == GTAScxmlLogMessage::Detail)
+        {
+            if(detailedInfo.contains(logMsg.ExpectedValue))
+                detailedInfo.insert(logMsg.ExpectedValue,logMsg.CurrentValue);
+            else
+                detailedInfo[logMsg.ExpectedValue] = logMsg.CurrentValue;
+
+            odetailInfoMap.insert(count,logMsg.ExpectedValue);
+            count++;
+        }
+    }
+    return detailedInfo;
+}
+double GTACommandBase::getExecutionEpochTime() const
+{
+    return _EpochTime;
+}
+QString GTACommandBase::getExecutionTime() const
+{
+    return _Time;
+}
+QString GTACommandBase::getLTRAStatement() const
+{
+    return getStatement();
+}
+QString GTACommandBase::getPrintStatement() const
+{
+    return getStatement();
+}
+void GTACommandBase::setLogMessageList(const QList<GTAScxmlLogMessage> &iList)
+{
+    _LogMessageList = iList;
+    _Result  = "NA";
+    _Time = "";
+    int logCnt = _LogMessageList.count();
+    for(int i=0;i<logCnt;i++)
+    {
+        GTAScxmlLogMessage logMsg = _LogMessageList.at(i);
+        if(logMsg.LOD == GTAScxmlLogMessage::Main)
+        {
+            _Result = logMsg.ResultTypeToString(logMsg.Result);
+            QString time  = logMsg.TimeStamp;
+            time.replace("[","");
+            time.replace("]","");
+            bool ok;
+            double s = time.toDouble( &ok );
+            if ( ok )
+            {
+                _EpochTime = s;
+                QDateTime dt = (QDateTime::fromTime_t(static_cast<uint>(s / 1000.0)));
+                _Time = dt.toString( Qt::TextDate );
+            }
+            break;
+        }
+    }
+}
+QString GTACommandBase::getExecutionResult() const
+{
+    return _Result;
+}
+
+QString GTACommandBase::getGlobalResultStatus()
+{
+    return getExecutionResult();
+}
+
+
+
+void GTACommandBase::setCommandProperty(const QString& iProperty, const QString& iValue)
+{
+
+    _commandProperty[iProperty]=iValue;
+}
+
+bool GTACommandBase::getIsSDIOnly() const
+{
+    return _IsOnlySDI;
+}
+void GTACommandBase::setIsSDIOnly(const bool iIsSetOnlySDI)
+{
+    _IsOnlySDI = iIsSetOnlySDI;
+}
+
+bool GTACommandBase::getIsParityOnly() const
+{
+    return _IsOnlyParity;
+}
+void GTACommandBase::setIsParityOnly(const bool iIsSetOnlyParity)
+{
+    _IsOnlyParity = iIsSetOnlyParity;
+}
+
+bool GTACommandBase::getIsRefreshRateOnly() const
+{
+    return _IsOnlyRefreshRate;
+}
+void GTACommandBase::setIsRefreshRateOnly(const bool iIsSetOnlyRefreshRate)
+{
+    _IsOnlyRefreshRate = iIsSetOnlyRefreshRate;
+}
+
+void GTACommandBase::setSDI(const QString& iSDI)
+{
+    _SDI = iSDI;
+
+}
+
+QString GTACommandBase::getSDI()const
+{
+    return _SDI;
+
+}
+
+void GTACommandBase::setParity(const QString& iParity)
+{
+    _Parity = iParity;
+}
+
+QString GTACommandBase::getParity()const
+{
+    return _Parity;
+}
+
+
+//void GTACommandBase::updateReportStatus()
+//{
+//    if (!_lstChildren->isEmpty())
+//    {
+//        int childSize = _lstChildren->size();
+//
+//        GTACommandBase::reportSelectionType currentStatus = getReportStatus();
+//        if (currentStatus == PARTIALLY_INCLUDE  )
+//        {
+//            for(int i=0;i<childSize;++i)
+//            {
+//                GTACommandBase* pCommand = _lstChildren->at(i);  
+//                if (NULL!=pCommand)
+//                {
+//                    GTACommandBase::reportSelectionType childStatus = pCommand->getReportStatus();
+//
+//                    if (childStatus==EXCLUDE || childStatus ==PARTIALLY_INCLUDE)
+//                    {
+//                        setReportStatus(PARTIALLY_INCLUDE);
+//                        return;
+//                    }
+//                }
+//                if (i==childSize-1)
+//                {
+//                    setReportStatus(INCLUDE);
+//                }
+//
+//            }
+//
+//
+//        }
+//        else if (currentStatus == INCLUDE  )
+//        {
+//            for(int i=0;i<childSize;++i)
+//            {
+//                GTACommandBase* pCommand = _lstChildren->at(i);  
+//                if (NULL!=pCommand)
+//                {
+//                    GTACommandBase::reportSelectionType childStatus = pCommand->getReportStatus();
+//
+//                    if (childStatus==EXCLUDE || childStatus ==PARTIALLY_INCLUDE)
+//                    {
+//                        setReportStatus(PARTIALLY_INCLUDE);
+//                        return;
+//                    }
+//                }                
+//
+//            }
+//
+//
+//        }
+//        else if (currentStatus==EXCLUDE)
+//        {
+//            for(int i=0;i<childSize;++i)
+//            {
+//                GTACommandBase* pCommand = _lstChildren->at(i);  
+//                if (NULL!=pCommand)
+//                {
+//                    GTACommandBase::reportSelectionType childStatus = pCommand->getReportStatus();
+//
+//                    if (childStatus==INCLUDE)
+//                    {
+//                        setReportStatus(PARTIALLY_INCLUDE);
+//                        return;
+//                    }
+//                }
+//                if (i==childSize-1)
+//                {
+//                    setReportStatus(INCLUDE);
+//                }
+//            }
+//
+//        }
+//
+//
+//    }
+//
+//}
+
+
+
+QString GTACommandBase::getObjId()const
+{
+    return _objID;
+}
+
+void GTACommandBase::setObjId(QString val,bool createNewID)
+{
+    if (createNewID)
+    {
+        _objID = QUuid::createUuid().toString();
+    }
+    else
+    {
+        _objID = val;
+    }
+}
+
+void GTACommandBase::getTrimmedStatement(QString &val)const
+{
+    QRegExp regExp("_uuid\\[\\{[a-zA-Z0-9]{8}-([a-zA-Z0-9]{4}-){3}[a-zA-Z0-9]{12}\\}\\]");
+    if(val.contains(regExp))
+    {
+        val.replace(regExp,"");
+    }
+}
+
+//Handling Internal parameters for SCXML Conditional Statement
+//Input the ioParam obtained from SCXML and the Val to be put in SCXML conditional statement
+QString GTACommandBase::resolveInternalParams(QString iVal, QStringList iVarList) const
+{
+    QRegExp regExp("\\[\\{[a-z0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}\\}\\]");
+    if (iVal.contains(regExp))
+    {
+        //obtaining list of regx in rhs
+        QString Val = iVal;
+        //int pos = regExp.indexIn(iVal);
+        //QStringList listVAL = regExp.capturedTexts();
+        QString idinVAL = regExp.capturedTexts().first();
+        foreach (QString var, iVarList)
+        {
+            QString vartemp = var;
+            QString colName = Val.remove(regExp).remove("_uuid").remove(QString("%2%1").arg(Val.split(INTERNAL_PARAM_SEP).last(),INTERNAL_PARAM_SEP)).remove("line.");
+            QString colNameinLst = vartemp.remove(regExp).split(".").last();
+            if (var.contains(idinVAL) && (iVal.contains("line.")? (colName == colNameinLst):true))
+            {
+                return var.remove(idinVAL);
+                //rhsVal = var.remove(idinRHS);
+                //break;
+            }
+        }
+    }
+    return iVal;
+}

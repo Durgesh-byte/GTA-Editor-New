@@ -1,0 +1,13 @@
+<invoke id="000002" type="xml-rpc">
+	<content>
+		<xmlrpc tool_id="CGIB">
+			<function name="UnSubscribeParamList">
+				<argument name="ParameterList" type="struct" value="varTemp"/>
+				<returnvalue name="returnValue"/>
+			</function>
+		</xmlrpc>
+	</content>
+	<finalize>
+	</finalize>
+</invoke>
+

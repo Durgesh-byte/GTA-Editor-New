@@ -1,0 +1,12 @@
+#ifndef XMLRPCLIB_GLOBAL_H
+#define XMLRPCLIB_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(XMLRPCLIB_LIBRARY)
+#  define XMLRPCLIBSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define XMLRPCLIBSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // XMLRPCLIB_GLOBAL_H

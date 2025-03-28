@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTAControllerLauncherWidgetClass</class>
+ <widget class="QDialog" name="GTAControllerLauncherWidgetClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1202</width>
+    <height>224</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>900</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Procedure Dashboard Launcher</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../resource.qrc">
+    <normaloff>:/images/forms/img/AddToDashboardLauncher.png</normaloff>:/images/forms/img/AddToDashboardLauncher.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="3">
+    <widget class="QPushButton" name="removeFileButton">
+     <property name="text">
+      <string>Remove</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resource.qrc">
+       <normaloff>:/images/forms/img/Remove.png</normaloff>:/images/forms/img/Remove.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="18">
+    <widget class="QPushButton" name="closeButton">
+     <property name="text">
+      <string>Close</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="17">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>30</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="1" column="6" colspan="2">
+    <widget class="QLineEdit" name="appStartUpDelayEdit">
+     <property name="minimumSize">
+      <size>
+       <width>30</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>30</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="10">
+    <widget class="QLineEdit" name="waitBeforeEmoTestLE">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>30</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="9">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Wait time before EmoTest (s):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="13">
+    <widget class="QLineEdit" name="delayBetweenExecutionLE">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>30</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QPushButton" name="downButton">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../resource.qrc">
+       <normaloff>:/images/forms/img/DownArrow_16_16.png</normaloff>:/images/forms/img/DownArrow_16_16.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="19">
+    <widget class="QTableWidget" name="fileTableWidget"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QPushButton" name="upButton">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../resource.qrc">
+       <normaloff>:/images/forms/img/UpArrow_16_16.png</normaloff>:/images/forms/img/UpArrow_16_16.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2">
+    <widget class="QPushButton" name="addFileButton">
+     <property name="text">
+      <string>Add File</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resource.qrc">
+       <normaloff>:/images/forms/img/Add.png</normaloff>:/images/forms/img/Add.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="4">
+    <widget class="QPushButton" name="launchButton">
+     <property name="text">
+      <string>Launch</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../resource.qrc">
+       <normaloff>:/images/forms/img/Launch.png</normaloff>:/images/forms/img/Launch.png</iconset>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="5">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Startup Application Delay (s):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="12">
+    <widget class="QLabel" name="label_3">
+     <property name="text">
+      <string>Delay between Execution (s):</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="16">
+    <widget class="QLineEdit" name="totalMaxEstimatedTime">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>50</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>50</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="15">
+    <widget class="QLabel" name="label_4">
+     <property name="text">
+      <string>Total Execution Tme:</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

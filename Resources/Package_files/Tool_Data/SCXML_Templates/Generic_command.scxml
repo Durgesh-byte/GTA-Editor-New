@@ -1,0 +1,16 @@
+<state id="">
+	<invoke id="" type="xml-rpc">
+		<content>
+			<xmlrpc tool_id="CGIB" tool_type="GFIB">
+				<function name ="GetParamValueSingleSample" >
+					<argument name="ParameterID" value="" type="string"/>
+					<returnvalue name="Return_Parameter_Structure" />
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign location="" expr="_event.data.Return_Parameter_Structure" />
+		</finalize>
+	</invoke>
+	<transition target="" event="done.invoke._all" cond=""/>
+</state>

@@ -1,0 +1,12 @@
+<invoke type="xml-rpc" id="i1">
+	<content>
+		<xmlrpc tool_id="" tool_type="">
+			<function name="SubscribeParamList">
+				<argument value="" type="struct" name="ParameterList"/>
+				<returnvalue name=""/>
+			</function>
+		</xmlrpc>
+	</content>
+	<finalize>
+	</finalize>
+</invoke>

@@ -1,0 +1,2674 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DAD09316-4D90-36DB-94D3-6C50117446F9}</ProjectGuid>
+    <RootNamespace>GTAUI</RootNamespace>
+    <Keyword>QtVS_v304</Keyword>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+    <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
+    <TargetPlatformVersion Condition="'$(TargetPlatformVersion)' == ''">$(LatestTargetPlatformVersion)</TargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolSet>v143</PlatformToolSet>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PrimaryOutput>GTAUI</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolSet>v143</PlatformToolSet>
+    <OutputDirectory>$(SolutionDir)\build\$(Configuration)\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PrimaryOutput>GTAUI</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
+    <TargetName>GTAUI</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
+    <TargetName>GTAUI</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>5.7_msvc2015_64</QtInstall>
+    <QtModules>core;xml;sql;network;gui;widgets;concurrent</QtModules>
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>5.7_msvc2015_64</QtInstall>
+    <QtModules>core;xml;sql;network;gui;widgets;concurrent</QtModules>
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;PrivateInterfaces;PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTADataModel\PublicInterfaces;..\GTADataModel\PrivateInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PublicInterfaces;..\GTAMath\PublicInterfaces;..\GTACore\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;..\GTASequencer\PublicInterfaces;$(SolutionDir)\build\$(Configuration);..\GTAConfigManager\PublicInterfaces;..\GTA-Controllers;$(SolutionDir)\ExternalLib\libgit2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAUI_LIBRARY;TOOLVER="20.00.000RC4";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>GTAControllers.lib;GTADataModel.lib;GTACommon.lib;GTACommands.lib;GTAMath.lib;GTACore.lib;GTAViewModel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAUI_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_WIDGETS_LIB;QT_GUI_LIB;QT_SQL_LIB;QT_XML_LIB;QT_NETWORK_LIB;QT_CONCURRENT_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <QtMoc />
+    <QtRcc />
+    <QtUic />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;PrivateInterfaces;PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTADataModel\PublicInterfaces;..\GTADataModel\PrivateInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PublicInterfaces;..\GTAMath\PublicInterfaces;..\GTACore\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;..\GTASequencer\PublicInterfaces;$(SolutionDir)\build\$(Configuration);..\GTAConfigManager\PublicInterfaces;..\GTA-Controllers;$(SolutionDir)\ExternalLib\libgit2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAUI_LIBRARY;TOOLVER="20.00.000RC4";QT_NO_DEBUG;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>GTAControllers.lib;GTADataModel.lib;GTACommon.lib;GTACommands.lib;GTAMath.lib;GTACore.lib;GTAViewModel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAUI_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_SQL_LIB;QT_XML_LIB;QT_NETWORK_LIB;QT_CONCURRENT_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
+    <QtMoc />
+    <QtRcc />
+    <QtUic />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAControllerLauncherWidget.cpp" />
+    <ClCompile Include="GTAPurposeAndConclusionDialog.cpp" />
+    <ClCompile Include="src\GTAActPrintMsgWidget.cpp" />
+    <ClCompile Include="src\GTAElementDependenciesWidget.cpp" />
+    <ClCompile Include="src\GTAMcduWidget.cpp" />
+    <ClCompile Include="src\GTAUiUtils.cpp" />
+    <ClCompile Include="src\GTAUndoRedoEditMTE.cpp" />
+    <ClCompile Include="src\CsvToProConverter.cpp" />
+    <ClCompile Include="src\CustomizedCommandInterface.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAIgnoreManualAction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActPrintTableWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionAVCWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionCallProceduresWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionCallWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionCmdCommentWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFCTLConfWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFTAKinematicMultiOutputWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFailureConfigValWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFailureWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFunctionReturnWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionGenericFunctionWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionIRTWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionInitParamWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionLineEditor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionManualWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionMathWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionMathsWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickLaunchAppWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickPPCWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickSetWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickTitleWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrintBITEBufferWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrintFWCBufferWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrintTimeWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrintValWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionReleaseWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionRoboticArmWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionSelectorWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionTitleWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionUnInitParamWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAChannelSelectorWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckAudioWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckBiteMessageWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckECAMDisplayWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckFWCProcedureWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckFWCWarningWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckRefreshWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckValueWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACmdRequirementWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAComboBoxDelegatorLogResulTV.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACommentImageWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACommentWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACompatibilityReport.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAConditionActionWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\GTADraggableTabWidget.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </QtMoc>
+    <ClCompile Include="src\GTADumpListWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEditorFrame.cpp" />
+    <ClCompile Include="src\GTAEditorWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAElementTableView.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAElementTreeViewWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationConstValueWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationCrenelsWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationGainValueWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationItemValueWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationPulseWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationRampWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationSawToothWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationSineCrvWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationSinusWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationStepWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationTrapeWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationTriangleWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAExportDocWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFSIIImportWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileConstantWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileExpWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileIdleWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileNoiseWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfilePulseWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileRampSlopeWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileRampWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileSawToothWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileSineWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileStopTriggerWgt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFilterModel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenSearchWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericToolWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenestaImportWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAHeaderFieldEdit.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAHeaderWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAImageDisplay.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAImportDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAInitConfigWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAKeyBoardShortcutsWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTALogAttachmentWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTALogFrame.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTALogResultTV.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTALogResultTVRowEditor.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAMainWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAMessageBox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTANewFileCreationDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAOneClickDynamicDirOption.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAOneClickWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAParamDetails.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAPortingDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAProfileSelectorWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAProgress.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTARenameDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTARestrictedTextEdit.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAResultMdiArea.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASVNAuthenticationWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASVNCheckForModificationsWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASVNListAllWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASVNResolveOptionDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASaveEditorWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASavePrompt.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASearchReplaceDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASearchResults.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASearchWidgetInterface.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASessionManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASetActionWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTASettingsWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTATagVariableDescWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTATitleBasedExecution.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTATreeView.cpp" />
+    <ClCompile Include="src\GTAUITheme.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoAddCmd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoAddRow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoClearAll.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoClearRow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoCollapseToTitle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoCut.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoDeleteRow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoHideRow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoIgnoreOnOff.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoMoveRowsDown.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoMoveRowsUp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoPaste.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoShowAllRows.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAUndoRedoToggleReadOnly.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAValidationListWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAWaitForWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAWaitUntilActionWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActPrintMsgWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActPrintTableWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionAVCWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionCallProceduresWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionCallWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionCmdCommentWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionFCTLConfWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionFTAKinematicMultiOutputWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionFailureConfigValWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionFailureWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionFunctionReturnWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionGenericFunctionWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionIRTWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionInitParamWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionLineEditor.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionManualWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionMathWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionMathsWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionOneClickLaunchAppWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionOneClickPPCWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionOneClickSetWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionOneClickTitleWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GTACustomizedInterface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="GTAPurposeAndConclusionDialog.h" />
+    <ClInclude Include="PrivateInterfaces\GTAActionPrintFWCBufferWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAControllerLauncherWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionPrintTimeWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionPrintValWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionReleaseWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionRoboticArmWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionSelectorWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionTitleWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAActionUnInitParamWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAChannelSelectorWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACheckAudioWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACheckBiteMessageWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACheckECAMDisplayWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACheckFWCProcedureWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACheckFWCWarningWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACheckRefreshWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACheckValueWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACheckWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACmdRequirementWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAComboBoxDelegatorLogResulTV.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACommentImageWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACommentWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTACompatibilityReport.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAConditionActionWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTADumpListWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAElementTableView.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAElementTreeViewWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationConstValueWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationCrenelsWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationGainValueWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationItemValueWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationPulseWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationRampWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationSawToothWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationSineCrvWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationSinusWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationStepWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationTrapeWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationTriangleWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEquationWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAExportDocWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFSIIImportWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileConstantWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileExpWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileIdleWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileNoiseWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfilePulseWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileRampSlopeWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileRampWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileSawToothWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileSineWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileStopTriggerWgt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAEditorFrame.h" />
+    <QtMoc Include="PrivateInterfaces\GTAElementDependenciesWidget.h" />
+    <ClInclude Include="PrivateInterfaces\GTAFilterModel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAGenSearchWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAGenericToolWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAGenestaImportWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAHeaderFieldEdit.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAHeaderWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAImageDisplay.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAImportDialog.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAInitConfigWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAKeyBoardShortcutsWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTALogAttachmentWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTALogFrame.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTALogResultTV.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTALogResultTVRowEditor.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAMessageBox.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTANewFileCreationDialog.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAOneClickDynamicDirOption.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAOneClickWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAParamDetails.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAPortingDialog.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAProfileSelectorWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTARenameDialog.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASVNAuthenticationWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASVNCheckForModificationsWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASVNListAllWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASVNResolveOptionDialog.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASaveEditorWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASavePrompt.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASearchReplaceDialog.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASearchResults.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASearchWidgetInterface.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASessionManager.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASetActionWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTASettingsWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTATagVariableDescWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTATitleBasedExecution.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAUITheme.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTATreeView.h" />
+    <QtMoc Include="PrivateInterfaces\GTAMcduWidget.h" />
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoAddCmd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAIgnoreManualAction.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoAddRow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoClearAll.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoClearRow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoCollapseToTitle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoCut.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoDeleteRow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoEditMTE.h" />
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoHideRow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoIgnoreOnOff.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoMoveRowsDown.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoMoveRowsUp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoPaste.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoShowAllRows.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoToggleReadOnly.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAValidationListWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAWaitForWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PrivateInterfaces\GTAWaitUntilActionWidget.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAWgtRegisterDef.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PublicInterfaces\GTAEditorWindow.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PublicInterfaces\GTAMainWindow.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PublicInterfaces\GTAProgress.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PublicInterfaces\GTADraggableTabWidget.h" />
+    <ClInclude Include="PublicInterfaces\GTARestrictedTextEdit.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="PublicInterfaces\GTAResultMdiArea.h">
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAUI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="forms\img\AddFileForCommit.png" />
+    <Image Include="forms\img\ExportToCsv.png" />
+    <Image Include="forms\img\git\git.png" />
+    <Image Include="forms\img\git\status_added.png" />
+    <Image Include="forms\img\git\status_conflicted.png" />
+    <Image Include="forms\img\git\status_deleted.png" />
+    <Image Include="forms\img\git\status_ignored.png" />
+    <Image Include="forms\img\git\status_locked.png" />
+    <Image Include="forms\img\git\status_modified.png" />
+    <Image Include="forms\img\git\status_nonversioned.png" />
+    <Image Include="forms\img\git\status_normal.png" />
+    <Image Include="forms\img\git\status_readonly.png" />
+    <Image Include="forms\img\GTAAppIcon_black.png" />
+    <Image Include="forms\img\SVNAddFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\CsvToProConverter.h" />
+    <ClInclude Include="PublicInterfaces\CustomizedCommandInterface.h" />
+    <QtMoc Include="PublicInterfaces\GTAUiUtils.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="src\uic\ui_GTAActPrintTableWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionAVCWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionCallProceduresWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionCallWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionCmdCommentWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionFCTLConfWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionFTAKinematicMultiOutputWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionFailureConfigValWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionFailureWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionFunctionReturnWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionGenericFunctionWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionIRTWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionInitParamWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionLineEditor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionManualWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionMathWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionMathsWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionOneClickLaunchAppWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionOneClickPPCWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionOneClickSetWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionOneClickTitleWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionPrintTimeWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionPrintValWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionReleaseWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionRoboticArmWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionSelectorWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionTitleWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAActionUnInitParamWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAChannelSelectorWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACheckAudioWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACheckBiteMessageWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACheckECAMDisplayWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACheckFWCProcedureWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACheckFWCWarningWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACheckRefreshWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACheckValueWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACheckWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACmdRequirementWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACommentImageWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACommentWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTACompatibilityReport.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAConditionActionWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTADumpListWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEditorWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAElementTreeViewWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationConstValueWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationCrenelsWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationGainValueWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationItemValueWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationPulseWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationRampWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationSawToothWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationSineCrvWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationSinusWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationStepWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationTrapeWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationTriangleWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAEquationWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAExportDocWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFSIIImportWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfileConstantWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfileExpWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfileIdleWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfileNoiseWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfilePulseWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfileRampSlopeWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfileRampWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfileSawToothWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfileSineWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAFailProfileStopTriggerWgt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAGenSearchWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAGenericToolWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAGenestaImportWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAHeaderFieldEdit.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAHeaderWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAImageDisplay.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAImportDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAInitConfigWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAKeyBoardShortcutsWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTALiveModeParameterSave.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTALivePallete.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTALogAttachmentWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTALogFrame.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTALogResultTVRowEditor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAMainWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAMessageBox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTANewFileCreationDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAOneClickDynamicDirOption.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAOneClickWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAParamDetails.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAPortingDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAProfileSelectorWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAProgress.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTARenameDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASVNAuthenticationWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASVNCheckForModificationsWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASVNListAllWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASVNResolveOptionDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASaveEditorWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASavePrompt.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASearchReplaceDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASearchResults.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASessionManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASetActionWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTASettingsWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTATagVariableDescWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTATitleBasedExecution.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAUITheme.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAValidationListWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAWaitForWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\uic\ui_GTAWaitUntilActionWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActPrintTableWidget.ui">
+    </QtUic>
+    <QtUic Include="GTAPurposeAndConclusionDialog.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAControllerLauncherWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionAVCWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionCallProceduresWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionCallWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionCmdCommentWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionFCTLConfWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionFTAKinematicMultiOutputWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionFailureConfigValWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionFailureWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionFunctionReturnWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionGenericFunctionWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionIRTWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionInitParamWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionLineEditor.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionManualWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionMathWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionMathsWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionOneClickLaunchAppWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionOneClickPPCWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionOneClickSetWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionOneClickTitleWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionPrintTimeWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionPrintValWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionReleaseWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionRoboticArmWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionSelectorWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionTitleWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAActionUnInitParamWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAChannelSelectorWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACheckAudioWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACheckBiteMessageWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACheckECAMDisplayWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACheckFWCProcedureWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACheckFWCWarningWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACheckRefreshWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACheckValueWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACheckWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACmdRequirementWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACommentImageWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACommentWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTACompatibilityReport.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAConditionActionWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTADumpListWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEditorWindow.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAElementDependenciesWidget.ui" />
+    <QtUic Include="forms\GTAElementTreeViewWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationConstValueWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationCrenelsWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationGainValueWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationItemValueWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationPulseWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationRampWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationSawToothWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationSineCrvWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationSinusWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationStepWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationTrapeWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationTriangleWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAEquationWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAExportDocWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFSIIImportWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileConstantWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileExpWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileIdleWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileNoiseWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfilePulseWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileRampSlopeWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileRampWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileSawToothWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileSineWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileStopTriggerWgt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAGenSearchWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAGenericToolWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAGenestaImportWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAHeaderFieldEdit.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAHeaderWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAImageDisplay.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAIgnoreManualAction.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAImportDialog.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAInitConfigWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAKeyBoardShortcutsWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTALogAttachmentWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTALogFrame.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTALogResultTVRowEditor.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAMainWindow.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAMcduWidget.ui" />
+    <QtUic Include="forms\GTAMessageBox.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTANewFileCreationDialog.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAOneClickDynamicDirOption.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAOneClickWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAParamDetails.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAPortingDialog.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAProfileSelectorWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAProgress.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTARenameDialog.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASVNAuthenticationWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASVNCheckForModificationsWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASVNListAllWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASVNResolveOptionDialog.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASaveEditorWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASavePrompt.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASearchReplaceDialog.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASearchResults.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASessionManager.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASetActionWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTASettingsWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTATagVariableDescWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTATitleBasedExecution.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAUITheme.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAValidationListWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAWaitForWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAWaitUntilActionWidget.ui">
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\Hmovetoolbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\Hsepartoolbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\Vmovetoolbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\Vsepartoolbar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\branch_closed-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\branch_closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\branch_open-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\branch_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\checkbox_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\checkbox_checked_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\checkbox_checked_focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\checkbox_indeterminate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\checkbox_indeterminate_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\checkbox_indeterminate_focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\checkbox_unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\checkbox_unchecked_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\checkbox_unchecked_focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\close-hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\close-pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\down_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\down_arrow_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\left_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\left_arrow_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\radio_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\radio_checked_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\radio_checked_focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\radio_unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\radio_unchecked_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\radio_unchecked_focus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\right_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\right_arrow_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\sizegrip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\stylesheet-branch-end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\stylesheet-branch-more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\stylesheet-vline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\transparent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\undock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\up_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\qdarkstyle\up_arrow_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_obj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_seq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_obj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_seq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_obj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_seq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_obj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_seq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_obj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_seq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_obj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_seq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_obj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_seq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_obj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_seq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_fun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_obj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_pro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_seq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ACTION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ADD_ROW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Analyze.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Attachment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Backspace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Breakpoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\BreakpointArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\CANCEL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\CHECK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\CLEAR.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\CLEAR_ALL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\COMMENT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\COPY_ROW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\CUT_ROW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Collapseall.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Connection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ConvertCsvToPro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Critical.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\CurrentBreakppoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\DELETE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\DELETE_ROW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\DebugIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\DeselectAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\DownArrow_16_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\EDIT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\EQUATION.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\EQUATION_CRENELS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\EQUATION_TRAPEZE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\EditFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Editing_Collapse_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Editing_Expand_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Expandall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ExportLTRA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ExportXml.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ExternalPlugin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\FunctionIconFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\GTAAppIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\GreenSphere32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Header.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\HeaderIconFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Help1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\INIT_CONF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\IgnoreWarning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Indentation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Launch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\LaunchSequence.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\LeftArrow_16_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\LockIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\NEW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\NewWindow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\New_Tab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\OK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\OK_FlatIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ObjectIconFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\OpenFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\OpenFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\PASTE_ROW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\PREVIEW.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Paramlog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ProcedureIconFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ProgressBar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Pulse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Qt_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\RESET.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Ramp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\RedSphere_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Relation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Rename.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Requirements.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SAVE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SEARCH.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SEARCH_REPLACE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SVNCommitFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SVNUpdateFolder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SVN_Clean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SVN_Lock2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SVN_lock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SVN_unlock2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SaveAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Save_FlatIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SelectAll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SequenceFileIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\SplashScreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\StopSCXML.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\TemplateIconFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\TitleBasedExecution.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\UnlockIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\UpArrow_16_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\UsedBy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Validate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\abort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\accept_svn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\addToFav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\cancel_svn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\checkbox_checked.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\checkbox_checked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\checkbox_checked_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\checkbox_unchecked.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\checkbox_unchecked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\checkbox_unchecked_pressed.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\checkbox_unchecked_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\continueCmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\dialog_warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\edit_flat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\export.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\failure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\force.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\forceDBUpdate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\force_disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\force_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\force_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ignoreOff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\ignoreOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\logicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\nextCmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\next_page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\plugin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\previousCmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\previous_page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\radio-off-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\radio-on-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\readOnly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\removeFromFav.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\resolveConflict.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\sawtooth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\signal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\sineFormula.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\sinus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\step-intoCmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\step-outCmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\step.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\stopCmd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\subversion-logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svn_Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svn_Unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svn_check_for_Modification.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svn_commit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\svn_update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\switch_off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\switch_on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\table2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\textbold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\textcenter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\textitalic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\textjustify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\textleft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\textright.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\textunder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\triangle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\unhide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resource.qrc">
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GTAUI.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

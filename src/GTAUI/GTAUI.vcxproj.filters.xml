@@ -1,0 +1,2370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionAVCWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionCallProceduresWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionCallWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionCmdCommentWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionFailureConfigValWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionFailureWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionFCTLConfWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionFTAKinematicMultiOutputWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionFunctionReturnWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionGenericFunctionWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionInitParamWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionIRTWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionLineEditor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionManualWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionMathsWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionMathWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionOneClickLaunchAppWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionOneClickPPCWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionOneClickSetWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionOneClickTitleWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionPrintBITEBufferWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionPrintFWCBufferWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionPrintTimeWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionPrintValWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionReleaseWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionRoboticArmWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionSelectorWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionTitleWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActionUnInitParamWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActPrintMsgWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAActPrintTableWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAChannelSelectorWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACheckBiteMessageWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACheckAudioWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACheckECAMDisplayWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACheckFWCProcedureWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACheckFWCWarningWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACheckRefreshWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACheckValueWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACmdRequirementWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACheckWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAComboBoxDelegatorLogResulTV.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACommentImageWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACommentWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTACompatibilityReport.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAConditionActionWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTADumpListWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEditorFrame.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEditorWindow.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAElementTableView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAElementTreeViewWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationConstValueWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationCrenelsWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationGainValueWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationItemValueWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationPulseWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationRampWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationSawToothWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationSineCrvWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationSinusWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationStepWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationTrapeWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationTriangleWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAEquationWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAExportDocWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfileConstantWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfileExpWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfileIdleWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfileNoiseWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfilePulseWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfileRampSlopeWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfileRampWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfileSawToothWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfileStopTriggerWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFailProfileSineWgt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFSIIImportWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAFilterModel.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAGenericToolWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAGenestaImportWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAGenSearchWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAHeaderFieldEdit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAHeaderWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAImageDisplay.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAImportDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAInitConfigWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAKeyBoardShortcutsWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTALogAttachmentWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTALogFrame.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTALogResultTVRowEditor.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTALogResultTV.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAMainWindow.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAMessageBox.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTANewFileCreationDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAOneClickDynamicDirOption.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAOneClickWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAParamDetails.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAPortingDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAProfileSelectorWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAProgress.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTARenameDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTARestrictedTextEdit.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAResultMdiArea.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASaveEditorWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASearchResults.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASearchReplaceDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASearchWidgetInterface.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASessionManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASetActionWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASVNAuthenticationWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASettingsWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASVNCheckForModificationsWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASVNListAllWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASVNResolveOptionDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTATagVariableDescWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTATitleBasedExecution.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTATreeView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUITheme.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoAddCmd.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoAddRow.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoClearAll.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoClearRow.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoCollapseToTitle.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoCut.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoDeleteRow.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoHideRow.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoIgnoreOnOff.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoMoveRowsDown.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoMoveRowsUp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoPaste.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoShowAllRows.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoToggleReadOnly.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAValidationListWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAWaitForWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAWaitUntilActionWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTASavePrompt.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CsvToProConverter.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CustomizedCommandInterface.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAIgnoreManualAction.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUndoRedoEditMTE.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAElementDependenciesWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAMcduWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAUiUtils.cpp" />
+    <ClCompile Include="GTAPurposeAndConclusionDialog.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GTAControllerLauncherWidget.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PrivateInterfaces\GTAActionPrintFWCBufferWidget.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="GTACustomizedInterface.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAFilterModel.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicInterfaces\GTARestrictedTextEdit.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicInterfaces\GTAUI.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoAddCmd.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoAddRow.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoClearAll.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoClearRow.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoCollapseToTitle.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoCut.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoDeleteRow.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoHideRow.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoIgnoreOnOff.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoMoveRowsDown.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoMoveRowsUp.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoPaste.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoShowAllRows.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoToggleReadOnly.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAWgtRegisterDef.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicInterfaces\CsvToProConverter.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="PublicInterfaces\CustomizedCommandInterface.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionAVCWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionCallProceduresWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionCallWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionCmdCommentWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionFailureConfigValWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionFailureWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionFCTLConfWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionFTAKinematicMultiOutputWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionFunctionReturnWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionGenericFunctionWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionInitParamWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionIRTWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionLineEditor.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionManualWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionMathsWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionMathWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionOneClickLaunchAppWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionOneClickPPCWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionOneClickSetWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionOneClickTitleWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionPrintTimeWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionPrintValWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionReleaseWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionRoboticArmWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionTitleWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActionUnInitParamWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAActPrintTableWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAChannelSelectorWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACheckAudioWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACheckBiteMessageWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACheckECAMDisplayWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACheckFWCProcedureWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACheckFWCWarningWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACheckRefreshWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACheckValueWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACheckWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACmdRequirementWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACommentImageWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACommentWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTACompatibilityReport.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAConditionActionWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTADumpListWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEditorWindow.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAElementTreeViewWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationConstValueWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationCrenelsWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationGainValueWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationItemValueWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationPulseWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationRampWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationSawToothWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationSineCrvWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationSinusWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationStepWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationTrapeWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationTriangleWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAEquationWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAExportDocWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfileConstantWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfileExpWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfileIdleWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfileNoiseWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfilePulseWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfileRampSlopeWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfileRampWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfileSawToothWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfileSineWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFailProfileStopTriggerWgt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAFSIIImportWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAGenericToolWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAGenestaImportWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAGenSearchWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAHeaderFieldEdit.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAHeaderWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAImageDisplay.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAImportDialog.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAInitConfigWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAKeyBoardShortcutsWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTALiveModeParameterSave.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTALivePallete.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTALogAttachmentWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTALogFrame.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTALogResultTVRowEditor.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAMainWindow.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAMessageBox.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTANewFileCreationDialog.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAOneClickDynamicDirOption.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAOneClickWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAParamDetails.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAPortingDialog.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAProfileSelectorWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAProgress.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTARenameDialog.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASaveEditorWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASavePrompt.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASearchReplaceDialog.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASearchResults.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASessionManager.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASetActionWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASettingsWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASVNAuthenticationWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASVNCheckForModificationsWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASVNListAllWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTASVNResolveOptionDialog.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTATagVariableDescWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTATitleBasedExecution.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAUITheme.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAValidationListWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAWaitForWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\uic\ui_GTAWaitUntilActionWidget.h">
+      <Filter>ui</Filter>
+    </ClInclude>
+    <ClInclude Include="PrivateInterfaces\GTAUndoRedoEditMTE.h">
+      <Filter>Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="src\uic\ui_GTAActionSelectorWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="src\GTADraggableTabWidget.cpp">
+      <Filter>src</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionAVCWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionCallProceduresWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionCallWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionCmdCommentWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionFailureConfigValWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionFailureWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionFCTLConfWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionFTAKinematicMultiOutputWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionFunctionReturnWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionGenericFunctionWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionInitParamWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionIRTWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionLineEditor.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionManualWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionMathsWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionMathWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionOneClickLaunchAppWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionOneClickPPCWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionOneClickSetWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionOneClickTitleWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionPrintTimeWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionPrintValWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionReleaseWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionRoboticArmWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionSelectorWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionTitleWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActionUnInitParamWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActPrintMsgWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAActPrintTableWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAChannelSelectorWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACheckAudioWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACheckBiteMessageWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACheckECAMDisplayWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACheckFWCProcedureWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACheckFWCWarningWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACheckRefreshWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACheckValueWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACheckWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACmdRequirementWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACommentImageWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACommentWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTACompatibilityReport.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAConditionActionWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PublicInterfaces\GTADraggableTabWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTADumpListWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PublicInterfaces\GTAEditorWindow.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEditorFrame.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAElementTreeViewWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationConstValueWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationCrenelsWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationGainValueWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationItemValueWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationPulseWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationRampWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationSawToothWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationSineCrvWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationSinusWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationStepWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationTrapeWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationTriangleWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAEquationWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAExportDocWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileConstantWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileExpWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileIdleWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileNoiseWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfilePulseWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileRampSlopeWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileRampWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileSawToothWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileSineWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFailProfileStopTriggerWgt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAFSIIImportWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAGenericToolWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAGenestaImportWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAGenSearchWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAHeaderFieldEdit.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAHeaderWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAImageDisplay.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAImportDialog.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAInitConfigWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAKeyBoardShortcutsWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTALogAttachmentWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTALogFrame.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTALogResultTV.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTALogResultTVRowEditor.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PublicInterfaces\GTAMainWindow.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAMessageBox.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTANewFileCreationDialog.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAOneClickDynamicDirOption.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAOneClickWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAParamDetails.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAPortingDialog.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAProfileSelectorWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PublicInterfaces\GTAProgress.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTARenameDialog.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PublicInterfaces\GTAResultMdiArea.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASaveEditorWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASavePrompt.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASearchReplaceDialog.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASearchResults.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASearchWidgetInterface.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASessionManager.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASetActionWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASettingsWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASVNAuthenticationWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASVNCheckForModificationsWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASVNListAllWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTASVNResolveOptionDialog.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTATagVariableDescWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTATitleBasedExecution.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTATreeView.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAUITheme.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAValidationListWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAWaitForWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAWaitUntilActionWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAComboBoxDelegatorLogResulTV.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAIgnoreManualAction.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAElementDependenciesWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAMcduWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PublicInterfaces\GTAUiUtils.h" />
+    <QtMoc Include="PrivateInterfaces\GTAElementTableView.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="GTAPurposeAndConclusionDialog.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+    <QtMoc Include="PrivateInterfaces\GTAControllerLauncherWidget.h">
+      <Filter>Interfaces</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="resource.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="forms\GTAFailProfileIdleWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAMessageBox.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionAVCWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionCallProceduresWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionCallWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionCmdCommentWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionFailureConfigValWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionFailureWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionFCTLConfWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionFTAKinematicMultiOutputWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionFunctionReturnWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionGenericFunctionWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionInitParamWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionIRTWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionLineEditor.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionManualWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionMathsWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionMathWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionOneClickLaunchAppWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionOneClickPPCWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionOneClickSetWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionOneClickTitleWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionPrintTimeWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionPrintValWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionReleaseWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionRoboticArmWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionSelectorWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionTitleWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActionUnInitParamWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAActPrintTableWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAChannelSelectorWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACheckAudioWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACheckBiteMessageWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACheckECAMDisplayWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACheckFWCProcedureWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACheckFWCWarningWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACheckRefreshWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACheckValueWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACheckWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACmdRequirementWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACommentImageWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACommentWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTACompatibilityReport.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAConditionActionWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTADumpListWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEditorWindow.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAElementTreeViewWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationConstValueWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationCrenelsWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationGainValueWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationItemValueWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationPulseWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationRampWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationSawToothWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationSineCrvWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationSinusWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationStepWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationTrapeWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationTriangleWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAEquationWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAExportDocWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFailProfileConstantWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFailProfileExpWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFailProfileNoiseWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFailProfilePulseWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFailProfileRampSlopeWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFailProfileRampWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFailProfileSawToothWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFailProfileSineWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFailProfileStopTriggerWgt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAFSIIImportWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAGenericToolWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAGenestaImportWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAGenSearchWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAHeaderFieldEdit.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAHeaderWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAImageDisplay.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAImportDialog.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAInitConfigWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAKeyBoardShortcutsWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTALogAttachmentWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTALogFrame.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTALogResultTVRowEditor.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAMainWindow.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTANewFileCreationDialog.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAOneClickDynamicDirOption.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAOneClickWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAParamDetails.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAPortingDialog.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAProfileSelectorWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAProgress.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTARenameDialog.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASaveEditorWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASavePrompt.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASearchReplaceDialog.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASearchResults.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASessionManager.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASetActionWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASettingsWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASVNAuthenticationWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASVNCheckForModificationsWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASVNListAllWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTASVNResolveOptionDialog.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTATagVariableDescWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTATitleBasedExecution.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAUITheme.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAValidationListWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAWaitForWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAWaitUntilActionWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAIgnoreManualAction.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAElementDependenciesWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAMcduWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="GTAPurposeAndConclusionDialog.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+    <QtUic Include="forms\GTAControllerLauncherWidget.ui">
+      <Filter>ui</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="forms\img\abort.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\About.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\accept_svn.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ACTION.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Add.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ADD_ROW.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_fun.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_obj.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_pro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\AddedIcon_seq.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\addToFav.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Analyze.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Attachment.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Backspace.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\branch_closed.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\branch_closed-on.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\branch_open.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\branch_open-on.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Breakpoint.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\BreakpointArrow.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\CANCEL.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\cancel.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\cancel_svn.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\CHECK.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\checkbox_checked.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\checkbox_checked.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\checkbox_checked.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\checkbox_checked_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\checkbox_checked_focus.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\checkbox_checked_pressed.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\checkbox_indeterminate.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\checkbox_indeterminate_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\checkbox_indeterminate_focus.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\checkbox_unchecked.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\checkbox_unchecked.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\checkbox_unchecked.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\checkbox_unchecked_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\checkbox_unchecked_focus.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\checkbox_unchecked_pressed.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\checkbox_unchecked_pressed.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\CLEAR.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\CLEAR_ALL.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\clipboard.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\close.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\close-hover.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\close-pressed.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Collapseall.gif">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\COMMENT.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_fun.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_obj.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_pro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ConflictIcon_seq.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Connection.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\continueCmd.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ConvertCsvToPro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\COPY_ROW.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Critical.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\CurrentBreakppoint.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\CUT_ROW.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\DebugIcon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\DELETE.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\DELETE_ROW.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_fun.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_obj.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_pro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\DeletedIcon_seq.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\DeselectAll.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\dialog_warning.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\down_arrow.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\down_arrow_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\DownArrow_16_16.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\EDIT.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\edit_flat.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\EditFile.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Editing_Collapse_icon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Editing_Expand_icon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\EQUATION.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\EQUATION_CRENELS.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\EQUATION_TRAPEZE.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Expandall.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\export.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ExportLTRA.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ExportXml.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ExternalPlugin.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\failure.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\force.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\force_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\force_hover.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\force_pressed.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\forceDBUpdate.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\FunctionIconFile.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\GreenSphere32x32.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\GTAAppIcon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Header.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\HeaderIconFile.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Help1.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\hide.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\Hmovetoolbar.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\Hsepartoolbar.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_fun.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_obj.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_pro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\IgnoredIcon_seq.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ignoreOff.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ignoreOn.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\IgnoreWarning.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Indentation.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Information.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\INIT_CONF.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Launch.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\LaunchSequence.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\left_arrow.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\left_arrow_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\LeftArrow_16_16.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Load.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_fun.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_obj.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_pro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\LockedIcon_seq.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\LockIcon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\logicon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\minus.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_fun.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_obj.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_pro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ModifiedIcon_seq.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\NEW.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\New_Tab.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\NewWindow.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\next_page.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\nextCmd.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_fun.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_obj.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_pro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\NormalIcon_seq.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ObjectIconFile.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\OK.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\OK_FlatIcon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\OpenFile.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\OpenFolder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Paramlog.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\PASTE_ROW.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\plugin.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\plus.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\PREVIEW.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\previous_page.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\previousCmd.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ProcedureIconFile.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\ProgressBar.gif">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Pulse.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Qt_icon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\radio_checked.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\radio_checked_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\radio_checked_focus.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\radio_unchecked.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\radio_unchecked_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\radio_unchecked_focus.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\radio-off-button.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\radio-on-button.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Ramp.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\readOnly.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_fun.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_obj.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_pro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\ReadOnlyIcon_seq.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\RedSphere_32x32.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Refresh.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Relation.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Remove.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\removeFromFav.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Rename.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Requirements.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\RESET.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\resolveConflict.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\right_arrow.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\right_arrow_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SAVE.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Save_FlatIcon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SaveAll.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\sawtooth.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SEARCH.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SEARCH_REPLACE.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SelectAll.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SequenceFileIcon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\signal.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\sineFormula.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\sinus.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\sizegrip.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SplashScreen.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\step.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\step-intoCmd.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\step-outCmd.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\stopCmd.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\StopSCXML.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\stylesheet-branch-end.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\stylesheet-branch-more.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\stylesheet-vline.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\subversion-logo.jpg">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svn_check_for_Modification.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SVN_Clean.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svn_commit.ico">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svn_Delete.ico">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SVN_lock1.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SVN_Lock2.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svn_Unlock.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SVN_unlock2.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svn_update.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SVNCommitFolder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\SVNUpdateFolder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Switch.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\switch_off.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\switch_on.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\table2.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\TemplateIconFile.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\textbold.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\textcenter.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\textitalic.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\textjustify.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\textleft.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\textright.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\textunder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\TitleBasedExecution.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\transparent.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\triangle.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\undock.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\unhide.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\UnlockIcon.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_folder.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_fun.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_obj.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_pro.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\svnIconsGTAFlat\UnversionedIcon_seq.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\up_arrow.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\up_arrow_disabled.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\UpArrow_16_16.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\UsedBy.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Validate.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\Vmovetoolbar.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\qdarkstyle\Vsepartoolbar.png">
+      <Filter>Resources</Filter>
+    </None>
+    <None Include="forms\img\Warning.png">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{549517f9-993e-4f6c-b091-eb81e5e9f522}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{2f93e627-9a20-4017-9bab-c815a2d4f087}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Interfaces">
+      <UniqueIdentifier>{ea7d1751-6d9a-4d75-b338-6e5d11700033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{67e78b57-16cf-438c-a873-9690382192c8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="forms\img\SVNAddFolder.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\ExportToCsv.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\git.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\status_added.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\status_conflicted.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\status_deleted.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\status_ignored.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\status_locked.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\status_modified.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\status_nonversioned.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\status_normal.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\git\status_readonly.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\GTAAppIcon_black.png">
+      <Filter>Resources</Filter>
+    </Image>
+    <Image Include="forms\img\AddFileForCommit.png">
+      <Filter>Resources</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="GTAUI.rc" />
+  </ItemGroup>
+</Project>

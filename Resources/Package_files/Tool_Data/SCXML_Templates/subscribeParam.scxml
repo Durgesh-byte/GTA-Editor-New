@@ -1,0 +1,12 @@
+<invoke id="invokeID" type="xml-rpc">
+	<content>
+		<xmlrpc tool_id="CGIB" tool_type="GFIB">
+			<function name ="SubscribeParamList" >											
+				<argument name="ParameterList" type="struct" value="varTemp"/>
+				<returnvalue name="returnValue" />						
+			</function>
+		</xmlrpc>
+	</content>
+	<finalize>
+	</finalize>
+</invoke>	

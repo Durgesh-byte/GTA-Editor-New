@@ -1,0 +1,18 @@
+<state id="@StateId">
+	<invoke id="Pinprog" type="xml-rpc">
+		<content>
+			<xmlrpc tool_id="LAUNCHER" tool_type="launcher">
+				<function name ="launch_application" >											
+					<argument name="appname" value="'Pinprog'" type="string" />
+					<argument name="args_list" value="['@PPCPath']" type="array" />
+					<returnvalue name="@SateId_PPCReturn" />
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign location="@SateId_PPCReturn" expr="_event.data.@SateId_PPCReturn" />
+			<log label="Info" expr="@SateId_PPCReturn"/>
+		</finalize>
+	</invoke>
+	<transition target="@Target_Pass" event="done.invoke.Console" cond = "@SateId_PPCReturn =='OK'" status="Success"/>
+</state>	

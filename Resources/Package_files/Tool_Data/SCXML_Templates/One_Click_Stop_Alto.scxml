@@ -1,0 +1,22 @@
+<state id="oneClick_s0">
+	<onentry>
+	</onentry>
+	<invoke type="xml-rpc" id="oneClick_i0">
+		<content>
+			<xmlrpc tool_id="FIB_ATM" tool_type="Alto">
+				<function name="StopEnvironment">
+					<argument value="ATM" type="Configuration" name="ConfigurationName"/>
+					<returnvalue name="Result"/>
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.Result" location="ATM.LaunchStatus"/>
+		</finalize>
+	</invoke>
+	<transition status="success" target="InitEnv_Final" cond="ATM.LaunchStatus== 'OK'" event="done.invoke.oneClick_i0">
+	</transition>
+	<onexit>
+	<assign expr="[]" location="ATM"/>
+	</onexit>
+</state>

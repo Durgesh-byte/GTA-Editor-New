@@ -1,0 +1,22 @@
+<state id="oneClick_s0">
+	<onentry>
+	</onentry>
+	<invoke type="xml-rpc" id="oneClick_i0">
+		<content>
+			<xmlrpc tool_id="proto_evica" tool_type="BIS_G">
+				<function name ="launch_application" >											
+					<argument name="appname" value="'pinprog'" type="string" />
+					<argument name="args_list" value="[]" type="array" />
+					<returnvalue name="SubscribeResult" />
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.Result" location="ATM.LaunchStatus"/>
+		</finalize>
+	</invoke>
+	<transition status="success" target="InitEnv_Final" cond="ATM.LaunchStatus== 'OK'" event="done.invoke.oneClick_i0">
+	</transition>
+	<onexit>
+	</onexit>
+</state>

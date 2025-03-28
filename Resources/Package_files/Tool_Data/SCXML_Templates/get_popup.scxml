@@ -1,0 +1,12 @@
+	<invoke id="" type="xml-rpc">
+		<content>
+			<xmlrpc tool_id="IC_0" tool_type = "IC">
+				<function name="displayMessage">
+					<argument name="message" value="" type="string"/>
+					<argument name="wait_ack" value="" type="boolean"/>						
+				</function>  
+			</xmlrpc>
+		</content>
+		<finalize>				
+		</finalize>
+	</invoke>	

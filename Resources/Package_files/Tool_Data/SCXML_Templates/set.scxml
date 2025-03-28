@@ -1,0 +1,22 @@
+<state id="">
+	<onentry>
+		<assign location="MultiSetList[0]" expr="{ Application: 'ApplicationName1', Bus:'VLName5', Signal:'SignalName', Value:'1', Status='NO'}" />
+	</onentry>
+	<invoke id="invoke2" type="xml-rpc">
+		<content>
+			<xmlrpc tool_id="CGIB" tool_type="GFIB">
+				<function name ="SetParam" >
+					<argument name="ParameterList" value="MultiSetList" type="array"/>
+					<returnvalue name="SetStatus" />
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign location="SetStatus" expr="_event.data.SetStatus" />
+		</finalize>
+	</invoke>
+	<transition target=""/>
+	<onexit>
+		<assign location="MultiSetList" expr="[]" />
+	</onexit>
+</state>

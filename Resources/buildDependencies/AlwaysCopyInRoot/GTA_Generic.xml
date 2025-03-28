@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GTA version="1.00.000">
+	<OBJECT_CMD_SET >
+		<ACTION NAME="set">
+		</ACTION>
+		<ACTION NAME="print">
+			<COMPLEMENT NAME="message"/>
+			<COMPLEMENT NAME="parameter value"/>
+			<COMPLEMENT NAME="table"/>
+		</ACTION>
+		<ACTION NAME="wait">
+			<COMPLEMENT NAME="for"/>
+			<COMPLEMENT NAME="until"/>
+		</ACTION>
+		<ACTION NAME="title"/>
+		<CHECK NAME="Value" />
+		<EQUATION NAME="Constants"/>
+		<EQUATION NAME="Gain"/>
+		<EQUATION NAME="Ramp"/>
+		<EQUATION NAME="Trapeze"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Sine Curve"/>
+		<ACTION NAME="condition">
+			<COMPLEMENT NAME="if"/>
+			<COMPLEMENT NAME="else"/>
+			<COMPLEMENT NAME="while"/>
+			<COMPLEMENT NAME="do while"/>
+			<COMPLEMENT NAME="for each"/>
+		</ACTION>
+	</OBJECT_CMD_SET>
+	<FUNCTION_CMD_SET >
+		<ACTION NAME="set">
+		</ACTION>
+		<ACTION NAME="print">
+			<COMPLEMENT NAME="message"/>
+			<COMPLEMENT NAME="parameter value"/>
+			<COMPLEMENT NAME="time"/>
+			<COMPLEMENT NAME="table"/>
+		</ACTION>
+		<ACTION NAME="condition">
+			<COMPLEMENT NAME="if"/>
+			<COMPLEMENT NAME="else"/>
+			<COMPLEMENT NAME="while"/>
+			<COMPLEMENT NAME="do while"/>
+			<COMPLEMENT NAME="for each"/>
+		</ACTION>
+		<ACTION NAME="call">
+			<COMPLEMENT NAME="object"/>
+			<COMPLEMENT NAME="function"/>
+		</ACTION>
+		<ACTION NAME="wait">
+			<COMPLEMENT NAME="for"/>
+			<COMPLEMENT NAME="until"/>
+		</ACTION>
+		<ACTION NAME="Maths">
+		</ACTION>		
+		<ACTION NAME="title"/>		
+		<CHECK NAME="Value" />
+		<EQUATION NAME="Constants"/>
+		<EQUATION NAME="Gain"/>
+		<EQUATION NAME="Ramp"/>
+		<EQUATION NAME="Trapeze"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Sine Curve"/>
+	</FUNCTION_CMD_SET>
+	<PROCEDURE_CMD_SET >
+		<ACTION NAME="set">
+		</ACTION>
+		<ACTION NAME="print">
+			<COMPLEMENT NAME="message"/>
+			<COMPLEMENT NAME="parameter value"/>
+			<COMPLEMENT NAME="time"/>
+			<COMPLEMENT NAME="table"/>
+		</ACTION>
+		<ACTION NAME="condition">
+			<COMPLEMENT NAME="if"/>
+			<COMPLEMENT NAME="else"/>
+			<COMPLEMENT NAME="while"/>
+			<COMPLEMENT NAME="do while"/>
+			<COMPLEMENT NAME="for each"/>
+		</ACTION>
+		<ACTION NAME="call">
+			<COMPLEMENT NAME="object"/>
+			<COMPLEMENT NAME="function"/>
+			<COMPLEMENT NAME="monitor"/>
+		</ACTION>
+		<ACTION NAME="wait">
+			<COMPLEMENT NAME="for"/>
+			<COMPLEMENT NAME="until"/>
+		</ACTION>
+		<ACTION NAME="Maths">
+		</ACTION>
+		<ACTION NAME="title"/>
+		<CHECK NAME="Value" />
+		<EQUATION NAME="Constants"/>
+		<EQUATION NAME="Gain"/>
+		<EQUATION NAME="Ramp"/>
+		<EQUATION NAME="Trapeze"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Sine Curve"/>
+	</PROCEDURE_CMD_SET>
+	<SEQUENCE_CMD_SET >
+		<ACTION NAME="set">
+		</ACTION>
+		<ACTION NAME="print">
+			<COMPLEMENT NAME="message"/>
+			<COMPLEMENT NAME="parameter value"/>
+			<COMPLEMENT NAME="time"/>
+			<COMPLEMENT NAME="table"/>
+		</ACTION>
+		<ACTION NAME="condition">
+			<COMPLEMENT NAME="if"/>
+			<COMPLEMENT NAME="else"/>
+			<COMPLEMENT NAME="while"/>
+			<COMPLEMENT NAME="do while"/>
+			<COMPLEMENT NAME="for each"/>
+		</ACTION>
+		<ACTION NAME="call">
+			<COMPLEMENT NAME="object"/>
+			<COMPLEMENT NAME="function"/>
+			<COMPLEMENT NAME="procedure"/>
+		</ACTION>
+		<ACTION NAME="wait">
+			<COMPLEMENT NAME="for"/>
+			<COMPLEMENT NAME="until"/>
+		</ACTION>
+		<ACTION NAME="title"/>
+		<ACTION NAME="Maths"/>
+		<ACTION NAME="Parallel Call"/>
+		<CHECK NAME="Value" />
+		<EQUATION NAME="Constants"/>
+		<EQUATION NAME="Gain"/>
+		<EQUATION NAME="Ramp"/>
+		<EQUATION NAME="Trapeze"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Sine Curve"/>
+	</SEQUENCE_CMD_SET>
+</GTA>

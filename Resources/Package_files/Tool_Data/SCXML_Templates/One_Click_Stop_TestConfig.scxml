@@ -1,0 +1,20 @@
+<state id="oneClick_s0">
+	<onentry>
+	</onentry>
+	<invoke type="xml-rpc" id="oneClick_i0">
+		<content>
+			<xmlrpc tool_id="ATM_SA" tool_type="BIS_G">
+				<function name="StopEnvironment">
+					<returnvalue name="Result"/>
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.Result" location="generic_stop.LaunchStatus"/>
+		</finalize>
+	</invoke>
+	<transition status="success" target="InitEnv_Final" cond="generic_stop.LaunchStatus== 'OK'" event="done.invoke.oneClick_i0">
+	</transition>
+	<onexit>
+	</onexit>
+</state>

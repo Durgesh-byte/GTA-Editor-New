@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GTA version="1.00.000">
+	<OBJECT_CMD_SET >
+		<ACTION NAME="set">
+		</ACTION>
+		<ACTION NAME="print">
+			<COMPLEMENT NAME="message"/>
+			<COMPLEMENT NAME="parameter value"/>
+			<!-- <COMPLEMENT NAME="FWC Buffer"/>
+			<COMPLEMENT NAME="BITE Buffer"/> -->
+		</ACTION>
+		<!--<ACTION NAME="print table"/> -->
+		<ACTION NAME="manual action"/>
+		<!--	<ACTION NAME="Return Function"/> -->
+		<ACTION NAME="release">
+			<COMPLEMENT NAME="VMAC parameter"/>
+		</ACTION>
+		<ACTION NAME="wait">
+			<COMPLEMENT NAME="for"/>
+			<COMPLEMENT NAME="until"/>
+		</ACTION>
+		<ACTION NAME="title"/>
+		<!-- <ACTION NAME="Generic Command"/> -->
+		<ACTION NAME="Init PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>
+		<ACTION NAME="Release PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>		
+		<CHECK NAME="Value" />
+		<CHECK NAME="FWC Warning" />
+		<!-- <CHECK NAME="FWC Procedure" /> -->
+		<!-- <CHECK NAME="FWC Display" /> -->
+		<CHECK NAME="BITE Message" />
+		<!-- <CHECK NAME="ECAM Display" /> -->
+		<!-- <CHECK NAME="Audio Alarm" >
+			<SUBCHECK NAME="sound">
+				<OPTION>Single chime;Triple click</OPTION>
+			</SUBCHECK>
+			<SUBCHECK NAME="synthetic voice">
+				<OPTION>Windshear;Auto-call-out</OPTION>
+			</SUBCHECK>
+		</CHECK> -->
+		<!-- <CHECK NAME="Visual Display" /> -->
+		<!-- <CHECK NAME="Manual Check" /> -->
+		<!-- <CHECK NAME="Refresh" /> -->
+
+		<EQUATION NAME="Constants"/>
+		<EQUATION NAME="Gain"/>
+		<EQUATION NAME="Ramp"/>
+		<EQUATION NAME="Trapeze"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Sine Curve"/>
+		<ACTION NAME="condition">
+			<COMPLEMENT NAME="if"/>
+			<COMPLEMENT NAME="else"/>
+			<COMPLEMENT NAME="while"/>
+			<COMPLEMENT NAME="do while"/>
+			<COMPLEMENT NAME="for each"/>
+			<!--<COMPLEMENT NAME="for"/>-->
+		</ACTION>
+	</OBJECT_CMD_SET>
+	<FUNCTION_CMD_SET >
+		<ACTION NAME="set">
+		</ACTION>
+		<ACTION NAME="print">
+			<COMPLEMENT NAME="message"/>
+			<COMPLEMENT NAME="parameter value"/>
+			<COMPLEMENT NAME="time"/>
+			<COMPLEMENT NAME="table"/>
+			<!-- <COMPLEMENT NAME="FWC Buffer"/>
+			<COMPLEMENT NAME="BITE Buffer"/> -->
+		</ACTION>
+		<ACTION NAME="Init PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>
+		<ACTION NAME="Release PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>			
+		<!--<ACTION NAME="print table"/>-->
+		<ACTION NAME="condition">
+			<COMPLEMENT NAME="if"/>
+			<COMPLEMENT NAME="else"/>
+			<COMPLEMENT NAME="while"/>
+			<COMPLEMENT NAME="do while"/>
+			<COMPLEMENT NAME="for each"/>
+			<!--<COMPLEMENT NAME="for"/>-->
+		</ACTION>
+		<ACTION NAME="manual action"/>
+		<ACTION NAME="External Tool"/>
+		<!--	<ACTION NAME="Return Function"/> -->
+		<ACTION NAME="call">
+			<COMPLEMENT NAME="object"/>
+			<COMPLEMENT NAME="function"/>
+		</ACTION>
+		<ACTION NAME="release">
+			<COMPLEMENT NAME="VMAC parameter"/>
+		</ACTION>
+		<ACTION NAME="wait">
+			<COMPLEMENT NAME="for"/>
+			<COMPLEMENT NAME="until"/>
+		</ACTION>
+		<!--	<ACTION NAME="IRT Object"/> -->
+		<!-- <ACTION NAME="Robotic arm"/> -->
+		<ACTION NAME="Maths">
+
+		</ACTION>		
+		<ACTION NAME="title"/>		
+		<!-- <ACTION NAME="Generic Command"/> -->
+		<!-- <ACTION NAME="print table"/>		--> 
+
+
+		<CHECK NAME="Value" />
+		<CHECK NAME="FWC Warning" />
+		<!-- <CHECK NAME="FWC Procedure" /> -->
+		<!-- <CHECK NAME="FWC Display" /> -->
+		<CHECK NAME="BITE Message" />
+		<!-- <CHECK NAME="ECAM Display" /> -->
+		<!-- <CHECK NAME="Audio Alarm" >
+			<SUBCHECK NAME="sound">
+				<OPTION>Single chime;Triple click</OPTION>
+			</SUBCHECK>
+			<SUBCHECK NAME="synthetic voice">
+				<OPTION>Windshear;Auto-call-out</OPTION>
+			</SUBCHECK>
+		</CHECK> -->
+		<!-- <CHECK NAME="Visual Display" /> -->
+		<!-- <CHECK NAME="Manual Check" /> -->
+		<!-- <CHECK NAME="Refresh" /> -->
+
+
+		<EQUATION NAME="Constants"/>
+		<EQUATION NAME="Gain"/>
+		<EQUATION NAME="Ramp"/>
+		<EQUATION NAME="Trapeze"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Sine Curve"/>
+	</FUNCTION_CMD_SET>
+	<PROCEDURE_CMD_SET >
+		<ACTION NAME="set">
+		</ACTION>
+		<ACTION NAME="print">
+			<COMPLEMENT NAME="message"/>
+			<COMPLEMENT NAME="parameter value"/>
+			<COMPLEMENT NAME="time"/>
+			<COMPLEMENT NAME="table"/>
+			<!--<COMPLEMENT NAME="FWC Buffer"/>
+			<COMPLEMENT NAME="BITE Buffer"/>-->
+		</ACTION>
+		<ACTION NAME="condition">
+			<COMPLEMENT NAME="if"/>
+			<COMPLEMENT NAME="else"/>
+			<COMPLEMENT NAME="while"/>
+			<COMPLEMENT NAME="do while"/>
+			<COMPLEMENT NAME="for each"/>
+			<!--<COMPLEMENT NAME="for"/>-->
+		</ACTION>
+		<ACTION NAME="Init PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>
+		<ACTION NAME="Release PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>			
+		<!--<ACTION NAME="print table"/>-->
+		<ACTION NAME="manual action"/>
+		<!--	<ACTION NAME="Return Function"/> -->
+		<ACTION NAME="call">
+			<COMPLEMENT NAME="object"/>
+			<COMPLEMENT NAME="function"/>
+			<COMPLEMENT NAME="parallel"/>
+		</ACTION>
+		<ACTION NAME="release">
+			<COMPLEMENT NAME="VMAC parameter"/>
+		</ACTION>
+		<!-- <ACTION NAME="fctl">
+			<COMPLEMENT NAME="kinematic multi output"/>
+		</ACTION> -->		
+		<ACTION NAME="wait">
+			<COMPLEMENT NAME="for"/>
+			<COMPLEMENT NAME="until"/>
+		</ACTION>
+		<!--	<ACTION NAME="IRT Object"/>  -->
+		<ACTION NAME="Maths">
+
+		</ACTION>
+		<!-- <ACTION NAME="Robotic arm"/> -->
+		<ACTION NAME="title"/>
+		<!-- <ACTION NAME="Generic Command"/> -->
+		<ACTION NAME="External Tool"/>
+		<CHECK NAME="Value" />
+		<CHECK NAME="FWC Warning" />
+		<!-- <CHECK NAME="FWC Procedure" /> -->
+		<!-- <CHECK NAME="FWC Display" /> -->
+		<CHECK NAME="BITE Message" />
+		<!-- <CHECK NAME="ECAM Display" /> -->
+		<!-- <CHECK NAME="Audio Alarm" >
+			<SUBCHECK NAME="sound">
+				<OPTION>Single chime;Triple click</OPTION>
+			</SUBCHECK>
+			<SUBCHECK NAME="synthetic voice">
+				<OPTION>Windshear;Auto-call-out</OPTION>
+			</SUBCHECK>
+		</CHECK> -->
+		<!-- <CHECK NAME="Visual Display" /> -->
+		<!-- <CHECK NAME="Manual Check" /> -->
+		<!-- <CHECK NAME="Refresh" /> -->
+
+
+		<EQUATION NAME="Constants"/>
+		<EQUATION NAME="Gain"/>
+		<EQUATION NAME="Ramp"/>
+		<EQUATION NAME="Trapeze"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Sine Curve"/>
+	</PROCEDURE_CMD_SET>
+	<SEQUENCE_CMD_SET >
+		<ACTION NAME="set">
+		</ACTION>
+		<ACTION NAME="print">
+			<COMPLEMENT NAME="message"/>
+			<COMPLEMENT NAME="parameter value"/>
+			<!--<COMPLEMENT NAME="FWC Buffer"/>
+			<COMPLEMENT NAME="BITE Buffer"/>-->
+			<COMPLEMENT NAME="time"/>
+			<COMPLEMENT NAME="table"/>
+		</ACTION>
+		<!--<ACTION NAME="print table"/>-->
+		<ACTION NAME="condition">
+			<COMPLEMENT NAME="if"/>
+			<COMPLEMENT NAME="else"/>
+			<COMPLEMENT NAME="while"/>
+			<COMPLEMENT NAME="do while"/>
+			<COMPLEMENT NAME="for each"/>
+			<!--<COMPLEMENT NAME="for"/>-->
+		</ACTION>
+		<ACTION NAME="Init PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>
+		<ACTION NAME="Release PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>			
+		<ACTION NAME="manual action"/>
+		<!--	<ACTION NAME="Return Function"/> -->
+		<ACTION NAME="External Tool"/>
+		<ACTION NAME="call">
+			<COMPLEMENT NAME="object"/>
+			<COMPLEMENT NAME="function"/>
+			<COMPLEMENT NAME="procedure"/>
+			<COMPLEMENT NAME="parallel"/>
+		</ACTION>
+		<!-- <ACTION NAME="One Click">	 -->
+			<COMPLEMENT NAME="Title"/>
+			<COMPLEMENT NAME="Setup PinProg"/>
+			<COMPLEMENT NAME="Application"/>
+			<COMPLEMENT NAME="Environment"/>
+			<!--<COMPLEMENT NAME="Set"/>		TO BE ENABLED IF REQUIRED-->
+<!-- 		</ACTION>
+		<ACTION NAME="fctl">
+			<COMPLEMENT NAME="kinematic multi output"/>
+		</ACTION>		 -->
+		<ACTION NAME="release">
+			<COMPLEMENT NAME="VMAC parameter"/>
+		</ACTION>
+		<ACTION NAME="wait">
+			<COMPLEMENT NAME="for"/>
+			<COMPLEMENT NAME="until"/>
+		</ACTION>
+		<ACTION NAME="title"/>
+		<!-- <ACTION NAME="failure"/> -->
+		<ACTION NAME="Maths"/>
+		<!--	<ACTION NAME="AVC Data"/>		 -->
+		<!-- <ACTION NAME="Generic Command"/> -->
+		<ACTION NAME="Parallel Call"/>
+
+		<CHECK NAME="Value" />
+		<CHECK NAME="FWC Warning" />
+		<!-- <CHECK NAME="FWC Procedure" /> -->
+		<!-- <CHECK NAME="FWC Display" /> -->
+		<CHECK NAME="BITE Message" />
+		<!-- <CHECK NAME="ECAM Display" /> -->
+		<!-- <CHECK NAME="Audio Alarm" >
+			<SUBCHECK NAME="sound">
+				<OPTION>Single chime;Triple click</OPTION>
+			</SUBCHECK>
+			<SUBCHECK NAME="synthetic voice">
+				<OPTION>Windshear;Auto-call-out</OPTION>
+			</SUBCHECK>
+		</CHECK> -->
+		<!-- <CHECK NAME="Visual Display" /> -->
+		<!-- <CHECK NAME="Manual Check" /> -->
+		<!-- <CHECK NAME="Refresh" /> -->
+
+
+		<EQUATION NAME="Constants"/>
+		<EQUATION NAME="Gain"/>
+		<EQUATION NAME="Ramp"/>
+		<EQUATION NAME="Trapeze"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Sine Curve"/>
+	</SEQUENCE_CMD_SET>
+	<TEMPLATE_CMD_SET >
+		<ACTION NAME="set">
+
+		</ACTION>
+		<ACTION NAME="print">
+			<COMPLEMENT NAME="message"/>
+			<COMPLEMENT NAME="parameter value"/>
+			<!--<COMPLEMENT NAME="FWC Buffer"/>
+			<COMPLEMENT NAME="BITE Buffer"/>-->
+			<COMPLEMENT NAME="time"/>
+			<COMPLEMENT NAME="table"/>
+		</ACTION>
+		<ACTION NAME="condition">
+			<COMPLEMENT NAME="if"/>
+			<COMPLEMENT NAME="else"/>
+			<COMPLEMENT NAME="while"/>
+			<COMPLEMENT NAME="do while"/>
+			<COMPLEMENT NAME="for each"/>
+			<!--<COMPLEMENT NAME="for"/>-->
+		</ACTION>
+		<ACTION NAME="Init PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>
+		<ACTION NAME="Init PIR List">
+			<COMPLEMENT NAME="parameter"/>
+		</ACTION>		
+		<ACTION NAME="manual action">
+		</ACTION>
+		<ACTION NAME="object">
+			<COMPLEMENT NAME="call object"/>
+		</ACTION>
+		<ACTION NAME="release">
+			<COMPLEMENT NAME="VMAC parameter"/>
+		</ACTION>
+
+		<ACTION NAME="wait">
+			<COMPLEMENT NAME="for"/>
+			<COMPLEMENT NAME="until"/>
+		</ACTION>
+
+		<CHECK NAME="Value" />
+		<CHECK NAME="FWC Warning" />
+		<!-- <CHECK NAME="FWC Procedure" /> -->
+		<!-- <CHECK NAME="FWC Display" /> -->
+		<CHECK NAME="BITE Message" />
+		<!-- <CHECK NAME="ECAM Display" /> -->
+		<!-- <CHECK NAME="Audio Alarm" >
+			<SUBCHECK NAME="sound">
+				<OPTION>Single chime;Triple click</OPTION>
+			</SUBCHECK>
+			<SUBCHECK NAME="synthetic voice">
+				<OPTION>Windshear;Auto-call-out</OPTION>
+			</SUBCHECK>
+		</CHECK> -->
+		<!-- <CHECK NAME="Visual Display" /> -->
+		<!-- <CHECK NAME="Manual Check" /> -->
+		<!-- <CHECK NAME="Refresh" /> -->
+
+
+		<EQUATION NAME="Constants"/>
+		<EQUATION NAME="Gain"/>
+		<EQUATION NAME="Ramp"/>
+		<EQUATION NAME="Trapeze"/>
+		<EQUATION NAME="Crenels"/>
+		<EQUATION NAME="Sine Curve"/>
+	</TEMPLATE_CMD_SET>
+</GTA>

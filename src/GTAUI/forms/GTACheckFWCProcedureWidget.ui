@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTACheckFWCProcedureWidget</class>
+ <widget class="QWidget" name="GTACheckFWCProcedureWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>479</width>
+    <height>355</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Display Procedure</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_12">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLineEdit" name="Proc1LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search1PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLineEdit" name="Proc2LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search2PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <widget class="QLineEdit" name="Proc3LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search3PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLineEdit" name="Proc4LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search4PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QLineEdit" name="Proc5LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search5PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLineEdit" name="Proc6LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search6PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLineEdit" name="Proc7LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search7PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_8">
+         <item>
+          <widget class="QLineEdit" name="Proc8LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search8PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <item>
+          <widget class="QLineEdit" name="Proc9LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search9PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QLineEdit" name="Proc10LE"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Search10PB">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="../resource.qrc">
+             <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Is</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="OperationCB">
+           <item>
+            <property name="text">
+             <string/>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>NOT</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>348</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

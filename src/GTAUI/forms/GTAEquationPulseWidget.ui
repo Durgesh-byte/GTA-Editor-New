@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTAEquationPulseWidget</class>
+ <widget class="QWidget" name="GTAEquationPulseWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>840</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>840</width>
+    <height>550</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>840</width>
+    <height>550</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>170</y>
+     <width>815</width>
+     <height>368</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>815</width>
+     <height>368</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>815</width>
+     <height>368</height>
+    </size>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../resource.qrc">:/images/forms/img/Square_RisingEdge.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QFrame" name="gridFrame">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>12</y>
+     <width>815</width>
+     <height>150</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>815</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>815</width>
+     <height>150</height>
+    </size>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::Box</enum>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_2">
+    <item row="0" column="3">
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
+       <widget class="QLabel" name="directionLB">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Direction:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="0" column="0">
+         <widget class="QComboBox" name="directionCB">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+			 <property name="sizePolicy">
+				 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+					 <horstretch>0</horstretch>
+					 <verstretch>0</verstretch>
+				 </sizepolicy>
+			 </property>
+			 <property name="minimumSize">
+				 <size>
+					 <width>150</width>
+					 <height>30</height>
+				 </size>
+			 </property>
+			 <property name="maximumSize">
+				 <size>
+					 <width>150</width>
+					 <height>30</height>
+				 </size>
+			 </property>
+          <item>
+           <property name="text">
+            <string>Rising Edge</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Falling Edge</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QToolButton" name="SearchPB5">
+			 <property name="text">
+				 <string>...</string>
+			 </property>
+			 <property name="icon">
+				 <iconset resource="../resource.qrc">
+					 <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png
+				 </iconset>
+			 </property>
+			 <property name="iconSize">
+				 <size>
+					 <width>15</width>
+					 <height>15</height>
+				 </size>
+			 </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="2">
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QLabel" name="dutyCycleLB">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Duty Cycle (%):</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QLineEdit" name="dutyCycleLE"/>
+        </item>
+        <item row="0" column="1">
+         <widget class="QToolButton" name="SearchPB4">
+          <property name="text">
+           <string>...</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resource.qrc">
+            <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>15</width>
+            <height>15</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="2">
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QLabel" name="minValueLB">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Min Value:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="minValueLE"/>
+        </item>
+        <item row="1" column="1">
+         <widget class="QToolButton" name="SearchPB3">
+          <property name="text">
+           <string>...</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resource.qrc">
+            <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>15</width>
+            <height>15</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="0" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="periodLB">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Period (s):</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="0" column="0">
+         <widget class="QLineEdit" name="periodLE"/>
+        </item>
+        <item row="0" column="1">
+         <widget class="QToolButton" name="SearchPB">
+          <property name="text">
+           <string>...</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resource.qrc">
+            <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>15</width>
+            <height>15</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item row="1" column="0">
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="maxValLB">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Max Value:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QLineEdit" name="maxValueLE"/>
+        </item>
+        <item row="0" column="1">
+         <widget class="QToolButton" name="SearchPB2">
+          <property name="text">
+           <string>...</string>
+          </property>
+          <property name="icon">
+           <iconset resource="../resource.qrc">
+            <normaloff>:/images/forms/img/SEARCH.png</normaloff>:/images/forms/img/SEARCH.png</iconset>
+          </property>
+          <property name="iconSize">
+           <size>
+            <width>15</width>
+            <height>15</height>
+           </size>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

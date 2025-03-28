@@ -1,0 +1,734 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C187B28E-EB8D-3958-8B4E-1EC29D27E580}</ProjectGuid>
+    <RootNamespace>GTACommands</RootNamespace>
+    <Keyword>QtVS_v304</Keyword>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+    <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
+    <TargetPlatformVersion Condition="'$(TargetPlatformVersion)' == ''">$(LatestTargetPlatformVersion)</TargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <PlatformToolSet>v143</PlatformToolSet>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PrimaryOutput>GTACommands</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolSet>v143</PlatformToolSet>
+    <OutputDirectory>$(SolutionDir)\build\$(Configuration)\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PrimaryOutput>GTACommands</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
+    <TargetName>GTACommands</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
+    <TargetName>GTACommands</TargetName>
+    <IgnoreImportLibrary>true</IgnoreImportLibrary>
+    <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <QtInstall>5.7_msvc2015_64</QtInstall>
+    <QtModules>core;xml;gui</QtModules>
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
+  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <QtInstall>5.7_msvc2015_64</QtInstall>
+    <QtModules>core;xml;gui</QtModules>
+    <QtDeploy>true</QtDeploy>
+  </PropertyGroup>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTAMath\PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACommands_LIBRARY;TOOLVER="20.00.000RC4";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>GTACommon.lib;GTAMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACommands_LIBRARY;;TOOLVER=\"20.00.000RC4\";QT_GUI_LIB;QT_XML_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTAMath\PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACommands_LIBRARY;TOOLVER="20.00.000RC4";QT_NO_DEBUG;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>GTACommon.lib;GTAMath.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACommands_LIBRARY;;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_GUI_LIB;QT_XML_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionBase.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionCall.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionCallProcedures.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionCondition.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionDoWhile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionDoWhileEnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionElse.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionExpandedCall.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFCTLConf.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFTAKinematicMultiOutput.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFailure.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionForEach.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionForEachEnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionFunctionReturn.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionGenericFunction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionIF.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionIRT.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionIfEnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionManual.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionMath.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionMaths.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickPPC.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickSet.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickSetList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneClickTitle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionOneclickParentTitle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionParentTitle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionParentTitleEnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrint.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrintTable.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionRelease.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionRoboArm.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionSet.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionSetList.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionSubscribe.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionTitle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionUnSubscribe.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionWait.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionWhile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionWhileEnd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckAudioAlarm.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckBase.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckBiteMessage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckEcamDisplay.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckFwcDisplay.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckFwcProcedure.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckFwcWarning.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckManualCheck.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckRefresh.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckValue.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACheckVisualDisplay.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACommandBase.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACommandConfig.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTACommandVariant.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAComment.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationBase.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationConst.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationCrenels.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationGain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationPulse.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationRamp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationSawTooth.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationSineCrv.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationSinus.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationStep.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationTrepeze.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAEquationTriangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileConstant.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileExp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileIdle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileNoise.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfilePulse.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileRamp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileRampSlope.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileSawTooth.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileSine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailProfileStopTrigger.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailureConfig.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAFailureProfileBase.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericArgument.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericAttribute.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericDB.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericDbAttribute.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericFunction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericParamData.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericToolCommand.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAGenericToolData.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAInitConfigBase.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAInitConfiguration.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAInvalidCommand.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAOneClick.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAOneClickLaunchApplication.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAParamValidator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAParamValueValidator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAScxmlLogMessage.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\GTAActionPrintTime.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionBase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionCall.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionCallProcedures.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionCondition.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionDoWhile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionDoWhileEnd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionElse.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionExpandedCall.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionFCTLConf.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionFTAKinematicMultiOutput.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionFailure.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionForEach.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionForEachEnd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionFunctionReturn.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionGenericFunction.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionIF.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionIRT.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionIfEnd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionManual.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionMath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionMaths.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionOneClickPPC.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionOneClickParentTitle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionOneClickSet.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionOneClickSetList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionOneClickTitle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionParentTitle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionParentTitleEnd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionPrint.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionPrintTable.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionRelease.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionRoboArm.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionSet.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionSetList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionSubscribe.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionTitle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionUnSubscribe.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionWait.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionWhile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionWhileEnd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckAudioAlarm.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckBase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckBiteMessage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckEcamDisplay.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckFwcDisplay.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckFwcProcedure.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckFwcWarning.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckManualCheck.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckRefresh.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckValue.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACheckVisualDisplay.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACommandBase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACommandConfig.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACommandList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACommandVariant.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACommandVisualItf.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTACommands.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAComment.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationBase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationConst.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationCrenels.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationGain.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationPulse.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationRamp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationSawTooth.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationSineCrv.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationSinus.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationStep.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationTrepeze.h" />
+  </ItemGroup>
+    <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAEquationTriangle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfileConstant.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfileExp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfileIdle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfileNoise.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfilePulse.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfileRamp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfileRampSlope.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfileSawTooth.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfileSine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailProfileStopTrigger.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailureConfig.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAFailureProfileBase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAGenericArgument.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAGenericAttribute.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAGenericDB.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAGenericDbAttribute.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAGenericFunction.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAGenericParamData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAGenericToolCommand.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAGenericToolData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAInitConfigBase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAInitConfiguration.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAInvalidCommand.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAOneClick.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAOneClickLaunchApplication.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAParamValidator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAParamValueValidator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAScxmlLogMessage.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PublicInterfaces\GTAActionPrintTime.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

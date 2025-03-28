@@ -1,0 +1,60 @@
+# GIT_IGNORE FILE for GTA Development
+
+# Visual Studio Code files when opening any project
+*.vcxproj.bak
+*.pro.bak
+*.suo
+*.user
+*.exe
+UpgradeLog.htm
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.cache
+*.VC.db
+*.VC.VC.opendb
+
+# QtCreator local machine specific files for imported projects
+*creator.user*
+*.pro.user
+*_qmlcache.qrc
+*.pri
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Bb]uild/
+[Gg]enerated[Ff]iles/
+
+# Just used for *.log into each module
+**/x64/
+
+# Extensions file have not to be committed 
+*.db
+*.obj
+*.log
+*.tlog
+*.pdb
+*.ini
+*.dll
+*.ilk
+
+
+
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+
+# Un-ignore the affected subdirectory
+!/ExternalLib/
+!/ExternalLib/*
+!/ExternalLib/**/*
+
+!/src/Resources
+!/src/doc/DevGuide/doxygen/html

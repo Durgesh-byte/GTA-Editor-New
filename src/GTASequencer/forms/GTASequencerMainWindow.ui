@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GTASequencerMainWindow</class>
+ <widget class="QMainWindow" name="GTASequencerMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>783</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>GTA Sequence Manager</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../../GTAUI/resource.qrc">
+    <normaloff>:/images/forms/img/GTAAppIcon.png</normaloff>:/images/forms/img/GTAAppIcon.png</iconset>
+  </property>
+  <property name="dockOptions">
+   <set>QMainWindow::AllowTabbedDocks|QMainWindow::AnimatedDocks|QMainWindow::VerticalTabs</set>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QTextEdit" name="LoggerTE">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="toolTip">
+       <string>Log window for the sequencer</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>783</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSequencer">
+    <property name="title">
+     <string>Sequencer</string>
+    </property>
+    <addaction name="actionClose"/>
+    <addaction name="action_Start_Server"/>
+    <addaction name="action_Test_Client"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionUser_Guide"/>
+   </widget>
+   <addaction name="menuSequencer"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="actionToolBar">
+   <property name="windowTitle">
+    <string>Operation tool bar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QDockWidget" name="SettingsDW">
+   <property name="windowIcon">
+    <iconset resource="../../GTAUI/resource.qrc">
+     <normaloff>:/images/forms/img/GTAAppIcon.png</normaloff>:/images/forms/img/GTAAppIcon.png</iconset>
+   </property>
+   <property name="windowTitle">
+    <string>Sequencer Settings</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents_5"/>
+  </widget>
+  <action name="actionSettings">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionUser_Guide">
+   <property name="icon">
+    <iconset resource="../../GTAUI/resource.qrc">
+     <normaloff>:/images/forms/img/About.png</normaloff>:/images/forms/img/About.png</iconset>
+   </property>
+   <property name="text">
+    <string>User Guide</string>
+   </property>
+  </action>
+  <action name="action_Start_Server">
+   <property name="text">
+    <string>Start Server</string>
+   </property>
+  </action>
+  <action name="action_Test_Client">
+   <property name="text">
+    <string>Test Client</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../../GTAUI/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

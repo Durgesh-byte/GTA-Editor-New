@@ -1,0 +1,15 @@
+<state id="WakeUpLauncher">
+	<invoke type="xml-rpc" id="init_0">
+		<content>
+			<xmlrpc tool_id="Launcher" tool_type="Launcher">
+				<function name="WakeUp">
+					<returnvalue name = "return_from_wake"/>
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.return_from_wake" location="return_from_wake"/>
+		</finalize>
+	</invoke>
+	<transition status="success" event="done.invoke.init_0" target="subscribe"/>
+</state>

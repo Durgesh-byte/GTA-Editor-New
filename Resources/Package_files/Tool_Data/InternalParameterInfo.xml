@@ -1,0 +1,49 @@
+<InternalParameterInfo>
+	<CommandList>
+		<Command name="set" complement="">
+			<internalParameter name="Return" type="dbParamStrcut"/>
+			<!-- <return name = "krutika" type = "boolean"/> -->
+		</Command>
+		<Command name="check_Value" complement="">
+			<internalParameter name="Return" type="dbParamStrcut"/>
+		</Command>
+		<Command name="check_BITE_Message" complement="">
+			<internalParameter name="Return" type="dbParamStrcut"/>
+		</Command>
+		<Command name="check_FWC_Warning" complement="">
+			<internalParameter name="Return" type="dbParamStrcut"/>
+		</Command>
+		<Command name="call" complement="monitor">
+			<internalParameter name="monitorFlags" type="MonitorStruct"/>
+		</Command>		
+		<Command name="condition" complement="for each">
+			<internalParameter name="line" type="list"/>
+		</Command>		
+		<Command name="print" complement="parameter value">
+			<internalParameter name="saurav" type="boolean"/>
+		</Command>	
+		<Command name="Maths" complement="">
+			<internalParameter name="Return" type="SetStruct"/>
+		</Command>
+		<Command name="condition" complement="if">
+			<internalParameter name="Return" type="dbParamStrcut"/>
+		</Command>
+	</CommandList>
+	<ComplexTypes>
+		<ComplexType name="SetStruct">
+			<item name="Status" type="string"/>
+			<item name="Message" type="string"/>
+			<item name ="Argument" type= "string"/>
+		</ComplexType>
+		<ComplexType name="dbParamStrcut">
+			<item name="ParameterType" type="string"/>
+			<item name="Status" type="string"/>
+			<item name = "Condition" type= "MonitorStruct"/>
+		</ComplexType>
+		<ComplexType name="MonitorStruct">
+			<item name="startMonitor" type="boolean"/>
+			<item name="stopMonitor" type="boolean"/>
+			<item name="initMonitor" type="boolean"/>
+		</ComplexType>
+	</ComplexTypes>
+</InternalParameterInfo>

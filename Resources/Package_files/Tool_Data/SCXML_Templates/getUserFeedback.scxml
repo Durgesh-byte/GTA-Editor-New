@@ -1,0 +1,15 @@
+<invoke type="xml-rpc" id="i0">
+	<content>
+		<xmlrpc tool_id="IC_0" tool_type="IC">
+			<function name="getParamValueSingleSample">
+				<argument value="'test'" type="string" name="message"/>
+				<argument value="'bool'" type="string" name="ExpectedReturnType"/>
+				<returnvalue name="Return_Parameter_Structure"/>
+			</function>
+		</xmlrpc>
+	</content>
+	<finalize>
+		<assign expr="_event.data.Return_Parameter_Structure" location="UserFeedback"/>
+		<send event="HiddenWaitTimeDelay_i0" delay="100ms"/>
+	</finalize>
+</invoke>

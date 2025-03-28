@@ -1,0 +1,12 @@
+<invoke type="xml-rpc" id="unsubscribe_invoke">
+	<content>
+		<xmlrpc tool_id="CGIB" tool_type="GFIB">
+			<function name="UnsubscribeProcedureParam">
+				<argument value="[{'FileName' : 'Test_2119_3.scxml'}]" name="FileName" type="array"/>
+				<returnvalue name="Result_unsubscribe"/>
+			</function>
+		</xmlrpc>
+	</content>
+	<finalize>
+	</finalize>
+</invoke>

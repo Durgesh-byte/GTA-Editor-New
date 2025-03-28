@@ -1,0 +1,15 @@
+<scxml datamodel="lua" initial="Shape1" name="Scxml" version="1.0" xmlns="http://www.w3.org/2005/07/scxml">
+	<datamodel>
+		<data id="VarCollection">{ [1]='a', [2]='b', [3]='c' }</data>
+	</datamodel>
+	<state id="Shape1">
+		<onentry>
+			<foreach array="VarCollection" index="indexCollection" item="itemCollection">
+				<log expr="indexCollection" label="indexCollection"/>
+				<log expr="itemCollection" label="itemCollection"/>
+			</foreach>
+		</onentry>
+		<transition target="End"/>
+	</state>
+	<final id="End"/>
+</scxml>

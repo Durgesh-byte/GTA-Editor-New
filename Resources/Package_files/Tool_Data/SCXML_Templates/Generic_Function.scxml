@@ -1,0 +1,16 @@
+<SCXML>
+	<invoke type="xml-rpc" id="">
+		<content>
+			<xmlrpc tool_id="@TOOL_ID" tool_type="@TOOL_TYPE">
+				<function name="@SCXML_FUNCTION_NAME">                    
+
+					<returnvalue name="@ARG_RETURN"/>
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.@ARG_RETURN" location="@LOCATION" />
+		</finalize>
+	</invoke>
+	<transition status="success" cond="@LOCATION.STATUS" event="done.invoke._all"/>
+</SCXML>

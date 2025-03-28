@@ -1,0 +1,22 @@
+<state id="">
+	<onentry>
+		<assign location="ISSM_Simulation_LR_BAS_A330_200" expr="{ ApplicationName: 'ISSM330', version:'7.0.0_QC1', options :{version_aspic:16.0.0, version_maestro : 1.0.0}}" />
+	</onentry>
+	<invoke type="xml-rpc" id="i0">
+		<content>
+			<xmlrpc tool_id="CGIB" tool_type="ALTO">
+				<function name="LaunchEnvironment"> 
+					<argument value="ISSM_Simulation_LR_BAS_A330_200" type="struct" name="ConfigurationName"/>
+					<returnvalue name="Result"/>
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.Result" location="ISSM_Simulation_LR_BAS_A330_200.LaunchStatus"/>
+		</finalize>
+	</invoke>
+	<transition target="" event="done.invoke2._all"/>
+	<onexit>
+		<assign location="ISSM_Simulation_LR_BAS_A330_200" expr="[]" />
+	</onexit>
+</state>

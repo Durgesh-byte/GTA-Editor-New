@@ -1,0 +1,39 @@
+<state id="@StatID">
+	<invoke type="xml-rpc" id="@InvokeID">
+		<content>
+			<xmlrpc tool_id="BITE-Logger" tool_type="Logger">
+				<function name="CheckCondition">
+					<argument value="12354" type = "int" name ="ID" />
+					<argument value="'@Message'" type="string" name = "content"/>
+					<argument value ="'bite_message'" type ="string" name ="ContentType" />
+					<argument value="'EQ'" type="string" name="condition" />                                                                                                                                 
+					<argument value ="'none'" type ="string" name="condition_value" />
+					<argument value="@BufferDepth" type="int" name="delay"/>
+					<returnvalue name="@ReturnVal"/>
+				</function>	
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.@ReturnVal" location="@ReturnVal"/>
+		</finalize>
+	</invoke>
+		<invoke id="FORDUMPLIST" type="xml-rpc">
+		<content>
+			<xmlrpc tool_id="CGIB" tool_type="GFIB">
+				<function name ="GetParamValueSingleSample" >
+					<argument name="ParameterID" value="" type="string"/>
+					<returnvalue name="Return_Parameter_Structure" />
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign location="" expr="_event.data.Return_Parameter_Structure" />
+		</finalize>
+	</invoke>
+	<transition status="success" target="@TargetID1" event="done.invoke.@InvokeID" cond ="@ReturnVal.ResultStatus =='OK'">
+		<log label="'info'" expr="@LogMessage1"/>
+	</transition>
+	<transition status="fail" target="@TargetID2" event="done.invoke.@InvokeID" cond ="@ReturnVal.ResultStatus !='OK'">
+		<log label="'info'" expr="@LogMessage2"/>
+	</transition>
+</state>

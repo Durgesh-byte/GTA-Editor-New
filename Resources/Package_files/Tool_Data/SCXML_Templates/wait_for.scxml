@@ -1,0 +1,7 @@
+<state id="WaitState">
+	<onentry>
+		<send event="Timer" delay="@ms/s"/>
+	</onentry>
+	<transition target="final" event="Timer" />
+</state>
+

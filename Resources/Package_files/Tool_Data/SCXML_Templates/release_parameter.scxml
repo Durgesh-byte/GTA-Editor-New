@@ -1,0 +1,17 @@
+<state id="@StatID">
+	<invoke type="xml-rpc" id="@InvokeID">
+		<content>
+			<xmlrpc tool_id="CGIB" tool_type="GFIB">
+				<function name ="ReleaseParam" >
+					<argument name="ParameterID" value="'@PARAM'" type= "array"/> 
+					<returnvalue name="Return_Parameter_Structure" />
+				</function>
+			</xmlrpc>
+		</content>
+		<finalize>
+			<assign expr="_event.data.Return_Parameter_Structure" location="@ReturnVal"/>
+		</finalize>
+	</invoke>
+	<transition target="@TargetID" cond="((@ReturnVal == 'OK' )) == true" event="done.invoke._all"/>
+	
+</state>
