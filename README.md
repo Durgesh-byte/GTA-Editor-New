@@ -156,7 +156,7 @@ Update then execute ```_Build_Package.bat```
 
 ### Dependencies
 
-* Windows 7 or higher
+* Windows 7 or higher done
 
 ### Installing
 
