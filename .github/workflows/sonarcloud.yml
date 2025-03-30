@@ -1,4 +1,4 @@
-name: SonarCloud Scan
+name: SonarCloud C++ Analysis
 
 on:
   push:
@@ -12,102 +12,50 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # 1. Checkout code
+      # 1. Checkout code (required for SonarCloud analysis)
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Full history needed for SonarCloud
 
-      # 2. Install Chocolatey (package manager for Windows)
-      - name: Install Chocolatey
-        shell: powershell
-        run: |
-          Set-ExecutionPolicy Bypass -Scope Process -Force
-          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
-          iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-          choco --version
-
-      # 3. Install Qt with specific version and components
+      # 2. Install Qt using aqtinstall (recommended for GitHub Actions)
       - name: Install Qt
-        shell: powershell
         run: |
-          choco install qt-sdk-windows-x86 -y --version=5.15.2
-          $qtPath = "C:\Qt\5.15.2\msvc2019_64"
-          if (-not (Test-Path "$qtPath\bin\qmake.exe")) {
-              Write-Error "Qt installation failed - qmake not found"
-              exit 1
-          }
-          echo "QT_DIR=$qtPath" >> $env:GITHUB_ENV
-          echo "PATH=$qtPath\bin;$env:PATH" >> $env:GITHUB_ENV
+          python -m pip install aqtinstall
+          python -m aqt install-qt windows desktop 5.15.2 win64_msvc2019_64 -O C:\Qt
+          echo "C:\Qt\5.15.2\msvc2019_64\bin" >> $GITHUB_PATH
 
-      # 4. Verify Qt installation
-      - name: Verify Qt Installation
-        shell: powershell
-        run: |
-          $qmakePath = "$env:QT_DIR\bin\qmake.exe"
-          if (Test-Path $qmakePath) {
-              & $qmakePath --version
-          } else {
-              Write-Error "qmake not found at $qmakePath"
-              exit 1
-          }
+      # 3. Verify Qt installation
+      - name: Check Qt
+        run: qmake --version
 
-      # 5. Set up MSBuild
-      - name: Set up MSBuild
-        uses: microsoft/setup-msbuild@v2
+      # 4. Setup MSBuild (VS 2022)
+      - uses: microsoft/setup-msbuild@v2
         with:
           vs-version: '17.0'
 
-      # 6. Install .NET SDK (required for SonarScanner)
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '6.0.x'
-
-      # 7. Install SonarScanner
-      - name: Install SonarScanner
-        shell: powershell
+      # 5. Install SonarScanner (native binary version)
+      - name: Setup SonarScanner
         run: |
-          dotnet tool install --global dotnet-sonarscanner --version 5.13.0
-          $toolPath = "$env:USERPROFILE\.dotnet\tools"
-          echo "PATH=$toolPath;$env:PATH" >> $env:GITHUB_ENV
-          dotnet sonarscanner /version
+          mkdir sonar-scanner
+          curl -o scanner.zip -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-windows.zip
+          unzip scanner.zip -d sonar-scanner
+          echo "$PWD/sonar-scanner/sonar-scanner-5.0.1.3006-windows/bin" >> $GITHUB_PATH
 
-      # 8. Initialize SonarScanner
-      - name: Initialize SonarScanner
-        shell: powershell
+      # 6. Initialize SonarScanner
+      - name: SonarCloud Scan
         run: |
-          dotnet sonarscanner begin `
-            /k:"Durgesh-byte_GTA-Editor-New" `
-            /o:"${{ secrets.SONAR_ORG }}" `
-            /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-            /d:sonar.host.url="https://sonarcloud.io" `
-            /d:sonar.verbose=true `
-            /d:sonar.cfamily.build-wrapper-output=bw-output
+          sonar-scanner \
+            -Dsonar.projectKey=Durgesh-byte_GTA-Editor-New \
+            -Dsonar.organization=${{ secrets.SONAR_ORG }} \
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.cfamily.build-wrapper-output=bw-output
 
-      # 9. Build solution
-      - name: Build Solution
-        shell: powershell
-        run: |
-          msbuild GTAAPPLICATION.sln `
-            -t:rebuild `
-            -p:Qt5_DIR="$env:QT_DIR" `
-            -p:Configuration=Release `
-            -p:Platform=x64 `
-            -verbosity:diagnostic
+      # 7. Build solution
+      - name: Build with MSBuild
+        run: msbuild GTAAPPLICATION.sln /t:rebuild /p:Configuration=Release /p:Platform=x64
 
-      # 10. Finalize SonarScanner
-      - name: End SonarScanner
+      # 8. Finalize analysis
+      - name: SonarCloud Results
         if: always()
-        shell: powershell
-        run: |
-          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-
-      # 11. Upload logs if build fails
-      - name: Upload Build Logs
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-logs
-          path: |
-            *.log
-            **/*.log
+        run: sonar-scanner -Dsonar.token=${{ secrets.SONAR_TOKEN }} end
