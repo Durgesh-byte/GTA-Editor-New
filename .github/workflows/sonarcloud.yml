@@ -12,52 +12,50 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # Step 1: Checkout repository with full history
+      # Step 1: Checkout repository
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Required for SonarCloud analysis
-          submodules: recursive  # Important if your project has submodules
+          fetch-depth: 0
+          submodules: recursive
 
-      # Step 2: Install Qt with specific components
+      # Step 2: Install Qt
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
           version: '5.15.2'
           arch: 'win64_msvc2019_64'
           install-deps: true
-          modules: 'qtbase,qttools,qtdeclarative'  # Specify required modules
-          cached: 'true'  # Cache Qt installation for faster runs
+          modules: 'qtbase,qttools,qtdeclarative'
 
-      # Step 3: Set up MSBuild with specific VS version
+      # Step 3: Set up MSBuild
       - name: Set up MSBuild
         uses: microsoft/setup-msbuild@v2
         with:
-          vs-version: '17.0'  # Visual Studio 2022
-          vstool-path: true  # Ensure vswhere is available
+          vs-version: '17.0'
 
-      # Step 4: Configure environment variables
+      # Step 4: Configure Qt environment
       - name: Set Qt Environment
         shell: pwsh
         run: |
           $qtPath = "C:\Qt\5.15.2\msvc2019_64"
-          echo "QT_DIR=$qtPath" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-          echo "PATH=$qtPath\bin;$env:PATH" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-          echo "QMAKESPEC=win32-msvc" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          echo "QT_DIR=$qtPath" >> $env:GITHUB_ENV
+          echo "PATH=$qtPath\bin;$env:PATH" >> $env:GITHUB_ENV
+          echo "QMAKESPEC=win32-msvc" >> $env:GITHUB_ENV
 
-      # Step 5: Verify Qt installation (debugging)
+      # Step 5: Verify Qt installation
       - name: Verify Qt Installation
         shell: pwsh
         run: |
-          dir "$env:QT_DIR\bin\qmake.exe"
-          dir "$env:QT_DIR\include\QtCore"
+          Get-ChildItem "$env:QT_DIR\bin\qmake.exe"
+          Get-ChildItem "$env:QT_DIR\include\QtCore"
 
-      # Step 6: Install SonarScanner with version pinning
+      # Step 6: Install SonarScanner
       - name: Install SonarScanner
         run: |
           dotnet tool install --global dotnet-sonarscanner --version 5.13.0
           echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
-      # Step 7: Initialize SonarScanner with additional parameters
+      # Step 7: Initialize SonarScanner
       - name: Initialize SonarScanner
         run: |
           dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" `
@@ -65,10 +63,9 @@ jobs:
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
             /d:sonar.verbose=true `
-            /d:sonar.cfamily.build-wrapper-output=bw-output `
-            /d:sonar.cfamily.cache.enabled=true
+            /d:sonar.cfamily.build-wrapper-output=bw-output
 
-      # Step 8: Build with detailed logging and Qt support
+      # Step 8: Build solution
       - name: Build Solution
         shell: pwsh
         run: |
@@ -77,20 +74,18 @@ jobs:
             -p:Qt5_DIR="$env:QT_DIR" `
             -p:Configuration=Release `
             -p:Platform="x64" `
-            -verbosity:diagnostic `
-            -maxCpuCount `
-            -property:TrackFileAccess=false
+            -verbosity:diagnostic
 
-      # Step 9: Finalize SonarCloud analysis
+      # Step 9: Finalize SonarScanner (always run)
       - name: Finalize SonarScanner
-        if: always()  # Always run even if build fails
+        if: always()
         run: |
           dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 
-      # Step 10: Upload build logs as artifacts (for debugging)
+      # Step 10: Upload logs if build fails (using v4 of upload-artifact)
       - name: Upload Build Logs
         if: failure()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-logs
           path: |
