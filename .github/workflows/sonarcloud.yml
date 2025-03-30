@@ -12,34 +12,102 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      # 1. Checkout code
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Visual Studio Build Tools
+      # 2. Install Chocolatey (package manager for Windows)
+      - name: Install Chocolatey
+        shell: powershell
+        run: |
+          Set-ExecutionPolicy Bypass -Scope Process -Force
+          [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072
+          iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+          choco --version
+
+      # 3. Install Qt with specific version and components
+      - name: Install Qt
+        shell: powershell
+        run: |
+          choco install qt-sdk-windows-x86 -y --version=5.15.2
+          $qtPath = "C:\Qt\5.15.2\msvc2019_64"
+          if (-not (Test-Path "$qtPath\bin\qmake.exe")) {
+              Write-Error "Qt installation failed - qmake not found"
+              exit 1
+          }
+          echo "QT_DIR=$qtPath" >> $env:GITHUB_ENV
+          echo "PATH=$qtPath\bin;$env:PATH" >> $env:GITHUB_ENV
+
+      # 4. Verify Qt installation
+      - name: Verify Qt Installation
+        shell: powershell
+        run: |
+          $qmakePath = "$env:QT_DIR\bin\qmake.exe"
+          if (Test-Path $qmakePath) {
+              & $qmakePath --version
+          } else {
+              Write-Error "qmake not found at $qmakePath"
+              exit 1
+          }
+
+      # 5. Set up MSBuild
+      - name: Set up MSBuild
         uses: microsoft/setup-msbuild@v2
         with:
           vs-version: '17.0'
 
-      - name: Install Qt
-        run: choco install qt5-default -y
+      # 6. Install .NET SDK (required for SonarScanner)
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
 
-      - name: Set Qt Environment Variables
-        run: |
-          echo "C:\Qt\5.15.2\msvc2019\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-          echo "C:\Qt\5.15.2\msvc2019\lib" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-
-      - name: Verify Qt Installation
-        run: qmake --version
-
+      # 7. Install SonarScanner
       - name: Install SonarScanner
+        shell: powershell
         run: |
-          dotnet tool install --global dotnet-sonarscanner
-          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"${{ secrets.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true
+          dotnet tool install --global dotnet-sonarscanner --version 5.13.0
+          $toolPath = "$env:USERPROFILE\.dotnet\tools"
+          echo "PATH=$toolPath;$env:PATH" >> $env:GITHUB_ENV
+          dotnet sonarscanner /version
 
-      - name: Build with MSBuild
+      # 8. Initialize SonarScanner
+      - name: Initialize SonarScanner
+        shell: powershell
         run: |
-          msbuild GTAAPPLICATION.sln -t:rebuild -verbosity:diagnostic
+          dotnet sonarscanner begin `
+            /k:"Durgesh-byte_GTA-Editor-New" `
+            /o:"${{ secrets.SONAR_ORG }}" `
+            /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
+            /d:sonar.host.url="https://sonarcloud.io" `
+            /d:sonar.verbose=true `
+            /d:sonar.cfamily.build-wrapper-output=bw-output
 
+      # 9. Build solution
+      - name: Build Solution
+        shell: powershell
+        run: |
+          msbuild GTAAPPLICATION.sln `
+            -t:rebuild `
+            -p:Qt5_DIR="$env:QT_DIR" `
+            -p:Configuration=Release `
+            -p:Platform=x64 `
+            -verbosity:diagnostic
+
+      # 10. Finalize SonarScanner
       - name: End SonarScanner
-        run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+        if: always()
+        shell: powershell
+        run: |
+          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+
+      # 11. Upload logs if build fails
+      - name: Upload Build Logs
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs
+          path: |
+            *.log
+            **/*.log
