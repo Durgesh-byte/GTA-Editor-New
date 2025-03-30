@@ -12,36 +12,30 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # 1. Checkout code (required for SonarCloud analysis)
+      # 1. Checkout code
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Full history needed for SonarCloud
+          fetch-depth: 0
 
-      # 2. Install Qt using aqtinstall (recommended for GitHub Actions)
+      # 2. Install Qt from official installer
       - name: Install Qt
         run: |
-          python -m pip install aqtinstall
-          python -m aqt install-qt windows desktop 5.15.2 win64_msvc2019_64 -O C:\Qt
-          echo "C:\Qt\5.15.2\msvc2019_64\bin" >> $GITHUB_PATH
+          curl -o qt-installer.exe -L https://download.qt.io/official_releases/online_installers/qt-unified-windows-x64-online.exe
+          ./qt-installer.exe --script .github/scripts/qt-installer-noninteractive.qs
 
-      # 3. Verify Qt installation
-      - name: Check Qt
-        run: qmake --version
-
-      # 4. Setup MSBuild (VS 2022)
+      # 3. Setup MSBuild (VS 2022)
       - uses: microsoft/setup-msbuild@v2
         with:
           vs-version: '17.0'
 
-      # 5. Install SonarScanner (native binary version)
+      # 4. Download SonarScanner (native binary)
       - name: Setup SonarScanner
         run: |
-          mkdir sonar-scanner
-          curl -o scanner.zip -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-windows.zip
-          unzip scanner.zip -d sonar-scanner
+          curl -o sonar-scanner.zip -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-windows.zip
+          unzip sonar-scanner.zip -d sonar-scanner
           echo "$PWD/sonar-scanner/sonar-scanner-5.0.1.3006-windows/bin" >> $GITHUB_PATH
 
-      # 6. Initialize SonarScanner
+      # 5. Initialize analysis
       - name: SonarCloud Scan
         run: |
           sonar-scanner \
@@ -51,11 +45,11 @@ jobs:
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.cfamily.build-wrapper-output=bw-output
 
-      # 7. Build solution
+      # 6. Build solution
       - name: Build with MSBuild
         run: msbuild GTAAPPLICATION.sln /t:rebuild /p:Configuration=Release /p:Platform=x64
 
-      # 8. Finalize analysis
+      # 7. Finalize analysis
       - name: SonarCloud Results
         if: always()
         run: sonar-scanner -Dsonar.token=${{ secrets.SONAR_TOKEN }} end
