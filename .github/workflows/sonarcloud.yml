@@ -12,29 +12,36 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # Step 1: Checkout the repository got it
+      # Step 1: Checkout the repository
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0  # Ensures full history for better analysis
 
-      # Step 2: Set up Visual Studio environment (for MSBuild)
+      # Step 2: Install Qt (Required for Qt Projects)
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '5.15.2'  # Change if you need another Qt version
+          host: 'windows'
+      
+      # Step 3: Set up Visual Studio environment
       - name: Set up Visual Studio Build Tools
         uses: microsoft/setup-msbuild@v2
         with:
           vs-version: '17.0'  # Specify Visual Studio 2022
 
-      # Step 3: Install SonarScanner for MSBuild
+      # Step 4: Install SonarScanner for MSBuild
       - name: Install SonarScanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
           dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"${{ secrets.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true
 
-      # Step 4: Build the project with MSBuild
+      # Step 5: Build the project with MSBuild
       - name: Build with MSBuild
         run: |
           msbuild GTAAPPLICATION.sln -t:rebuild -verbosity:diagnostic
 
-      # Step 5: End SonarScanner and upload results
+      # Step 6: End SonarScanner and upload results
       - name: End SonarScanner
         run: |
           dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
