@@ -6,119 +6,40 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  QT_VERSION: '5.15.2'
-  QT_ARCH: 'win64_msvc2019_64'
-  BUILD_CONFIG: 'Release'
-  BUILD_PLATFORM: 'x64'
-
 jobs:
   sonarcloud:
-    name: SonarCloud Analysis
+    name: SonarCloud
     runs-on: windows-latest
 
     steps:
-      # 1. Checkout code
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          submodules: recursive
 
-      # 2. Setup Python (for aqtinstall)
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
-      # 3. Install Qt (with error handling)
-      - name: Install Qt
-        id: install-qt
-        shell: pwsh
-        run: |
-          # Install aqtinstall with specific version
-          python -m pip install aqtinstall==3.1.21
-          
-          # Install Qt base components
-          python -m aqt install-qt windows desktop $env:QT_VERSION $env:QT_ARCH --outputdir C:\Qt
-          
-          # Verify installation
-          $qtPath = "C:\Qt\$env:QT_VERSION\$env:QT_ARCH"
-          if (-not (Test-Path "$qtPath\bin\qmake.exe")) {
-              Write-Error "Qt installation failed - qmake not found at $qtPath"
-              Get-ChildItem C:\Qt -Recurse | Out-Host
-              exit 1
-          }
-          echo "QT_DIR=$qtPath" >> $env:GITHUB_ENV
-          echo "PATH=$qtPath\bin;$env:PATH" >> $env:GITHUB_ENV
-
-      # 4. Setup MSBuild
-      - name: Setup MSBuild
+      - name: Set up Visual Studio Build Tools
         uses: microsoft/setup-msbuild@v2
         with:
           vs-version: '17.0'
 
-      # 5. Install .NET SDK (required for SonarScanner)
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '6.0.x'
+      - name: Install Qt
+        run: choco install qt5-default -y
 
-      # 6. Install SonarScanner (with proper PATH setup)
+      - name: Set Qt Environment Variables
+        run: |
+          echo "C:\Qt\5.15.2\msvc2019\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          echo "C:\Qt\5.15.2\msvc2019\lib" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
+      - name: Verify Qt Installation
+        run: qmake --version
+
       - name: Install SonarScanner
-        shell: pwsh
         run: |
-          # Install tool
-          dotnet tool install --global dotnet-sonarscanner --version 5.13.0
-          
-          # Add to PATH
-          $toolPath = "$env:USERPROFILE\.dotnet\tools"
-          echo "PATH=$toolPath;$env:PATH" >> $env:GITHUB_ENV
-          
-          # Verify installation
-          dotnet sonarscanner /version
-          if (-not (Get-Command dotnet-sonarscanner -ErrorAction SilentlyContinue)) {
-              Write-Error "SonarScanner installation failed"
-              exit 1
-          }
+          dotnet tool install --global dotnet-sonarscanner
+          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"${{ secrets.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true
 
-      # 7. Initialize SonarScanner
-      - name: SonarCloud Scan
-        shell: pwsh
+      - name: Build with MSBuild
         run: |
-          dotnet sonarscanner begin `
-            /k:"Durgesh-byte_GTA-Editor-New" `
-            /o:"${{ secrets.SONAR_ORG }}" `
-            /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
-            /d:sonar.host.url="https://sonarcloud.io" `
-            /d:sonar.cfamily.build-wrapper-output=bw-output
+          msbuild GTAAPPLICATION.sln -t:rebuild -verbosity:diagnostic
 
-      # 8. Build solution
-      - name: Build Solution
-        shell: pwsh
-        run: |
-          msbuild GTAAPPLICATION.sln `
-            -t:rebuild `
-            -p:Qt5_DIR="$env:QT_DIR" `
-            -p:Configuration=$env:BUILD_CONFIG `
-            -p:Platform=$env:BUILD_PLATFORM `
-            -verbosity:diagnostic `
-            -nr:false `
-            -bl:msbuild.binlog
-
-      # 9. Finalize SonarScanner
-      - name: SonarCloud Results
-        if: always()
-        shell: pwsh
-        run: |
-          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-
-      # 10. Upload diagnostics
-      - name: Upload Diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: diagnostics-${{ github.run_id }}
-          path: |
-            msbuild.binlog
-            *.log
-            **/*.log
+      - name: End SonarScanner
+        run: dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
