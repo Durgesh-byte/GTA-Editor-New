@@ -15,31 +15,26 @@ jobs:
       # Step 1: Checkout the repository
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-      # Step 2: Install Qt
-      - name: Install Qt
-        uses: jurplel/install-qt-action@v3
-        with:
-          version: '6.5.0'  # Replace with your Qt version (e.g., 5.15.2)
-          install-deps: true  # Installs Qt dependencies (like MSVC)
-
-      # Step 3: Set up MSBuild
-      - name: Set up MSBuild
+      # Step 2: Set up Visual Studio environment (for MSBuild)
+      - name: Set up Visual Studio Build Tools
         uses: microsoft/setup-msbuild@v2
+        with:
+          vs-version: '17.0'  # Specify Visual Studio 2022
 
-      # Step 4: Install SonarScanner
+      # Step 3: Install SonarScanner for MSBuild
       - name: Install SonarScanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
-          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"${{ secrets.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"${{ secrets.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true
 
-      # Step 5: Build with MSBuild (now Qt is available)
+      # Step 4: Build the project with MSBuild
       - name: Build with MSBuild
         run: |
-          msbuild GTAAPPLICATION.sln -t:rebuild -p:Qt5_DIR="C:\Qt\5.15.2\msvc2019_64\lib\cmake\Qt5"  # Adjust path to your Qt version
+          msbuild GTAAPPLICATION.sln -t:rebuild -verbosity:diagnostic
 
-      # Step 6: End SonarScanner
+      # Step 5: End SonarScanner and upload results
       - name: End SonarScanner
         run: |
           dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
