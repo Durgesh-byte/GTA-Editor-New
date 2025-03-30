@@ -1,4 +1,4 @@
-name: SonarCloud C++ Analysis
+name: SonarCloud Scan
 
 on:
   push:
@@ -12,44 +12,38 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # 1. Checkout code
+      # Step 1: Checkout the repository
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-      # 2. Install Qt from official installer
+      # Step 2: Install Qt
       - name: Install Qt
-        run: |
-          curl -o qt-installer.exe -L https://download.qt.io/official_releases/online_installers/qt-unified-windows-x64-online.exe
-          ./qt-installer.exe --script .github/scripts/qt-installer-noninteractive.qs
-
-      # 3. Setup MSBuild (VS 2022)
-      - uses: microsoft/setup-msbuild@v2
+        uses: strawberryperl/qt-cmake-action@master
         with:
-          vs-version: '17.0'
+          qt-version: '6.5.0'  # Specify the Qt version you need (adjust as per your project)
+          qt-target: 'desktop'
+          qt-modules: 'qtcore qtnetwork qtxml'  # Add Qt modules your project uses
+          install-dir: 'C:\Qt'
 
-      # 4. Download SonarScanner (native binary)
-      - name: Setup SonarScanner
+      # Step 3: Set up Visual Studio environment (for MSBuild)
+      - name: Set up Visual Studio Build Tools
+        uses: microsoft/setup-msbuild@v2
+        with:
+          vs-version: '17.0'  # Specify Visual Studio 2022
+
+      # Step 4: Install SonarScanner for MSBuild
+      - name: Install SonarScanner
         run: |
-          curl -o sonar-scanner.zip -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-windows.zip
-          unzip sonar-scanner.zip -d sonar-scanner
-          echo "$PWD/sonar-scanner/sonar-scanner-5.0.1.3006-windows/bin" >> $GITHUB_PATH
+          dotnet tool install --global dotnet-sonarscanner
+          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"${{ secrets.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true
 
-      # 5. Initialize analysis
-      - name: SonarCloud Scan
-        run: |
-          sonar-scanner \
-            -Dsonar.projectKey=Durgesh-byte_GTA-Editor-New \
-            -Dsonar.organization=${{ secrets.SONAR_ORG }} \
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.cfamily.build-wrapper-output=bw-output
-
-      # 6. Build solution
+      # Step 5: Build the project with MSBuild
       - name: Build with MSBuild
-        run: msbuild GTAAPPLICATION.sln /t:rebuild /p:Configuration=Release /p:Platform=x64
+        run: |
+          msbuild GTAAPPLICATION.sln -t:rebuild -verbosity:diagnostic
 
-      # 7. Finalize analysis
-      - name: SonarCloud Results
-        if: always()
-        run: sonar-scanner -Dsonar.token=${{ secrets.SONAR_TOKEN }} end
+      # Step 6: End SonarScanner and upload results
+      - name: End SonarScanner
+        run: |
+          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
