@@ -12,29 +12,87 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # Step 1: Checkout the repository
+      # Step 1: Checkout repository with full history
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0  # Required for SonarCloud analysis
+          submodules: recursive  # Important if your project has submodules
 
-      # Step 2: Set up Visual Studio environment (for MSBuild)
-      - name: Set up Visual Studio Build Tools
+      # Step 2: Install Qt with specific components
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v3
+        with:
+          version: '5.15.2'
+          arch: 'win64_msvc2019_64'
+          install-deps: true
+          modules: 'qtbase,qttools,qtdeclarative'  # Specify required modules
+          cached: 'true'  # Cache Qt installation for faster runs
+
+      # Step 3: Set up MSBuild with specific VS version
+      - name: Set up MSBuild
         uses: microsoft/setup-msbuild@v2
         with:
-          vs-version: '17.0'  # Specify Visual Studio 2022
+          vs-version: '17.0'  # Visual Studio 2022
+          vstool-path: true  # Ensure vswhere is available
 
-      # Step 3: Install SonarScanner for MSBuild
+      # Step 4: Configure environment variables
+      - name: Set Qt Environment
+        shell: pwsh
+        run: |
+          $qtPath = "C:\Qt\5.15.2\msvc2019_64"
+          echo "QT_DIR=$qtPath" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          echo "PATH=$qtPath\bin;$env:PATH" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          echo "QMAKESPEC=win32-msvc" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+
+      # Step 5: Verify Qt installation (debugging)
+      - name: Verify Qt Installation
+        shell: pwsh
+        run: |
+          dir "$env:QT_DIR\bin\qmake.exe"
+          dir "$env:QT_DIR\include\QtCore"
+
+      # Step 6: Install SonarScanner with version pinning
       - name: Install SonarScanner
         run: |
-          dotnet tool install --global dotnet-sonarscanner
-          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"${{ secrets.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true
+          dotnet tool install --global dotnet-sonarscanner --version 5.13.0
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
-      # Step 4: Build the project with MSBuild
-      - name: Build with MSBuild
+      # Step 7: Initialize SonarScanner with additional parameters
+      - name: Initialize SonarScanner
         run: |
-          msbuild GTAAPPLICATION.sln -t:rebuild -verbosity:diagnostic
+          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" `
+            /o:"${{ secrets.SONAR_ORG }}" `
+            /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
+            /d:sonar.host.url="https://sonarcloud.io" `
+            /d:sonar.verbose=true `
+            /d:sonar.cfamily.build-wrapper-output=bw-output `
+            /d:sonar.cfamily.cache.enabled=true
 
-      # Step 5: End SonarScanner and upload results
-      - name: End SonarScanner
+      # Step 8: Build with detailed logging and Qt support
+      - name: Build Solution
+        shell: pwsh
+        run: |
+          msbuild GTAAPPLICATION.sln `
+            -t:rebuild `
+            -p:Qt5_DIR="$env:QT_DIR" `
+            -p:Configuration=Release `
+            -p:Platform="x64" `
+            -verbosity:diagnostic `
+            -maxCpuCount `
+            -property:TrackFileAccess=false
+
+      # Step 9: Finalize SonarCloud analysis
+      - name: Finalize SonarScanner
+        if: always()  # Always run even if build fails
         run: |
           dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+
+      # Step 10: Upload build logs as artifacts (for debugging)
+      - name: Upload Build Logs
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-logs
+          path: |
+            *.log
+            **/*.log
