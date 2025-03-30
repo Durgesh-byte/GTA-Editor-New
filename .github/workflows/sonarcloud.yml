@@ -11,33 +11,40 @@ jobs:
     name: SonarCloud
     runs-on: windows-latest
 
+    env:
+      QT_VERSION: '5.15.2'  # Centralized version management
+      QT_ARCH: 'win64_msvc2019_64'
+      BUILD_CONFIG: 'Release'
+      BUILD_PLATFORM: 'x64'
+
     steps:
-      # Step 1: Checkout repository
+      # Step 1: Checkout with full history
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           submodules: recursive
 
-      # Step 2: Install Qt
+      # Step 2: Install Qt with caching
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: '5.15.2'
-          arch: 'win64_msvc2019_64'
+          version: ${{ env.QT_VERSION }}
+          arch: ${{ env.QT_ARCH }}
           install-deps: true
           modules: 'qtbase,qttools,qtdeclarative'
+          cached: true  # Enable caching for faster subsequent runs
 
       # Step 3: Set up MSBuild
-      - name: Set up MSBuild
+      - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
         with:
           vs-version: '17.0'
 
       # Step 4: Configure Qt environment
-      - name: Set Qt Environment
+      - name: Configure Qt Paths
         shell: pwsh
         run: |
-          $qtPath = "C:\Qt\5.15.2\msvc2019_64"
+          $qtPath = "C:\Qt\${{ env.QT_VERSION }}\${{ env.QT_ARCH }}"
           echo "QT_DIR=$qtPath" >> $env:GITHUB_ENV
           echo "PATH=$qtPath\bin;$env:PATH" >> $env:GITHUB_ENV
           echo "QMAKESPEC=win32-msvc" >> $env:GITHUB_ENV
@@ -46,8 +53,11 @@ jobs:
       - name: Verify Qt Installation
         shell: pwsh
         run: |
-          Get-ChildItem "$env:QT_DIR\bin\qmake.exe"
-          Get-ChildItem "$env:QT_DIR\include\QtCore"
+          if (-not (Test-Path "$env:QT_DIR\bin\qmake.exe")) {
+            Write-Error "Qt installation verification failed - qmake not found"
+            exit 1
+          }
+          Write-Output "Qt verified at $env:QT_DIR"
 
       # Step 6: Install SonarScanner
       - name: Install SonarScanner
@@ -55,39 +65,47 @@ jobs:
           dotnet tool install --global dotnet-sonarscanner --version 5.13.0
           echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
 
-      # Step 7: Initialize SonarScanner
+      # Step 7: Initialize SonarScanner with timeout
       - name: Initialize SonarScanner
+        timeout-minutes: 5
         run: |
-          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" `
+          dotnet sonarscanner begin `
+            /k:"Durgesh-byte_GTA-Editor-New" `
             /o:"${{ secrets.SONAR_ORG }}" `
             /d:sonar.token="${{ secrets.SONAR_TOKEN }}" `
             /d:sonar.host.url="https://sonarcloud.io" `
             /d:sonar.verbose=true `
-            /d:sonar.cfamily.build-wrapper-output=bw-output
+            /d:sonar.cfamily.build-wrapper-output=bw-output `
+            /d:sonar.cfamily.cache.enabled=true
 
-      # Step 8: Build solution
+      # Step 8: Build with improved logging
       - name: Build Solution
+        timeout-minutes: 30
         shell: pwsh
         run: |
           msbuild GTAAPPLICATION.sln `
             -t:rebuild `
             -p:Qt5_DIR="$env:QT_DIR" `
-            -p:Configuration=Release `
-            -p:Platform="x64" `
-            -verbosity:diagnostic
+            -p:Configuration=${{ env.BUILD_CONFIG }} `
+            -p:Platform=${{ env.BUILD_PLATFORM }} `
+            -verbosity:diagnostic `
+            -nr:false `
+            -bl:msbuild.binlog
 
-      # Step 9: Finalize SonarScanner (always run)
+      # Step 9: Finalize SonarScanner
       - name: Finalize SonarScanner
         if: always()
+        timeout-minutes: 5
         run: |
           dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 
-      # Step 10: Upload logs if build fails (using v4 of upload-artifact)
-      - name: Upload Build Logs
-        if: failure()
+      # Step 10: Upload diagnostics
+      - name: Upload Diagnostics
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: build-logs
+          name: diagnostics-${{ github.run_id }}
           path: |
+            msbuild.binlog
             *.log
             **/*.log
