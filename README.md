@@ -178,7 +178,7 @@ Official packages can be found at https://artifactory.fr.eu.airbus.corp/ui/repos
 	![imgSettings](/doc/readme_file/Settings.png)
 	
  * Rebuild Database:
-    That is the first thing to do in order to use GTA efficiently
+    That is the first thing to do in order to use GTA efficiently yes
 
 
 ### Executing program
