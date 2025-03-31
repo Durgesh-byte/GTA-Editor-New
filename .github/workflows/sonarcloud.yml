@@ -56,7 +56,7 @@ jobs:
       # Step 6: Build the project with SonarCloud build wrapper
       - name: Build with SonarCloud build wrapper
         run: |
-          sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
+          sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64 /p:AdditionalIncludeDirectories="C:\Qt\Qt\5.15.2\msvc2019_64\include;C:\Qt\Qt\5.15.2\msvc2019_64\include\QtCore"
         shell: cmd
 
       # Step 7: Run SonarCloud scanner
