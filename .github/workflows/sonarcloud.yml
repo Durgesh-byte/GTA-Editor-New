@@ -17,37 +17,44 @@ jobs:
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-      # Step 2: Install Qt
-      - name: Install Qt
-        uses: strawberryperl/qt-cmake-action@master
+      # Step 2: Install Python (needed for aqtinstall to install Qt)
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          qt-version: '6.5.0'  # Specify the Qt version you need (adjust as per your project)
-          qt-target: 'desktop'
-          qt-modules: 'qtcore qtnetwork qtxml'  # Add Qt modules your project uses
-          install-dir: 'C:\Qt'
+          python-version: '3.x'
 
-      # Step 3: Set up Visual Studio environment (for MSBuild)
+      # Step 3: Install Qt using aqtinstall
+      - name: Install Qt
+        run: |
+          pip install aqtinstall
+          aqt install-qt --outputdir C:\Qt windows desktop 6.5.0 win64_msvc2019_64
+        shell: cmd
+
+      # Step 4: Set up Qt environment variables
+      - name: Set Qt environment variables
+        run: |
+          echo "QTDIR=C:\Qt\6.5.0\msvc2019_64" >> $env:GITHUB_ENV
+          echo "PATH=$env:QTDIR\bin;$env:PATH" >> $env:GITHUB_ENV
+        shell: pwsh
+
+      # Step 5: Set up Visual Studio environment (for MSBuild)
       - name: Set up Visual Studio Build Tools
         uses: microsoft/setup-msbuild@v2
         with:
           vs-version: '17.0'  # Specify Visual Studio 2022
 
-      # Step 4: Install SonarScanner for MSBuild
+      # Step 6: Install SonarScanner for MSBuild
       - name: Install SonarScanner
         run: |
           dotnet tool install --global dotnet-sonarscanner
           dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"${{ secrets.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true
 
-      # Step 5: Build the project with MSBuild
+      # Step 7: Build the project with MSBuild
       - name: Build with MSBuild
         run: |
           msbuild GTAAPPLICATION.sln -t:rebuild -verbosity:diagnostic
 
-      # Step 6: End SonarScanner and upload results
+      # Step 8: End SonarScanner and upload results
       - name: End SonarScanner
         run: |
           dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
-          name: "My workflow"
-permissions:
-  contents: read
-  pull-requests: write
