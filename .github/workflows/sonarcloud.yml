@@ -47,13 +47,13 @@ jobs:
       - name: Install SonarCloud build wrapper
         run: |
           mkdir sonar-build
-          curl -o sonar-build/build-wrapper-win-x86.zip https://sonarcloud.io/static/cpp/build-wrapper-win-x86.zip
-          if exist sonar-build\build-wrapper-win-x86.zip (echo Download successful) else (echo Download failed && exit /b 1)
-          unzip sonar-build/build-wrapper-win-x86.zip -d sonar-build
+          Invoke-WebRequest -Uri https://sonarcloud.io/static/cpp/build-wrapper-win-x86.zip -OutFile sonar-build/build-wrapper-win-x86.zip
+          if (Test-Path sonar-build/build-wrapper-win-x86.zip) { Write-Output "Download successful" } else { Write-Output "Download failed"; exit 1 }
+          Expand-Archive -Path sonar-build/build-wrapper-win-x86.zip -DestinationPath sonar-build
           dir sonar-build
-          dir sonar-build\build-wrapper-win-x86 2>nul || dir sonar-build\build-wrapper-win-x86-64 2>nul
-          dir sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe 2>nul || echo Build wrapper executable not found in build-wrapper-win-x86
-        shell: cmd
+          dir sonar-build\build-wrapper-win-x86 2>$null || dir sonar-build\build-wrapper-win-x86-64 2>$null
+          dir sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe 2>$null || Write-Output "Build wrapper executable not found in build-wrapper-win-x86"
+        shell: pwsh
 
       # Step 6: Restore NuGet packages (if your project uses NuGet)
       - name: Restore NuGet packages
