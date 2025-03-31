@@ -20,15 +20,7 @@ jobs:
         with:
           fetch-depth: 0  # Fetch all history for SonarCloud to analyze changes
 
-      # Step 2: Install curl using Chocolatey
-      - name: Install curl
-        run: |
-          choco install curl -y
-        shell: cmd
-        env:
-          chocolateyVersion: 2.3.0
-
-      # Step 3: Install Qt 5.15.2 using install-qt-action
+      # Step 2: Install Qt 5.15.2 using install-qt-action
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
         with:
@@ -39,43 +31,41 @@ jobs:
           dir: 'C:\Qt'
           install-deps: 'true'
 
-      # Step 4: Set Qt environment variables
+      # Step 3: Set Qt environment variables (for PATH only, since INCLUDE/LIB not working)
       - name: Set Qt environment variables
         run: |
-          echo "INCLUDE=C:\Qt\Qt\5.15.2\msvc2019_64\include;C:\Qt\Qt\5.15.2\msvc2019_64\include\QtCore;%INCLUDE%" >> $env:GITHUB_ENV
-          echo "LIB=C:\Qt\Qt\5.15.2\msvc2019_64\lib;%LIB%" >> $env:GITHUB_ENV
           echo "PATH=C:\Qt\Qt\5.15.2\msvc2019_64\bin;%PATH%" >> $env:GITHUB_ENV
         shell: pwsh
 
-      # Step 5: Set up MSBuild (for Visual Studio build tools)
+      # Step 4: Set up MSBuild (for Visual Studio build tools)
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      # Step 6: Install SonarCloud build wrapper
+      # Step 5: Install SonarCloud build wrapper
       - name: Install SonarCloud build wrapper
         run: |
           mkdir sonar-build
-          curl -o sonar-build/build-wrapper-win-x86.zip https://sonarcloud.io/static/cpp/build-wrapper-win-x86.zip
-          if exist sonar-build\build-wrapper-win-x86.zip (echo Download successful) else (echo Download failed && exit /b 1)
-          unzip sonar-build/build-wrapper-win-x86.zip -d sonar-build
+          Invoke-WebRequest -Uri https://sonarcloud.io/static/cpp/build-wrapper-win-x86.zip -OutFile sonar-build/build-wrapper-win-x86.zip
+          if (Test-Path sonar-build/build-wrapper-win-x86.zip) { Write-Output "Download successful" } else { Write-Output "Download failed"; exit 1 }
+          Expand-Archive -Path sonar-build/build-wrapper-win-x86.zip -DestinationPath sonar-build
           dir sonar-build
-          dir sonar-build\build-wrapper-win-x86 2>nul || dir sonar-build\build-wrapper-win-x86-64 2>nul
-          dir sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe 2>nul || echo Build wrapper executable not found in build-wrapper-win-x86
-        shell: cmd
+          dir sonar-build\build-wrapper-win-x86 2>$null || dir sonar-build\build-wrapper-win-x86-64 2>$null
+          dir sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe 2>$null || Write-Output "Build wrapper executable not found in build-wrapper-win-x86"
+        shell: pwsh
 
-      # Step 7: Restore NuGet packages (if your project uses NuGet)
+      # Step 6: Restore NuGet packages (if your project uses NuGet)
       - name: Restore NuGet packages
         run: |
           msbuild GTAAPPLICATION.sln -t:restore
         shell: cmd
 
-      # Step 8: Build the project with SonarCloud build wrapper
+      # Step 7: Build the project with SonarCloud build wrapper
       - name: Build with SonarCloud build wrapper
         run: |
-          sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
+          sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64 /p:AdditionalIncludeDirectories="C:\Qt\Qt\5.15.2\msvc2019_64\include;C:\Qt\Qt\5.15.2\msvc2019_64\include\QtCore"
         shell: cmd
 
-      # Step 9: Run SonarCloud scanner
+      # Step 8: Run SonarCloud scanner
       - name: Run SonarCloud scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
