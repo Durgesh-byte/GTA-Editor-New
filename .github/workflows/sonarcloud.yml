@@ -2,59 +2,69 @@ name: SonarCloud Scan
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   sonarcloud:
-    name: SonarCloud
+    name: SonarCloud Scan
     runs-on: windows-latest
 
     steps:
       # Step 1: Checkout the repository
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0  # Fetch all history for SonarCloud to analyze changes
 
-      # Step 2: Install Python (needed for aqtinstall to install Qt)
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+      # Step 2: Set up MSBuild (for Visual Studio build tools)
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v2
 
-      # Step 3: Install Qt using aqtinstall
+      # Step 3: Install Qt 5.15.2
       - name: Install Qt
         run: |
           pip install aqtinstall
-          aqt install-qt --outputdir C:\Qt windows desktop 6.5.0 win64_msvc2019_64
+          aqt install-qt --outputdir C:\Qt windows desktop 5.15.2 win64_msvc2019_64
         shell: cmd
 
-      # Step 4: Set up Qt environment variables
+      # Step 4: Set Qt environment variables
       - name: Set Qt environment variables
         run: |
-          echo "QTDIR=C:\Qt\6.5.0\msvc2019_64" >> $env:GITHUB_ENV
+          echo "QTDIR=C:\Qt\5.15.2\msvc2019_64" >> $env:GITHUB_ENV
           echo "PATH=$env:QTDIR\bin;$env:PATH" >> $env:GITHUB_ENV
         shell: pwsh
 
-      # Step 5: Set up Visual Studio environment (for MSBuild)
-      - name: Set up Visual Studio Build Tools
-        uses: microsoft/setup-msbuild@v2
-        with:
-          vs-version: '17.0'  # Specify Visual Studio 2022
+      # Step 5: Install SonarCloud build wrapper
+      - name: Install SonarCloud build wrapper
+        run: |
+          mkdir sonar-build
+          curl -o sonar-build/build-wrapper-win-x86.zip https://sonarcloud.io/static/cpp/build-wrapper-win-x86.zip
+          unzip sonar-build/build-wrapper-win-x86.zip -d sonar-build
+        shell: cmd
 
-      # Step 6: Install SonarScanner for MSBuild
-      - name: Install SonarScanner
+      # Step 6: Restore NuGet packages (if your project uses NuGet)
+      - name: Restore NuGet packages
+        run: |
+          msbuild GTAAPPLICATION.sln -t:restore
+        shell: cmd
+
+      # Step 7: Build the project with SonarCloud build wrapper
+      - name: Build with SonarCloud build wrapper
+        run: |
+          sonar-build/build-wrapper-win-x86/build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
+        shell: cmd
+
+      # Step 8: Run SonarCloud scanner
+      - name: Run SonarCloud scanner
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           dotnet tool install --global dotnet-sonarscanner
-          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"${{ secrets.SONAR_ORG }}" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.verbose=true
-
-      # Step 7: Build the project with MSBuild
-      - name: Build with MSBuild
-        run: |
-          msbuild GTAAPPLICATION.sln -t:rebuild -verbosity:diagnostic
-
-      # Step 8: End SonarScanner and upload results
-      - name: End SonarScanner
-        run: |
-          dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+          dotnet sonarscanner begin /k:"Durgesh-byte_GTA-Editor-New" /o:"durgesh-byte" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vscoveragexml.reportsPaths=coverage.xml
+          dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        shell: cmd
