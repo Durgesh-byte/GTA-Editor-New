@@ -35,14 +35,16 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      # Step 4: Install SonarCloud build wrapper with debugging
+      # Step 4: Install SonarCloud build wrapper with enhanced debugging
       - name: Install SonarCloud build wrapper
         run: |
           mkdir sonar-build
           curl -o sonar-build/build-wrapper-win-x86.zip https://sonarcloud.io/static/cpp/build-wrapper-win-x86.zip
+          if exist sonar-build\build-wrapper-win-x86.zip (echo Download successful) else (echo Download failed && exit /b 1)
           unzip sonar-build/build-wrapper-win-x86.zip -d sonar-build
           dir sonar-build
           dir sonar-build\build-wrapper-win-x86 2>nul || dir sonar-build\build-wrapper-win-x86-64 2>nul
+          dir sonar-build\build-wrapper-win-x86-64\build-wrapper-win-x86-64.exe 2>nul || echo Build wrapper executable not found
         shell: cmd
 
       # Step 5: Restore NuGet packages (if your project uses NuGet)
@@ -54,7 +56,13 @@ jobs:
       # Step 6: Build the project with SonarCloud build wrapper
       - name: Build with SonarCloud build wrapper
         run: |
-          sonar-build\build-wrapper-win-x86-64\build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
+          if exist sonar-build\build-wrapper-win-x86-64\build-wrapper-win-x86-64.exe (
+            sonar-build\build-wrapper-win-x86-64\build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
+          ) else if exist sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe (
+            sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
+          ) else (
+            echo Build wrapper not found in expected locations && exit /b 1
+          )
         shell: cmd
 
       # Step 7: Run SonarCloud scanner
