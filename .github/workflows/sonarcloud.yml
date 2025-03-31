@@ -35,12 +35,14 @@ jobs:
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      # Step 4: Install SonarCloud build wrapper
+      # Step 4: Install SonarCloud build wrapper with debugging
       - name: Install SonarCloud build wrapper
         run: |
           mkdir sonar-build
           curl -o sonar-build/build-wrapper-win-x86.zip https://sonarcloud.io/static/cpp/build-wrapper-win-x86.zip
           unzip sonar-build/build-wrapper-win-x86.zip -d sonar-build
+          dir sonar-build
+          dir sonar-build\build-wrapper-win-x86 2>nul || dir sonar-build\build-wrapper-win-x86-64 2>nul
         shell: cmd
 
       # Step 5: Restore NuGet packages (if your project uses NuGet)
@@ -52,7 +54,7 @@ jobs:
       # Step 6: Build the project with SonarCloud build wrapper
       - name: Build with SonarCloud build wrapper
         run: |
-          sonar-build/build-wrapper-win-x86/build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
+          sonar-build\build-wrapper-win-x86-64\build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
         shell: cmd
 
       # Step 7: Run SonarCloud scanner
