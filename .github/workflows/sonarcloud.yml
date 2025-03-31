@@ -20,25 +20,22 @@ jobs:
         with:
           fetch-depth: 0  # Fetch all history for SonarCloud to analyze changes
 
-      # Step 2: Set up MSBuild (for Visual Studio build tools)
+      # Step 2: Install Qt 5.15.2 using install-qt-action
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+        with:
+          version: '5.15.2'
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_msvc2019_64'
+          dir: 'C:\Qt'
+          install-deps: 'true'
+
+      # Step 3: Set up MSBuild (for Visual Studio build tools)
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
 
-      # Step 3: Install Qt 5.15.2
-      - name: Install Qt
-        run: |
-          pip install aqtinstall
-          aqt install-qt --outputdir C:\Qt windows desktop 5.15.2 win64_msvc2019_64
-        shell: cmd
-
-      # Step 4: Set Qt environment variables
-      - name: Set Qt environment variables
-        run: |
-          echo "QTDIR=C:\Qt\5.15.2\msvc2019_64" >> $env:GITHUB_ENV
-          echo "PATH=$env:QTDIR\bin;$env:PATH" >> $env:GITHUB_ENV
-        shell: pwsh
-
-      # Step 5: Install SonarCloud build wrapper
+      # Step 4: Install SonarCloud build wrapper
       - name: Install SonarCloud build wrapper
         run: |
           mkdir sonar-build
@@ -46,19 +43,19 @@ jobs:
           unzip sonar-build/build-wrapper-win-x86.zip -d sonar-build
         shell: cmd
 
-      # Step 6: Restore NuGet packages (if your project uses NuGet)
+      # Step 5: Restore NuGet packages (if your project uses NuGet)
       - name: Restore NuGet packages
         run: |
           msbuild GTAAPPLICATION.sln -t:restore
         shell: cmd
 
-      # Step 7: Build the project with SonarCloud build wrapper
+      # Step 6: Build the project with SonarCloud build wrapper
       - name: Build with SonarCloud build wrapper
         run: |
           sonar-build/build-wrapper-win-x86/build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
         shell: cmd
 
-      # Step 8: Run SonarCloud scanner
+      # Step 7: Run SonarCloud scanner
       - name: Run SonarCloud scanner
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
