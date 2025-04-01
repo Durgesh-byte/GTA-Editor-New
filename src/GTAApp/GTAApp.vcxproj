@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -21,13 +21,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <PlatformToolSet>v143</PlatformToolSet>
+    <PlatformToolSet>v140</PlatformToolSet>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <ConfigurationType>Application</ConfigurationType>
     <PrimaryOutput>GTAApp</PrimaryOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <PlatformToolSet>v143</PlatformToolSet>
+    <PlatformToolSet>v140</PlatformToolSet>
     <OutputDirectory>$(SolutionDir)\build\$(Configuration)\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <ConfigurationType>Application</ConfigurationType>
@@ -63,11 +63,11 @@
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <QtModules>core;xml;sql;network;gui;widgets</QtModules>
-    <QtInstall>5.7_msvc2015_64</QtInstall>
+    <QtInstall>5.9_msvc2015_64</QtInstall>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtInstall>5.7_msvc2015_64</QtInstall>
+    <QtInstall>5.9_msvc2015_64</QtInstall>
     <QtModules>core;xml;sql;network;gui;widgets</QtModules>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
@@ -76,7 +76,7 @@
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;PrivateInterfaces;PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTAUI\PublicInterfaces;..\GTAUI\PrivateInterfaces;..\GTADataModel\PublicInterfaces;..\GTADataModel\PrivateInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTACore\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;..\GTASequencer\PublicInterfaces;$(SolutionDir)\build\$(Configuration);..\GTAConfigManager\PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.9.0\msvc2015_64\include;C:\Qt\5.9.0\msvc2015_64\include\QtCore;C:\Qt\5.9.0\msvc2015_64\include\QtXml;C:\Qt\5.9.0\msvc2015_64\include\QtNetwork;C:\Qt\5.9.0\msvc2015_64\include\QtGui;C:\Qt\5.9.0\msvc2015_64\include\QtWidgets;C:\Qt\5.9.0\msvc2015_64\include\QtSql;.;PrivateInterfaces;PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTAUI\PublicInterfaces;..\GTAUI\PrivateInterfaces;..\GTADataModel\PublicInterfaces;..\GTADataModel\PrivateInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTACore\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;..\GTASequencer\PublicInterfaces;$(SolutionDir)\build\$(Configuration);..\GTAConfigManager\PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <Optimization>Disabled</Optimization>
@@ -95,7 +95,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Qt\5.9.0\msvc2015_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <DefaultCharType>Unsigned</DefaultCharType>
@@ -122,7 +122,7 @@ xcopy /F /d "$(SolutionDir)Resources\buildDependencies\AppConfig.ini" "$(OutDir)
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;PrivateInterfaces;PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTAUI\PublicInterfaces;..\GTAUI\PrivateInterfaces;..\GTADataModel\PublicInterfaces;..\GTADataModel\PrivateInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTACore\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;..\GTASequencer\PublicInterfaces;$(SolutionDir)\build\$(Configuration);..\GTAConfigManager\PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.9.0\msvc2015_64\include;C:\Qt\5.9.0\msvc2015_64\include\QtCore;C:\Qt\5.9.0\msvc2015_64\include\QtXml;C:\Qt\5.9.0\msvc2015_64\include\QtNetwork;C:\Qt\5.9.0\msvc2015_64\include\QtGui;C:\Qt\5.9.0\msvc2015_64\include\QtWidgets;C:\Qt\5.9.0\msvc2015_64\include\QtSql;.;PrivateInterfaces;PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTAUI\PublicInterfaces;..\GTAUI\PrivateInterfaces;..\GTADataModel\PublicInterfaces;..\GTADataModel\PrivateInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTACore\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;..\GTASequencer\PublicInterfaces;$(SolutionDir)\build\$(Configuration);..\GTAConfigManager\PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>None</DebugInformationFormat>
       <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <Optimization>MaxSpeed</Optimization>
@@ -141,7 +141,7 @@ xcopy /F /d "$(SolutionDir)Resources\buildDependencies\AppConfig.ini" "$(OutDir)
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <LinkIncremental>false</LinkIncremental>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Qt\5.9.0\msvc2015_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <DefaultCharType>Unsigned</DefaultCharType>
