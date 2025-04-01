@@ -17,7 +17,7 @@
     <QtMsBuild Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
     <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
     <TargetPlatformVersion Condition="'$(TargetPlatformVersion)' == ''">$(LatestTargetPlatformVersion)</TargetPlatformVersion>
-    <PlatformToolSet>v143</PlatformToolSet>
+    <PlatformToolSet>v140</PlatformToolSet>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PrimaryOutput>GTAZip</PrimaryOutput>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
@@ -53,12 +53,12 @@
     <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QtInstall>5.7_msvc2015_64</QtInstall>
+    <QtInstall>5.9_msvc2015_64</QtInstall>
     <QtModules>core;xml;gui</QtModules>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtInstall>5.7_msvc2015_64</QtInstall>
+    <QtInstall>5.9_msvc2015_64</QtInstall>
     <QtModules>core;xml;gui</QtModules>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
