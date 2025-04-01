@@ -11,23 +11,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{945B9F3E-2135-3D9D-BE75-20350EE82523}</ProjectGuid>
+    <ProjectGuid>{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}</ProjectGuid>
     <RootNamespace>GTAXmlRpcServerClient</RootNamespace>
     <Keyword>QtVS_v304</Keyword>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
     <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
     <TargetPlatformVersion Condition="'$(TargetPlatformVersion)' == ''">$(LatestTargetPlatformVersion)</TargetPlatformVersion>
-    <PlatformToolSet>v140</PlatformToolSet>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <OutputDirectory>$(SolutionDir)\build\$(Configuration)\</OutputDirectory>
+    <PlatformToolSet>v143</PlatformToolSet>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PrimaryOutput>GTAXmlRpcServerClient</PrimaryOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <PlatformToolSet>v143</PlatformToolSet>
     <OutputDirectory>$(SolutionDir)\build\$(Configuration)\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -62,13 +62,13 @@
     <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QtInstall>5.9_msvc2015_64</QtInstall>
-    <QtModules>core;xml;network;gui</QtModules>
+    <QtInstall>5.15_msvc2022_64</QtInstall>
+    <QtModules>core;xml;network</QtModules>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtInstall>5.9_msvc2015_64</QtInstall>
-    <QtModules>core;xml;network;gui</QtModules>
+    <QtInstall>5.15_msvc2022_64</QtInstall>
+    <QtModules>core;xml;network</QtModules>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
@@ -76,12 +76,13 @@
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Qt\5.9.0\msvc2015_64\include;C:\Qt\5.9.0\msvc2015_64\include\QtCore;C:\Qt\5.9.0\msvc2015_64\include\QtXml;C:\Qt\5.9.0\msvc2015_64\include\QtNetwork;C:\Qt\5.9.0\msvc2015_64\include\QtGui;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2022_64\include;C:\Qt\5.15.2\msvc2022_64\include\QtCore;C:\Qt\5.15.2\msvc2022_64\include\QtXml;C:\Qt\5.15.2\msvc2022_64\include\QtNetwork;.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTADataModel\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAXMLRPCSERVERCLIENT_LIBRARY;TOOLVER="20.00.000RC4";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAXmlRpcServerClient_LIBRARY;TOOLVER="20.00.000RC4";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <TreatWarningAsError>false</TreatWarningAsError>
@@ -89,8 +90,8 @@
       <ConformanceMode>false</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(QT_LIBS_);$(SolutionDir)\ExternalLib\XmlRpcLib\lib\5127_x64\Debug\maia.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Qt\5.9.0\msvc2015_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>XmlRpcLib.lib;GTACommon.lib;GTADataModel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2022_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <LinkDLL>true</LinkDLL>
@@ -102,7 +103,7 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAXMLRPCSERVERCLIENT_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_GUI_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAXmlRpcServerClient_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
       <Command>
@@ -110,27 +111,25 @@
       <Message>
       </Message>
     </PostBuildEvent>
-    <QtMoc>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-    </QtMoc>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Qt\5.9.0\msvc2015_64\include;C:\Qt\5.9.0\msvc2015_64\include\QtCore;C:\Qt\5.9.0\msvc2015_64\include\QtXml;C:\Qt\5.9.0\msvc2015_64\include\QtNetwork;C:\Qt\5.9.0\msvc2015_64\include\QtGui;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DebugInformationFormat>None</DebugInformationFormat>
+      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2022_64\include;C:\Qt\5.15.2\msvc2022_64\include\QtCore;C:\Qt\5.15.2\msvc2022_64\include\QtXml;C:\Qt\5.15.2\msvc2022_64\include\QtNetwork;.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTADataModel\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAXMLRPCSERVERCLIENT_LIBRARY;TOOLVER="20.00.000RC4";QT_NO_DEBUG;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAXmlRpcServerClient_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <TreatWarningAsError>true</TreatWarningAsError>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>$(QT_LIBS_);$(SolutionDir)\ExternalLib\XmlRpcLib\lib\5127_x64\Release\maia.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Qt\5.9.0\msvc2015_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>XmlRpcLib.lib;GTACommon.lib;GTADataModel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2022_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <LinkDLL>true</LinkDLL>
       <LinkIncremental>false</LinkIncremental>
@@ -142,7 +141,7 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAXMLRPCSERVERCLIENT_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_GUI_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAXmlRpcServerClient_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
       <Command>
@@ -150,24 +149,12 @@
       <Message>
       </Message>
     </PostBuildEvent>
-    <QtMoc />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\GTAClient.cpp" />
+    <ClCompile Include="src\GTAXmlRpcClient.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\GTAServer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="PublicInterfaces\GTAClient.h">
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="PublicInterfaces\GTAServer.h">
-    </QtMoc>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTAServerClient_global.h" />
+    <ClInclude Include="PublicInterfaces\GTAXmlRpcClient.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
