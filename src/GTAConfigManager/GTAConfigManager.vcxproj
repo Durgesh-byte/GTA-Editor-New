@@ -32,14 +32,14 @@
     <Import Project="$(QtMsBuild)\qt_defaults.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
-    <QtInstall>5.15_msvc2022_64</QtInstall>
+    <QtInstall>5.15_msvc2019_64</QtInstall>
     <QtModules>core;xml;gui;</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
     <QtDeploy>true</QtDeploy>
     <QtPlugin>false</QtPlugin>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
-    <QtInstall>5.15_msvc2022_64</QtInstall>
+    <QtInstall>5.15_msvc2019_64</QtInstall>
     <QtModules>core;xml;gui;</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
     <QtDeploy>true</QtDeploy>
@@ -70,7 +70,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2022_64\include;C:\Qt\5.15.2\msvc2022_64\include\QtCore;C:\Qt\5.15.2\msvc2022_64\include\QtXml;C:\Qt\5.15.2\msvc2022_64\include\QtNetwork;C:\Qt\5.15.2\msvc2022_64\include\QtGui;PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2019_64\include;C:\Qt\5.15.2\msvc2019_64\include\QtCore;C:\Qt\5.15.2\msvc2019_64\include\QtXml;C:\Qt\5.15.2\msvc2019_64\include\QtNetwork;C:\Qt\5.15.2\msvc2019_64\include\QtGui;PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>GTAConfigManager_LIBRARY;_WINDOWS;UNICODE;WIN32;WIN64;TOOLVER="20.00.000RC4";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -82,19 +82,19 @@
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2022_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2019_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Link>
-      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2022_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2019_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2022_64\include;C:\Qt\5.15.2\msvc2022_64\include\QtCore;C:\Qt\5.15.2\msvc2022_64\include\QtXml;C:\Qt\5.15.2\msvc2022_64\include\QtNetwork;C:\Qt\5.15.2\msvc2022_64\include\QtGui;PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2019_64\include;C:\Qt\5.15.2\msvc2019_64\include\QtCore;C:\Qt\5.15.2\msvc2019_64\include\QtXml;C:\Qt\5.15.2\msvc2019_64\include\QtNetwork;C:\Qt\5.15.2\msvc2019_64\include\QtGui;PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <WarningLevel>Level4</WarningLevel>
       <PreprocessorDefinitions>GTAConfigManager_LIBRARY;_WINDOWS;UNICODE;WIN32;WIN64;TOOLVER="20.00.000RC4";QT_NO_DEBUG;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <LanguageStandard>stdcpp17</LanguageStandard>
