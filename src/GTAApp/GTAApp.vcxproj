@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{44935333-F95D-3ED2-BF86-147A2A5495A4}</ProjectGuid>
+    <ProjectGuid>{D1E2F3A4-B5C6-7890-ABCD-EF1234567890}</ProjectGuid>
     <RootNamespace>GTAApp</RootNamespace>
     <Keyword>QtVS_v304</Keyword>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
@@ -21,13 +21,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <PlatformToolSet>v140</PlatformToolSet>
+    <PlatformToolSet>v143</PlatformToolSet>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <ConfigurationType>Application</ConfigurationType>
     <PrimaryOutput>GTAApp</PrimaryOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <PlatformToolSet>v140</PlatformToolSet>
+    <PlatformToolSet>v143</PlatformToolSet>
     <OutputDirectory>$(SolutionDir)\build\$(Configuration)\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <ConfigurationType>Application</ConfigurationType>
@@ -53,22 +53,20 @@
     <TargetName>GTAApp</TargetName>
     <LinkIncremental>false</LinkIncremental>
     <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IgnoreImportLibrary>true</IgnoreImportLibrary>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>$(SolutionDir)build\$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
     <TargetName>GTAApp</TargetName>
     <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
-    <IgnoreImportLibrary>true</IgnoreImportLibrary>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QtModules>core;xml;sql;network;gui;widgets</QtModules>
-    <QtInstall>5.9_msvc2015_64</QtInstall>
+    <QtInstall>5.15_msvc2022_64</QtInstall>
+    <QtModules>core;gui;xml;network;sql;widgets</QtModules>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtInstall>5.9_msvc2015_64</QtInstall>
-    <QtModules>core;xml;sql;network;gui;widgets</QtModules>
+    <QtInstall>5.15_msvc2022_64</QtInstall>
+    <QtModules>core;gui;xml;network;sql;widgets</QtModules>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
@@ -76,13 +74,12 @@
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Qt\5.9.0\msvc2015_64\include;C:\Qt\5.9.0\msvc2015_64\include\QtCore;C:\Qt\5.9.0\msvc2015_64\include\QtXml;C:\Qt\5.9.0\msvc2015_64\include\QtNetwork;C:\Qt\5.9.0\msvc2015_64\include\QtGui;C:\Qt\5.9.0\msvc2015_64\include\QtWidgets;C:\Qt\5.9.0\msvc2015_64\include\QtSql;.;PrivateInterfaces;PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTAUI\PublicInterfaces;..\GTAUI\PrivateInterfaces;..\GTADataModel\PublicInterfaces;..\GTADataModel\PrivateInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTACore\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;..\GTASequencer\PublicInterfaces;$(SolutionDir)\build\$(Configuration);..\GTAConfigManager\PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2022_64\include;C:\Qt\5.15.2\msvc2022_64\include\QtCore;C:\Qt\5.15.2\msvc2022_64\include\QtGui;C:\Qt\5.15.2\msvc2022_64\include\QtXml;C:\Qt\5.15.2\msvc2022_64\include\QtNetwork;C:\Qt\5.15.2\msvc2022_64\include\QtSql;C:\Qt\5.15.2\msvc2022_64\include\QtWidgets;.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTAConfigManager\PublicInterfaces;..\GTADataModel\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTACMDSCXML\PublicInterfaces;..\GTASCXML\PublicInterfaces;..\GTACommands\PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAApp_LIBRARY;TOOLVER="20.00.000RC4";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <TreatWarningAsError>false</TreatWarningAsError>
@@ -90,12 +87,10 @@
       <ConformanceMode>false</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>shell32.lib;GTAControllers.lib;GTAUI.lib;GTADataModel.lib;GTACommon.lib;GTACommands.lib;GTAConfigManager.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>GTACommon.lib;GTAConfigManager.lib;GTADataModel.lib;GTAXmlRpcServerClient.lib;GTAViewModel.lib;GTAControllers.lib;GTACMDSCXML.lib;GTASCXML.lib;GTACommands.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2022_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>C:\Qt\5.9.0\msvc2015_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <DefaultCharType>Unsigned</DefaultCharType>
@@ -103,45 +98,28 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAApp_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_WIDGETS_LIB;QT_GUI_LIB;QT_SQL_LIB;QT_XML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAApp_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_WIDGETS_LIB;QT_SQL_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
-    <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)Resources\buildDependencies\AlwaysCopyInRoot\*.*" "$(OutDir)" /Y /I /E
-xcopy /y "$(SolutionDir)ExternalLib\CLRZIP\x64\Release\CLRZIP.dll" "$(OutDir)"
-if exist "$(OutDir)AppConfig.ini" del "$(OutDir)AppConfig.ini"
-xcopy /F /d "$(SolutionDir)Resources\buildDependencies\AppConfig.ini" "$(OutDir)"</Command>
-      <Message>Copy ressources files to $(OutDir)</Message>
-    </PostBuildEvent>
-    <PreBuildEvent>
-      <Command>
-      </Command>
-    </PreBuildEvent>
-    <PreBuildEvent>
-      <Message>testing</Message>
-    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Qt\5.9.0\msvc2015_64\include;C:\Qt\5.9.0\msvc2015_64\include\QtCore;C:\Qt\5.9.0\msvc2015_64\include\QtXml;C:\Qt\5.9.0\msvc2015_64\include\QtNetwork;C:\Qt\5.9.0\msvc2015_64\include\QtGui;C:\Qt\5.9.0\msvc2015_64\include\QtWidgets;C:\Qt\5.9.0\msvc2015_64\include\QtSql;.;PrivateInterfaces;PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTAUI\PublicInterfaces;..\GTAUI\PrivateInterfaces;..\GTADataModel\PublicInterfaces;..\GTADataModel\PrivateInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTACore\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;$(SolutionDir)\ExternalLib\XmlRpcLib\inc;..\GTASequencer\PublicInterfaces;$(SolutionDir)\build\$(Configuration);..\GTAConfigManager\PublicInterfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <DebugInformationFormat>None</DebugInformationFormat>
+      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2022_64\include;C:\Qt\5.15.2\msvc2022_64\include\QtCore;C:\Qt\5.15.2\msvc2022_64\include\QtGui;C:\Qt\5.15.2\msvc2022_64\include\QtXml;C:\Qt\5.15.2\msvc2022_64\include\QtNetwork;C:\Qt\5.15.2\msvc2022_64\include\QtSql;C:\Qt\5.15.2\msvc2022_64\include\QtWidgets;.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTAConfigManager\PublicInterfaces;..\GTADataModel\PublicInterfaces;..\GTAXmlRpcServerClient\PublicInterfaces;..\GTAViewModel\PublicInterfaces;..\GTAControllers\PublicInterfaces;..\GTACMDSCXML\PublicInterfaces;..\GTASCXML\PublicInterfaces;..\GTACommands\PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAApp_LIBRARY;TOOLVER="20.00.000RC4";QT_NO_DEBUG;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAApp_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_WIDGETS_LIB;QT_SQL_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <TreatWarningAsError>true</TreatWarningAsError>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>shell32.lib;GTAControllers.lib;GTAUI.lib;GTADataModel.lib;GTACommon.lib;GTACommands.lib;GTAConfigManager.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <AdditionalDependencies>GTACommon.lib;GTAConfigManager.lib;GTADataModel.lib;GTAXmlRpcServerClient.lib;GTAViewModel.lib;GTAControllers.lib;GTACMDSCXML.lib;GTASCXML.lib;GTACommands.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2022_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
       <LinkIncremental>false</LinkIncremental>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>C:\Qt\5.9.0\msvc2015_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <DefaultCharType>Unsigned</DefaultCharType>
@@ -149,32 +127,72 @@ xcopy /F /d "$(SolutionDir)Resources\buildDependencies\AppConfig.ini" "$(OutDir)
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAApp_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_SQL_LIB;QT_XML_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTAApp_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_WIDGETS_LIB;QT_SQL_LIB;QT_NETWORK_LIB;QT_XML_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
-      <Command>xcopy "$(SolutionDir)Resources\buildDependencies\AlwaysCopyInRoot\*.*" "$(OutDir)" /Y /I /E
-xcopy /y "$(SolutionDir)ExternalLib\CLRZIP\x64\Release\CLRZIP.dll" "$(OutDir)"
-xcopy /F /d "$(SolutionDir)Resources\buildDependencies\AppConfig.ini" "$(OutDir)"</Command>
-      <Message>Copy ressources files to $(OutDir)</Message>
-    </PostBuildEvent>
-    <PreBuildEvent>
       <Command>
       </Command>
-    </PreBuildEvent>
+      <Message>
+      </Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ArgumentHandler.cpp" />
-    <ClCompile Include="src\GTAAppConfig.cpp" />
+    <ClCompile Include="src\GTAApp.cpp" />
+    <ClCompile Include="src\GTAAppMainWindow.cpp" />
+    <ClCompile Include="src\GTADataModelTreeWidget.cpp" />
+    <ClCompile Include="src\GTADataModelTreeWidgetItem.cpp" />
+    <ClCompile Include="src\GTAMainWindow.cpp" />
+    <ClCompile Include="src\GTAProjectTreeWidget.cpp" />
+    <ClCompile Include="src\GTAProjectTreeWidgetItem.cpp" />
+    <ClCompile Include="src\GTAScriptEditorWidget.cpp" />
+    <ClCompile Include="src\GTAScriptEditorWidgetFindReplace.cpp" />
+    <ClCompile Include="src\GTAScriptEditorWidgetTab.cpp" />
+    <ClCompile Include="src\GTAScriptEditorWidgetTabBar.cpp" />
+    <ClCompile Include="src\GTAStatusBarWidget.cpp" />
+    <ClCompile Include="src\GTAToolBarWidget.cpp" />
+    <ClCompile Include="src\GTAViewModelTreeWidget.cpp" />
+    <ClCompile Include="src\GTAViewModelTreeWidgetItem.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArgumentHandler.h" />
-    <ClInclude Include="PublicInterfaces\GTAAppConfig.h" />
-    <ClInclude Include="PublicInterfaces\main.h" />
-    <ClInclude Include="resource.h" />
+    <ClInclude Include="PublicInterfaces\GTAApp.h" />
+    <ClInclude Include="PublicInterfaces\GTAAppMainWindow.h" />
+    <ClInclude Include="PublicInterfaces\GTADataModelTreeWidget.h" />
+    <ClInclude Include="PublicInterfaces\GTADataModelTreeWidgetItem.h" />
+    <ClInclude Include="PublicInterfaces\GTAMainWindow.h" />
+    <ClInclude Include="PublicInterfaces\GTAProjectTreeWidget.h" />
+    <ClInclude Include="PublicInterfaces\GTAProjectTreeWidgetItem.h" />
+    <ClInclude Include="PublicInterfaces\GTAScriptEditorWidget.h" />
+    <ClInclude Include="PublicInterfaces\GTAScriptEditorWidgetFindReplace.h" />
+    <ClInclude Include="PublicInterfaces\GTAScriptEditorWidgetTab.h" />
+    <ClInclude Include="PublicInterfaces\GTAScriptEditorWidgetTabBar.h" />
+    <ClInclude Include="PublicInterfaces\GTAStatusBarWidget.h" />
+    <ClInclude Include="PublicInterfaces\GTAToolBarWidget.h" />
+    <ClInclude Include="PublicInterfaces\GTAViewModelTreeWidget.h" />
+    <ClInclude Include="PublicInterfaces\GTAViewModelTreeWidgetItem.h" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="GTAApp.rc" />
+    <QtMoc Include="PublicInterfaces\GTAAppMainWindow.h" />
+    <QtMoc Include="PublicInterfaces\GTADataModelTreeWidget.h" />
+    <QtMoc Include="PublicInterfaces\GTADataModelTreeWidgetItem.h" />
+    <QtMoc Include="PublicInterfaces\GTAMainWindow.h" />
+    <QtMoc Include="PublicInterfaces\GTAProjectTreeWidget.h" />
+    <QtMoc Include="PublicInterfaces\GTAProjectTreeWidgetItem.h" />
+    <QtMoc Include="PublicInterfaces\GTAScriptEditorWidget.h" />
+    <QtMoc Include="PublicInterfaces\GTAScriptEditorWidgetFindReplace.h" />
+    <QtMoc Include="PublicInterfaces\GTAScriptEditorWidgetTab.h" />
+    <QtMoc Include="PublicInterfaces\GTAScriptEditorWidgetTabBar.h" />
+    <QtMoc Include="PublicInterfaces\GTAStatusBarWidget.h" />
+    <QtMoc Include="PublicInterfaces\GTAToolBarWidget.h" />
+    <QtMoc Include="PublicInterfaces\GTAViewModelTreeWidget.h" />
+    <QtMoc Include="PublicInterfaces\GTAViewModelTreeWidgetItem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="src\GTAAppMainWindow.ui" />
+    <QtUic Include="src\GTAScriptEditorWidgetFindReplace.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="src\GTAApp.qrc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
