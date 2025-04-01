@@ -15,16 +15,29 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
-    # Step 2: Install Qt 5.15.2
+    # Step 2: Install Qt 5.15.2 with msvc2019_64
     - name: Install Qt
       uses: jurplel/install-qt-action@v3
       with:
         version: '5.15.2'
         host: 'windows'
         target: 'desktop'
-        arch: 'win64_msvc2022_64'
+        arch: 'win64_msvc2019_64'  # Changed from win64_msvc2022_64
         dir: 'C:\Qt'
         modules: 'qtcore qtgui qtxml qtnetwork qtwidgets qtsql'
+        install-deps: true
+        cache: false
+        cache-key-prefix: install-qt-action
+        setup-python: true
+        add-tools-to-path: true
+        set-env: true
+        no-qt-binaries: false
+        tools-only: false
+        aqtversion: '==3.1.*'
+        py7zrversion: '==0.20.*'
+        source: false
+        documentation: false
+        examples: false
 
     # Step 3: Set up MSBuild (Visual Studio 2022)
     - name: Setup MSBuild
@@ -43,11 +56,11 @@ jobs:
       run: |
         sonar-build\build-wrapper-win-x86\build-wrapper-win-x86-64.exe --out-dir sonar-build msbuild GTAAPPLICATION.sln /t:Rebuild /p:Configuration=Debug /p:Platform=x64
       env:
-        Qt5_DIR: C:\Qt\5.15.2\msvc2022_64\lib\cmake
-        QT_ROOT_DIR: C:\Qt\5.15.2\msvc2022_64
-        QT_PLUGIN_PATH: C:\Qt\5.15.2\msvc2022_64\plugins
-        QML2_IMPORT_PATH: C:\Qt\5.15.2\msvc2022_64\qml
-        PATH: C:\Qt\5.15.2\msvc2022_64\bin;%PATH%
+        Qt5_DIR: C:\Qt\5.15.2\msvc2019_64\lib\cmake  # Changed from msvc2022_64
+        QT_ROOT_DIR: C:\Qt\5.15.2\msvc2019_64  # Changed from msvc2022_64
+        QT_PLUGIN_PATH: C:\Qt\5.15.2\msvc2019_64\plugins  # Changed from msvc2022_64
+        QML2_IMPORT_PATH: C:\Qt\5.15.2\msvc2019_64\qml  # Changed from msvc2022_64
+        PATH: C:\Qt\5.15.2\msvc2019_64\bin;%PATH%  # Changed from msvc2022_64
 
     # Step 6: Run SonarScanner
     - name: Run SonarScanner
