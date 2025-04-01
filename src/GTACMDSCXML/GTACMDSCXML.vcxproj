@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{30070A4A-8631-38C9-B268-6416ACF00D68}</ProjectGuid>
+    <ProjectGuid>{C1D2E3F4-A5B6-7890-ABCD-EF1234567890}</ProjectGuid>
     <RootNamespace>GTACMDSCXML</RootNamespace>
     <Keyword>QtVS_v304</Keyword>
     <QtMsBuild Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
@@ -21,13 +21,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <PlatformToolSet>v140</PlatformToolSet>
+    <PlatformToolSet>v143</PlatformToolSet>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <PrimaryOutput>GTACMDSCXML</PrimaryOutput>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <PlatformToolSet>v140</PlatformToolSet>
+    <PlatformToolSet>v143</PlatformToolSet>
     <OutputDirectory>$(SolutionDir)\build\$(Configuration)\</OutputDirectory>
     <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -62,13 +62,13 @@
     <IntDir>$(SolutionDir)build\intermediate\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <QtInstall>5.9_msvc2015_64</QtInstall>
-    <QtModules>core;xml;gui</QtModules>
+    <QtInstall>5.15_msvc2022_64</QtInstall>
+    <QtModules>core;xml;network</QtModules>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <QtInstall>5.9_msvc2015_64</QtInstall>
-    <QtModules>core;xml;gui</QtModules>
+    <QtInstall>5.15_msvc2022_64</QtInstall>
+    <QtModules>core;xml;network</QtModules>
     <QtDeploy>true</QtDeploy>
   </PropertyGroup>
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
@@ -76,12 +76,13 @@
   </ImportGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Qt\5.9.0\msvc2015_64\include;C:\Qt\5.9.0\msvc2015_64\include\QtCore;C:\Qt\5.9.0\msvc2015_64\include\QtXml;C:\Qt\5.9.0\msvc2015_64\include\QtGui;.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PrivateInterfaces;..\GTACommands\PublicInterfaces;..\GTADataModel\PublicInterfaces;..\GTASCXML\PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2022_64\include;C:\Qt\5.15.2\msvc2022_64\include\QtCore;C:\Qt\5.15.2\msvc2022_64\include\QtXml;C:\Qt\5.15.2\msvc2022_64\include\QtNetwork;.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTADataModel\PublicInterfaces;..\GTASCXML\PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACMDSCXML_LIBRARY;TOOLVER="20.00.000RC4";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <TreatWarningAsError>false</TreatWarningAsError>
@@ -89,12 +90,12 @@
       <ConformanceMode>false</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>GTACommands.lib;GTACommon.lib;GTASCXML.lib;GTADataModel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>GTACommon.lib;GTADataModel.lib;GTASCXML.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2022_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <LinkDLL>true</LinkDLL>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>C:\Qt\5.9.0\msvc2015_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <DefaultCharType>Unsigned</DefaultCharType>
@@ -102,30 +103,37 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACMDSCXML_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_GUI_LIB;QT_XML_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACMDSCXML_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+      <Message>
+      </Message>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Qt\5.9.0\msvc2015_64\include;C:\Qt\5.9.0\msvc2015_64\include\QtCore;C:\Qt\5.9.0\msvc2015_64\include\QtXml;C:\Qt\5.9.0\msvc2015_64\include\QtGui;.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTACommands\PrivateInterfaces;..\GTACommands\PublicInterfaces;..\GTADataModel\PublicInterfaces;..\GTASCXML\PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Qt\5.15.2\msvc2022_64\include;C:\Qt\5.15.2\msvc2022_64\include\QtCore;C:\Qt\5.15.2\msvc2022_64\include\QtXml;C:\Qt\5.15.2\msvc2022_64\include\QtNetwork;.;PrivateInterfaces;PublicInterfaces;..\GTACommon\PublicInterfaces;..\GTADataModel\PublicInterfaces;..\GTASCXML\PublicInterfaces;$(SolutionDir)\build\$(Configuration);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <DisableSpecificWarnings>4577;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <Optimization>MaxSpeed</Optimization>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACMDSCXML_LIBRARY;TOOLVER="20.00.000RC4";QT_NO_DEBUG;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACMDSCXML_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <WarningLevel>Level4</WarningLevel>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <TreatWarningAsError>true</TreatWarningAsError>
       <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>GTACommands.lib;GTACommon.lib;GTASCXML.lib;GTADataModel.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>GTACommon.lib;GTADataModel.lib;GTASCXML.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\5.15.2\msvc2022_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreImportLibrary>true</IgnoreImportLibrary>
       <LinkDLL>true</LinkDLL>
       <LinkIncremental>false</LinkIncremental>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>C:\Qt\5.9.0\msvc2015_64\lib;$(OutDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <DefaultCharType>Unsigned</DefaultCharType>
@@ -133,7 +141,7 @@
       <WarningLevel>0</WarningLevel>
     </Midl>
     <ResourceCompile>
-      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACMDSCXML_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_GUI_LIB;QT_XML_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;WIN64;GTACMDSCXML_LIBRARY;QT_USE_QSTRINGBUILDER+;TOOLVER=\"20.00.000RC4\";QT_NO_DEBUG;QT_NETWORK_LIB;QT_XML_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ResourceCompile>
     <PostBuildEvent>
       <Command>
@@ -143,187 +151,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLBase.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLCALL.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLCallParallel.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLCheckBITEMessage.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLCheckFWCMessage.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLCheckValue.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLConditionDoWhile.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLConditionElse.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLConditionForEach.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLConditionIf.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLConditionIfElse.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLConditionWhile.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLContainerLoop.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLEquationBase.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLExternalTool.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLInitPIRParameters.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLLog.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLManualAction.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLMaths.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLPrint.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLPrintTable.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLPrintTime.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLReleaseVMACParameters.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLSCXML.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLSet.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLTitle.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLUnInitPIRParameters.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLUtils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLWaitFor.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\GTACMDSCXMLWaitUntil.cpp" />
+    <ClCompile Include="src\GTACMDSCXML.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PublicInterfaces\GTACMDSCXML.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLBase.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLCALL.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLCallParallel.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLCheckBITEMessage.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLCheckFWCMessage.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLCheckValue.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLConditionDoWhile.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLConditionElse.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLConditionForEach.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLConditionIf.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLConditionIfElse.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLConditionWhile.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLContainerLoop.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLEquationBase.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLExternalTool.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLInitPIRParameters.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLLog.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLManualAction.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLMaths.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLPrint.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLPrintTable.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLPrintTime.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLReleaseVMACParameters.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLSCXML.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLSet.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLTitle.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLUnInitPIRParameters.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLUtils.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLWaitFor.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="PublicInterfaces\GTACMDSCXMLWaitUntil.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
