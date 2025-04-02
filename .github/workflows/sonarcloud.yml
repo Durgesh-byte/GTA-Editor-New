@@ -33,7 +33,7 @@ jobs:
         host: windows
         target: desktop
         arch: win64_msvc2019_64
-        dir: C:\Qt
+        dir: C:\Qt  # Install Qt to C:\Qt, so Qt will be at C:\Qt\5.15.2\msvc2019_64
         install-deps: true
         cache: false
         cache-key-prefix: install-qt-action
@@ -55,12 +55,31 @@ jobs:
         arch: x64
         toolset: 14.29  # Corresponds to MSVC 2019 (v143 toolset)
 
-    # Step 5: Build the solution
+    # Step 5: Fix GTAXmlRpcServerClient.vcxproj to remove missing source file
+    - name: Remove missing GTAXmlRpcServerClient.cpp from project file
+      run: |
+        $projectFile = "src\GTAXmlRpcServerClient\GTAXmlRpcServerClient.vcxproj"
+        $content = Get-Content $projectFile -Raw
+        $updatedContent = $content -replace '<ClCompile Include="src\\GTAXmlRpcServerClient.cpp" />', ''
+        Set-Content $projectFile $updatedContent -NoNewline
+      shell: pwsh
+
+    # Step 6: Set Qt environment variables for MSBuild
+    - name: Set Qt environment variables
+      run: |
+        echo "QTDIR=C:\Qt\5.15.2\msvc2019_64" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+        echo "Qt5_Dir=C:\Qt\5.15.2\msvc2019_64" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      shell: pwsh
+
+    # Step 7: Build the solution
     - name: Build the solution
       run: |
         msbuild GTAApplication.sln -p:Configuration=Release -p:Platform=x64 -maxcpucount
+      env:
+        QTDIR: C:\Qt\5.15.2\msvc2019_64
+        Qt5_Dir: C:\Qt\5.15.2\msvc2019_64
 
-    # Step 6: Upload build artifacts
+    # Step 8: Upload build artifacts
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
